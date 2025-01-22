@@ -1,0 +1,164 @@
+table dimMeta
+	lineageTag: 8d6b44b7-c8de-4159-a9f6-19f856dd679a
+
+	column Symbol
+		dataType: string
+		lineageTag: 4b47751f-1d0b-443f-aead-3f6c291cc8b7
+		summarizeBy: none
+		sourceColumn: Symbol
+
+		annotation SummarizationSetBy = Automatic
+
+	column Currency
+		dataType: string
+		lineageTag: 3031597b-d294-4d1a-937e-b4f5b2808d17
+		summarizeBy: none
+		sourceColumn: Currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Exchange Name'
+		dataType: string
+		lineageTag: e29b374a-60ce-494f-a95a-73ee7650e2b8
+		summarizeBy: none
+		sourceColumn: Exchange Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Timezone
+		dataType: string
+		lineageTag: 83d08dee-2202-46c3-9a74-d6f2ce44e09b
+		summarizeBy: none
+		sourceColumn: Timezone
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Regular Market Price'
+		dataType: double
+		lineageTag: 40da6344-ec8b-499a-8c57-35e1d983d51d
+		summarizeBy: sum
+		sourceColumn: Regular Market Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Regular Market Day High'
+		dataType: double
+		lineageTag: 130dbc70-4061-447d-9e00-69a73a89469e
+		summarizeBy: sum
+		sourceColumn: Regular Market Day High
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Regular Market Day Low'
+		dataType: double
+		lineageTag: a5464041-c60c-4550-b3ed-b2659b0c181a
+		summarizeBy: sum
+		sourceColumn: Regular Market Day Low
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Regular Market Volume'
+		dataType: double
+		lineageTag: 94f48bdf-ecbb-4b16-97f6-6cc4d006a7b4
+		summarizeBy: sum
+		sourceColumn: Regular Market Volume
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Sector
+		dataType: string
+		lineageTag: 4a4637f2-2057-45ca-bfec-7614d162fbf7
+		summarizeBy: none
+		sourceColumn: Sector
+
+		annotation SummarizationSetBy = Automatic
+
+	column Industry
+		dataType: string
+		lineageTag: 079a26dc-6464-41a7-9ca8-d01d7cbd4486
+		summarizeBy: none
+		sourceColumn: Industry
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Name'
+		dataType: string
+		lineageTag: 16581c93-e340-4bc8-b2c5-1b7b4981b0f4
+		summarizeBy: none
+		sourceColumn: Company Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column '52 Week High'
+		dataType: double
+		lineageTag: c913ebd8-c5f7-4a6e-9a35-a80846f4122d
+		summarizeBy: sum
+		sourceColumn: 52 Week High
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '52 Week Low'
+		dataType: double
+		lineageTag: 10906e6b-a355-4f1b-ae6e-c5f542112b41
+		summarizeBy: sum
+		sourceColumn: 52 Week Low
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'First Trade Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: df36104a-01b3-4dfe-b1dd-96069dcbcdbc
+		summarizeBy: none
+		sourceColumn: First Trade Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Regular Market Time'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 6b5f7552-d65f-446f-9108-14cef5b8a003
+		summarizeBy: none
+		sourceColumn: Regular Market Time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition dimMeta = m
+		mode: import
+		source = ```
+				let
+				    // Reference the StockDataSource query
+				    StockData = fnStockData,
+				
+				    // Remove unnecessary columns for dimension table and include Sector and Industry
+				    DimensionTable = Table.Distinct(Table.SelectColumns(StockData, {
+				        "Symbol", "Company Name", "Sector", "Industry", "Currency", "Exchange Name", 
+				        "Timezone", "Regular Market Price", "52 Week High", 
+				        "52 Week Low", "Regular Market Day High", 
+				        "Regular Market Day Low", "Regular Market Volume", 
+				        "First Trade Date", "Regular Market Time"
+				    }))
+				in
+				    DimensionTable
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

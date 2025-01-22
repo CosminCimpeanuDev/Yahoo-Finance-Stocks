@@ -1,0 +1,58 @@
+table dimLogo
+	lineageTag: 0178abd5-ba00-4757-abf2-af9860881796
+
+	column Symbol
+		dataType: string
+		lineageTag: 27df5436-ce5d-423e-baaf-3357fa543715
+		summarizeBy: none
+		sourceColumn: Symbol
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company
+		dataType: string
+		lineageTag: 6979ff56-cc7f-4c04-a82c-1ea44b792df1
+		summarizeBy: none
+		sourceColumn: Company
+
+		annotation SummarizationSetBy = Automatic
+
+	column Domain
+		dataType: string
+		lineageTag: 65c62fe7-eced-4b03-8980-b09da70c11d5
+		summarizeBy: none
+		sourceColumn: Domain
+
+		annotation SummarizationSetBy = Automatic
+
+	column Logo
+		dataType: string
+		lineageTag: ae5a9bf1-e34f-49ec-b455-ba2138b32450
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: Logo
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimLogo = m
+		mode: import
+		source =
+				let
+				    // Reference the dimInputStocks query
+				    Source = dimInputStocks,
+				
+				    // Select the columns you need (Symbol, Company, Domain, Logo)
+				    SelectedColumns = Table.SelectColumns(Source, {"Symbol", "Company", "Domain", "Logo"}),
+				
+				    // Remove duplicates based on Symbol column
+				    DistinctTable = Table.Distinct(SelectedColumns),
+				
+				    // Sort by Symbol
+				    SortedTable = Table.Sort(DistinctTable, {{"Symbol", Order.Ascending}})
+				in
+				    SortedTable
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

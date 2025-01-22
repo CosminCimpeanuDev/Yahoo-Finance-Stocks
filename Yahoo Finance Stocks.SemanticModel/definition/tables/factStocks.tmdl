@@ -1,0 +1,106 @@
+table factStocks
+	lineageTag: 6a9de79a-36ef-4803-a484-8743f562beb4
+
+	column Date
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: cdb290c7-c8b1-41f8-aca8-c8f2d1c1b7fd
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column Open
+		dataType: double
+		formatString: 0.00
+		lineageTag: f714de8b-e072-4786-8719-ffcae5b2c640
+		summarizeBy: sum
+		sourceColumn: Open
+
+		annotation SummarizationSetBy = Automatic
+
+	column High
+		dataType: double
+		formatString: 0.00
+		lineageTag: 35ae7fac-e5f4-496a-b820-8c24b07f2bc0
+		summarizeBy: sum
+		sourceColumn: High
+
+		annotation SummarizationSetBy = Automatic
+
+	column Low
+		dataType: double
+		formatString: 0.00
+		lineageTag: 7780cf1f-be84-4be2-aa36-0bdef996bb27
+		summarizeBy: sum
+		sourceColumn: Low
+
+		annotation SummarizationSetBy = Automatic
+
+	column Close
+		dataType: double
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: adce25e2-d18d-4c9d-9702-750697e085b5
+		summarizeBy: sum
+		sourceColumn: Close
+
+		annotation SummarizationSetBy = Automatic
+
+	column Volume
+		dataType: double
+		formatString: 0.00
+		lineageTag: f9599a6e-2ec9-45f9-b700-8b959c3fe05a
+		summarizeBy: sum
+		sourceColumn: Volume
+
+		annotation SummarizationSetBy = Automatic
+
+	column Symbol
+		dataType: string
+		lineageTag: 8637a92d-7f3b-4cf5-8f91-866075cadbe3
+		summarizeBy: none
+		sourceColumn: Symbol
+
+		annotation SummarizationSetBy = Automatic
+
+	column PrevClose
+		dataType: double
+		formatString: 0.00
+		lineageTag: 76da485f-438c-4ac9-874e-462648624c91
+		summarizeBy: sum
+		sourceColumn: PrevClose
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	partition factStocks = m
+		mode: import
+		source =
+				let
+				    // Reference the StockDataSource query
+				    StockData = fnStockData,
+				
+				    // Select only the necessary columns for the fact table
+				    FactTable = Table.SelectColumns(StockData, {
+				        "Date", "Symbol", "Open", "High", "Low", "Close", "Volume"
+				    }),
+				
+				    // Add a PrevClose column with null as the first value and shift Close values down
+				    #"Added PrevClose" = Table.FromColumns(
+				        Table.ToColumns(FactTable) & {
+				            {null} & List.RemoveLastN(FactTable[Close], 1)
+				        },
+				        Table.ColumnNames(FactTable) & {"PrevClose"}
+				    )
+				in
+				    #"Added PrevClose"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

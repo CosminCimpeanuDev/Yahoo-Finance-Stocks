@@ -1,0 +1,148 @@
+table dimInputStocks
+	lineageTag: 9fba13d4-efe3-4cf0-9394-2963fac095e3
+
+	column Symbol
+		dataType: string
+		lineageTag: 9b3e1b5c-0c70-462d-b973-d83b186baecd
+		summarizeBy: none
+		sourceColumn: Symbol
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sector
+		dataType: string
+		lineageTag: f2cf1446-62fd-4df4-be80-d5d2d69e4a63
+		summarizeBy: none
+		sourceColumn: Sector
+
+		annotation SummarizationSetBy = Automatic
+
+	column Industry
+		dataType: string
+		lineageTag: e0281f4c-f2ad-4158-9223-85c704bf7512
+		summarizeBy: none
+		sourceColumn: Industry
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company
+		dataType: string
+		lineageTag: 2cd06be5-9d9e-42a3-80c3-46c98a45f8fe
+		summarizeBy: none
+		sourceColumn: Company
+
+		annotation SummarizationSetBy = Automatic
+
+	column Domain
+		dataType: string
+		lineageTag: 02ea69cf-4877-4f56-91cc-e8ee1d253de3
+		summarizeBy: none
+		sourceColumn: Domain
+
+		annotation SummarizationSetBy = Automatic
+
+	column Logo
+		dataType: string
+		lineageTag: b92231c0-d25e-4e59-b097-d387f2c8d1e5
+		summarizeBy: none
+		sourceColumn: Logo
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimInputStocks = m
+		mode: import
+		source = ```
+				let
+				    Source = Table.FromRecords({
+				        [Symbol="AAPL", Sector="Technology", Industry="Consumer Electronics", Company="Apple", Domain="apple.com"],
+				        [Symbol="MSFT", Sector="Technology", Industry="Software-Infrastructure", Company="Microsoft", Domain="microsoft.com"],
+				        [Symbol="NVDA", Sector="Technology", Industry="Semiconductors", Company="NVIDIA", Domain="nvidia.com"],
+				        [Symbol="GOOGL", Sector="Communication Services", Industry="Internet Content & Information", Company="Google", Domain="google.com"],
+				        [Symbol="META", Sector="Communication Services", Industry="Internet Content & Information", Company="Meta", Domain="meta.com"],
+				        [Symbol="PFE", Sector="Healthcare", Industry="Drug Manufacturers-General", Company="Pfizer", Domain="pfizer.com"],
+				        [Symbol="JNJ", Sector="Healthcare", Industry="Drug Manufacturers-General", Company="Johnson & Johnson", Domain="jnj.com"],
+				        [Symbol="ABBV", Sector="Healthcare", Industry="Drug Manufacturers-General", Company="AbbVie", Domain="abbvie.com"],
+				        [Symbol="UNH", Sector="Healthcare", Industry="Healthcare Plans", Company="UnitedHealth Group", Domain="unitedhealthgroup.com"],
+				        [Symbol="LLY", Sector="Healthcare", Industry="Drug Manufacturers-General", Company="Eli Lilly", Domain="lilly.com"],
+				        [Symbol="JPM", Sector="Financial Services", Industry="Banks-Diversified", Company="JPMorgan Chase", Domain="jpmorganchase.com"],
+				        [Symbol="GS", Sector="Financial Services", Industry="Capital Markets", Company="Goldman Sachs", Domain="gs.com"],
+				        [Symbol="C", Sector="Financial Services", Industry="Banks-Diversified", Company="Citigroup", Domain="citigroup.com"],
+				        [Symbol="WFC", Sector="Financial Services", Industry="Banks-Diversified", Company="Wells Fargo", Domain="wellsfargo.com"],
+				        [Symbol="XOM", Sector="Energy", Industry="Oil & Gas Integrated", Company="ExxonMobil", Domain="exxonmobil.com"],
+				        [Symbol="CVX", Sector="Energy", Industry="Oil & Gas Integrated", Company="Chevron", Domain="chevron.com"],
+				        [Symbol="NEE", Sector="Utilities", Industry="Utilities-Renewable", Company="NextEra Energy", Domain="nexteraenergy.com"],
+				        [Symbol="COP", Sector="Energy", Industry="Oil & Gas E&P", Company="ConocoPhillips", Domain="conocophillips.com"],
+				        [Symbol="BP", Sector="Energy", Industry="Oil & Gas Integrated", Company="BP", Domain="bp.com"],
+				        [Symbol="PG", Sector="Consumer Defensive", Industry="Household & Personal Products", Company="Procter & Gamble", Domain="pg.com"],
+				        [Symbol="KO", Sector="Consumer Defensive", Industry="Beverages-Non-Alcoholic", Company="Coca-Cola", Domain="coca-cola.com"],
+				        [Symbol="PEP", Sector="Consumer Defensive", Industry="Beverages-Non-Alcoholic", Company="PepsiCo", Domain="pepsico.com"],
+				        [Symbol="UL", Sector="Consumer Defensive", Industry="Household & Personal Products", Company="Unilever", Domain="unilever.com"],
+				        [Symbol="NKE", Sector="Consumer Cyclical", Industry="Footwear & Accessories", Company="Nike", Domain="nike.com"],
+				        [Symbol="WMT", Sector="Consumer Defensive", Industry="Discount Stores", Company="Walmart", Domain="walmart.com"],
+				        [Symbol="AMZN", Sector="Consumer Cyclical", Industry="Internet Retail", Company="Amazon", Domain="amazon.com"],
+				        [Symbol="TGT", Sector="Consumer Defensive", Industry="Discount Stores", Company="Target", Domain="target.com"],
+				        [Symbol="HD", Sector="Consumer Cyclical", Industry="Home Improvement Retail", Company="Home Depot", Domain="homedepot.com"],
+				        [Symbol="COST", Sector="Consumer Defensive", Industry="Discount Stores", Company="Costco", Domain="costco.com"],
+				        [Symbol="VZ", Sector="Communication Services", Industry="Telecom Services", Company="Verizon", Domain="verizon.com"],
+				        [Symbol="TMUS", Sector="Communication Services", Industry="Telecom Services", Company="T-Mobile", Domain="tmobile.com"],
+				        [Symbol="DUK", Sector="Utilities", Industry="Utilities-Regulated Electric", Company="Duke Energy", Domain="duke-energy.com"],
+				        [Symbol="SO", Sector="Utilities", Industry="Utilities-Regulated Electric", Company="Southern Company", Domain="southerncompany.com"],
+				        [Symbol="O", Sector="Real Estate", Industry="REIT-Retail", Company="Realty Income", Domain="realtyincome.com"],
+				        [Symbol="SPG", Sector="Real Estate", Industry="REIT-Retail", Company="Simon Property Group", Domain="spg.com"],
+				        [Symbol="PLD", Sector="Real Estate", Industry="REIT-Industrial", Company="Prologis", Domain="prologis.com"],
+				        [Symbol="TSLA", Sector="Consumer Cyclical", Industry="Auto Manufacturers", Company="Tesla", Domain="tesla.com"],
+				        [Symbol="NFLX", Sector="Communication Services", Industry="Entertainment", Company="Netflix", Domain="netflix.com"],
+				        [Symbol="DIS", Sector="Communication Services", Industry="Entertainment", Company="The Walt Disney Company", Domain="thewaltdisneycompany.com"],
+				        [Symbol="INTC", Sector="Technology", Industry="Semiconductors", Company="Intel", Domain="intel.com"],
+				        [Symbol="AMD", Sector="Technology", Industry="Semiconductors", Company="AMD", Domain="amd.com"],
+				        [Symbol="ADBE", Sector="Technology", Industry="Software-Infrastructure", Company="Adobe", Domain="adobe.com"],
+				        [Symbol="CRM", Sector="Technology", Industry="Software-Application", Company="Salesforce", Domain="salesforce.com"],
+				        [Symbol="ORCL", Sector="Technology", Industry="Software-Infrastructure", Company="Oracle", Domain="oracle.com"],
+				        [Symbol="CSCO", Sector="Technology", Industry="Communication Equipment", Company="Cisco", Domain="cisco.com"],
+				        [Symbol="T", Sector="Communication Services", Industry="Telecom Services", Company="AT&T", Domain="att.com"],
+				        [Symbol="GE", Sector="Industrials", Industry="Specialty Industrial Machinery", Company="General Electric", Domain="ge.com"],
+				        [Symbol="CAT", Sector="Industrials", Industry="Farm & Heavy Construction Machinery", Company="Caterpillar", Domain="cat.com"],
+				        [Symbol="MMM", Sector="Industrials", Industry="Specialty Industrial Machinery", Company="3M", Domain="3m.com"],
+				        [Symbol="FDX", Sector="Industrials", Industry="Integrated Freight & Logistics", Company="FedEx", Domain="fedex.com"],
+				        [Symbol="UPS", Sector="Industrials", Industry="Integrated Freight & Logistics", Company="United Parcel Service", Domain="ups.com"],
+				        [Symbol="BA", Sector="Industrials", Industry="Aerospace & Defense", Company="Boeing", Domain="boeing.com"],
+				        [Symbol="LMT", Sector="Industrials", Industry="Aerospace & Defense", Company="Lockheed Martin", Domain="lockheedmartin.com"],
+				        [Symbol="RTX", Sector="Industrials", Industry="Aerospace & Defense", Company="Raytheon Technologies", Domain="raytheon.com"],
+				        [Symbol="MO", Sector="Consumer Defensive", Industry="Tobacco", Company="Altria", Domain="altria.com"],
+				        [Symbol="PM", Sector="Consumer Defensive", Industry="Tobacco", Company="Philip Morris International", Domain="pmi.com"],
+				        [Symbol="MCD", Sector="Consumer Cyclical", Industry="Restaurants", Company="McDonald's", Domain="mcdonalds.com"],
+				        [Symbol="SBUX", Sector="Consumer Cyclical", Industry="Restaurants", Company="Starbucks", Domain="starbucks.com"],
+				        [Symbol="CI", Sector="Healthcare", Industry="Healthcare Plans", Company="Cigna", Domain="cigna.com"],
+				        [Symbol="MS", Sector="Financial Services", Industry="Capital Markets", Company="Morgan Stanley", Domain="morganstanley.com"],
+				        [Symbol="BK", Sector="Financial Services", Industry="Asset Management", Company="Bank of New York Mellon", Domain="bnymellon.com"],
+				        [Symbol="SCHW", Sector="Financial Services", Industry="Capital Markets", Company="Charles Schwab", Domain="schwab.com"],
+				        [Symbol="AMAT", Sector="Technology", Industry="Semiconductor Equipment & Materials", Company="Applied Materials", Domain="amat.com"],
+				        [Symbol="TXN", Sector="Technology", Industry="Semiconductors", Company="Texas Instruments", Domain="ti.com"],
+				        [Symbol="QCOM", Sector="Technology", Industry="Semiconductors", Company="Qualcomm", Domain="qualcomm.com"],
+				        [Symbol="MU", Sector="Technology", Industry="Semiconductors", Company="Micron Technology", Domain="micron.com"],
+				        [Symbol="SHOP", Sector="Technology", Industry="Software-Application", Company="Shopify", Domain="shopify.com"],
+				        [Symbol="SQ", Sector="Technology", Industry="Software-Infrastructure", Company="Square", Domain="squareup.com"],
+				        [Symbol="PYPL", Sector="Financial Services", Industry="Software-Infrastructure", Company="PayPal", Domain="paypal.com"],
+				        [Symbol="MA", Sector="Financial Services", Industry="Credit Services", Company="MasterCard", Domain="mastercard.com"],
+				        [Symbol="V", Sector="Financial Services", Industry="Credit Services", Company="Visa", Domain="visa.com"],
+				        [Symbol="AXP", Sector="Financial Services", Industry="Credit Services", Company="American Express", Domain="americanexpress.com"],
+				        [Symbol="DE", Sector="Industrials", Industry="Farm & Heavy Construction Machinery", Company="Deere & Co.", Domain="deere.com"],
+				        [Symbol="MCO", Sector="Financial Services", Industry="Financial Data & Stock Exchanges", Company="Moody's", Domain="moodys.com"],
+				        [Symbol="ICE", Sector="Financial Services", Industry="Financial Data & Stock Exchanges", Company="Intercontinental Exchange", Domain="ice.com"],
+				        [Symbol="%5EGSPC", Sector="Index", Industry="Stock Market", Company="S&P 500", Domain="spglobal.com"],
+				        [Symbol="%5EIXIC", Sector="Index", Industry="Stock Market", Company="NASDAQ Composite", Domain="nasdaq.com"],
+				        [Symbol="%5EN225", Sector="Index", Industry="Stock Market", Company="Nikkei 225", Domain="nikkei.com"],
+				        [Symbol="%5EHSI", Sector="Index", Industry="Stock Market", Company="HANG SENG INDEX", Domain="hsi.com"]
+				    }),
+				     
+				    DistinctTable = Table.Distinct(Source),
+				    SortedTable = Table.Sort(DistinctTable, {{"Symbol", Order.Ascending}}),
+				    AddLogoUrl = Table.AddColumn(SortedTable, "Logo", each "https://logo.clearbit.com/" & [Domain])
+				in
+				    AddLogoUrl
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

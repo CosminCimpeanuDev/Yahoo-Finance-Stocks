@@ -1,0 +1,91 @@
+table dimCalendar
+	lineageTag: 7be1def1-b586-4776-b44b-16a9e7166c7f
+
+	column Year
+		dataType: string
+		lineageTag: 5a056c5d-014e-427c-b2a2-a060a63e1326
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: string
+		lineageTag: 0227f8ea-dcbf-4cb4-87b6-a70a379e2bbf
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: d7429691-11eb-407a-b7f6-a33a5fe69e86
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column MonthName
+		dataType: string
+		lineageTag: 532ace5f-e074-4a45-a36d-e48644e3953f
+		summarizeBy: none
+		sourceColumn: MonthName
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfWeek
+		dataType: string
+		lineageTag: 6fb2eb7c-bbeb-4a0b-9ca0-80eddc9ef972
+		summarizeBy: none
+		sourceColumn: DayOfWeek
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayName
+		dataType: string
+		lineageTag: 73ab72c8-588c-4263-ac47-59d820c348b2
+		summarizeBy: none
+		sourceColumn: DayName
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimCalendar = m
+		mode: import
+		source = ```
+				let
+				    // Original data
+				    SourceFactTable = factStocks,
+				    
+				    // Get Min and Max Date directly from the fact table to define the range
+				    MinDate = List.Min(SourceFactTable[Date]),
+				    MaxDate = List.Max(SourceFactTable[Date]),
+				    
+				    // Generate date list from MinDate to MaxDate
+				    DateList = List.Dates(MinDate, Duration.Days(MaxDate - MinDate) + 1, #duration(1, 0, 0, 0)),
+				    
+				    // Convert to Table and change the type
+				    DateTable = Table.FromList(DateList, Splitter.SplitByNothing(), {"Date"}),
+				    DateTableWithTypes = Table.TransformColumnTypes(DateTable, {{"Date", type date}}),
+				
+				    // Adding year, month, and other columns in a single transformation
+				    DateTableWithAllColumns = Table.AddColumn(DateTableWithTypes, "DateDetails", each [
+				        Year = Date.Year([Date]),
+				        Month = Date.Month([Date]),
+				        MonthName = Date.MonthName([Date]),
+				        DayOfWeek = Date.DayOfWeek([Date]),
+				        DayName = Date.DayOfWeekName([Date])
+				    ]),
+				
+				    // Expand DateDetails in a single step to avoid multiple transformations
+				    FinalDateTable = Table.ExpandRecordColumn(DateTableWithAllColumns, "DateDetails", {"Year", "Month", "MonthName", "DayOfWeek", "DayName"})
+				in
+				    FinalDateTable
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

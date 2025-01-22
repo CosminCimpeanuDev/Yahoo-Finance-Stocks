@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Yahoo Finance Stocks"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e7dd479d-e5df-4492-90bb-d1e69e5ee1e7"
+  }
+}

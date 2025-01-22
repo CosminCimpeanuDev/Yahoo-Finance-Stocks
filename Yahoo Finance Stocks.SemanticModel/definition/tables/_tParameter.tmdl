@@ -1,0 +1,50 @@
+table _tParameter
+	lineageTag: e17e5446-8d84-4374-8295-e1f44122f85e
+
+	column Id
+		dataType: string
+		lineageTag: bed446ac-af71-487b-9e1f-7ed239a77f2b
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column NbOfDays
+		dataType: string
+		lineageTag: fb64a407-21ae-4ce7-996b-0156e9a2baf7
+		summarizeBy: none
+		sourceColumn: NbOfDays
+
+		annotation SummarizationSetBy = Automatic
+
+	column PeriodName
+		dataType: string
+		lineageTag: 03fafa7c-b20b-498e-9939-6dec15de4b7a
+		summarizeBy: none
+		sourceColumn: PeriodName
+		sortByColumn: Id
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _tParameter = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRecords({
+				        [Id=1, NbOfDays=10, PeriodName="10D"],
+				        [Id=2, NbOfDays=20, PeriodName="20D"],
+				        [Id=3, NbOfDays=30, PeriodName="30D"],
+				        [Id=4, NbOfDays=50, PeriodName="50D"],
+				        [Id=5, NbOfDays=100, PeriodName="100D"],
+				        [Id=6, NbOfDays=150, PeriodName="150D"],
+				        [Id=7, NbOfDays=200, PeriodName="200D"]
+				    })
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

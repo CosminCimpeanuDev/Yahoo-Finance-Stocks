@@ -1,0 +1,31 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-CH
+	dataAccessOptions
+		fastCombine
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.139.1678.0 (24.12)+2a034ab280bddf891eb7bb9ebfe6996f9c3a3196
+
+annotation PBI_QueryOrder = ["dimInputStocks","fnStockData","factStocks","dimMeta","dimCalendar","_tParameter","dimPeriod","dimLogo","dimSlicer","dimCurrencySymbol"]
+
+annotation PBI_ProTooling = ["TMDLView_Desktop","DaxQueryView_Desktop","DevMode"]
+
+ref table fnStockData
+ref table factStocks
+ref table dimMeta
+ref table dimCalendar
+ref table _Measures
+ref table dimInputStocks
+ref table _tParameter
+ref table dimPeriod
+ref table dimLogo
+ref table dimSlicer
+ref table dimCurrencySymbol
+
+ref cultureInfo en-US
+

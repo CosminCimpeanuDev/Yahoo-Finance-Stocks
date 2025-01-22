@@ -1,0 +1,13 @@
+createOrReplace
+
+	ref table dimLogo
+
+		column Logo
+			dataType: string
+			lineageTag: ae5a9bf1-e34f-49ec-b455-ba2138b32450
+			dataCategory: ImageUrl
+			summarizeBy: none
+			sourceColumn: Logo
+
+			annotation SummarizationSetBy = Automatic
+

@@ -1,0 +1,27 @@
+relationship AutoDetected_3f44afe9-b726-4034-adcf-311b8b33c40d
+	fromColumn: factStocks.Symbol
+	toColumn: dimMeta.Symbol
+
+relationship 73c731f7-3485-fa22-77a0-396af0380d0b
+	fromColumn: factStocks.Date
+	toColumn: dimCalendar.Date
+
+relationship 31f026b8-b148-795a-0733-9dfd8a011e1e
+	fromColumn: dimInputStocks.Symbol
+	toColumn: dimMeta.Symbol
+
+relationship 1dc8ad77-a4f5-e3df-3c4f-c1f056ea3fff
+	fromColumn: dimMeta.Symbol
+	toColumn: dimLogo.Symbol
+
+relationship AutoDetected_45ebd097-4763-4333-aece-e769266d45cb
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: dimLogo.Company
+	toColumn: dimInputStocks.Company
+
+relationship AutoDetected_efb2662d-3d61-4c88-b2da-60c084a221a0
+	fromColumn: dimMeta.Currency
+	toColumn: dimCurrencySymbol.Currency
+

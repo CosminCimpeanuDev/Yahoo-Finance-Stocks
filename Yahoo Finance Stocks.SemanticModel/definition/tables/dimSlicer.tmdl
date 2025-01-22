@@ -1,0 +1,95 @@
+table dimSlicer
+	lineageTag: 54c97e25-6179-4e55-a1a3-adc66c91b1f8
+
+	column Symbol
+		dataType: string
+		lineageTag: 24bab761-3220-4c2c-8fe5-2a08eac0259f
+		summarizeBy: none
+		sourceColumn: Symbol
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company
+		dataType: string
+		lineageTag: 002c6b3c-1055-4dd9-a9eb-b567d3ccf3ca
+		summarizeBy: none
+		sourceColumn: Company
+
+		annotation SummarizationSetBy = Automatic
+
+	column Domain
+		dataType: string
+		lineageTag: aeb1f225-ea59-494b-aa47-aa0cab582c1c
+		summarizeBy: none
+		sourceColumn: Domain
+
+		annotation SummarizationSetBy = Automatic
+
+	column Logo
+		dataType: string
+		lineageTag: 538a4bbf-6b23-459f-acd3-e428ac57d977
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: Logo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sector
+		dataType: string
+		lineageTag: a71ccc38-9847-4c7e-8ab5-933f02d2be31
+		summarizeBy: none
+		sourceColumn: Sector
+
+		annotation SummarizationSetBy = Automatic
+
+	column Industry
+		dataType: string
+		lineageTag: 193beedd-5cb2-4ea7-aab3-436d5332fe42
+		summarizeBy: none
+		sourceColumn: Industry
+
+		annotation SummarizationSetBy = Automatic
+
+	column Close
+		dataType: double
+		formatString: "CHF"\ #,0.###############;"CHF"-#,0.###############;"CHF"\ #,0.###############
+		lineageTag: e7686047-ec6b-4693-bfe4-f7b615dca7f5
+		summarizeBy: sum
+		sourceColumn: Close
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-CH"}
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5de1fb4a-69fa-4ece-b374-7cb39db96a53
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition dimSlicer = m
+		mode: import
+		source =
+				let
+				    // Reference the queries dimInputStocks and factStocks
+				    dimInputStocks = dimInputStocks,
+				    factStocks = factStocks,
+				
+				    // Merge dimInputStocks with factStocks based on the common key (e.g., Symbol)
+				    mergedTable = Table.NestedJoin(dimInputStocks, {"Symbol"}, factStocks, {"Symbol"}, "factStocks", JoinKind.LeftOuter),
+				
+				    // Expand the factStocks to get both the Date and Close columns
+				    expandedTable = Table.ExpandTableColumn(mergedTable, "factStocks", {"Date", "Close"}, {"Date", "Close"})
+				
+				in
+				    expandedTable
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

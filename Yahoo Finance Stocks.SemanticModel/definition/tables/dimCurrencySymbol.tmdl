@@ -1,0 +1,56 @@
+table dimCurrencySymbol
+	lineageTag: 1ca60167-9e37-4e5f-a207-bd415143d2c2
+
+	column Currency
+		dataType: string
+		lineageTag: 03bdad2c-7e63-47f8-ac5e-03a7141cf89a
+		summarizeBy: none
+		sourceColumn: Currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Currency Symbol'
+		dataType: string
+		lineageTag: 81b323e9-3f80-4459-b042-9657144d4876
+		summarizeBy: none
+		sourceColumn: Currency Symbol
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimCurrencySymbol = m
+		mode: import
+		source =
+				let
+				    // Define a list of top 20 currencies commonly used in stock markets along with their corresponding symbols
+				    CurrencyTable = #table(
+				        {"Currency", "Currency Symbol"},
+				        {
+				            {"USD", "$"},    // US Dollar
+				            {"EUR", "€"},    // Euro
+				            {"GBP", "£"},    // British Pound
+				            {"JPY", "¥"},    // Japanese Yen
+				            {"AUD", "A$"},   // Australian Dollar
+				            {"CAD", "C$"},   // Canadian Dollar
+				            {"INR", "₹"},    // Indian Rupee
+				            {"CNY", "¥"},    // Chinese Yuan
+				            {"CHF", "Fr"},   // Swiss Franc
+				            {"NZD", "NZ$"},  // New Zealand Dollar
+				            {"SEK", "kr"},   // Swedish Krona
+				            {"MXN", "$"},    // Mexican Peso
+				            {"SGD", "S$"},   // Singapore Dollar
+				            {"HKD", "HK$"},  // Hong Kong Dollar (HKN)
+				            {"NOK", "kr"},   // Norwegian Krone
+				            {"KRW", "₩"},    // South Korean Won
+				            {"TRY", "₺"},    // Turkish Lira
+				            {"RUB", "₽"},    // Russian Ruble
+				            {"BRL", "R$"},   // Brazilian Real
+				            {"ZAR", "R"}     // South African Rand
+				        }
+				    )
+				in
+				    CurrencyTable
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,142 @@
+table dimPeriod
+	lineageTag: faa1a6ff-3f6b-4021-9940-3f3dde7f04fc
+
+	column Order
+		dataType: int64
+		formatString: 0
+		lineageTag: 2abc0931-a36d-45ea-b994-68e098ba621b
+		summarizeBy: sum
+		sourceColumn: Order
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column StartDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: d15b14a2-a617-4988-a0f7-3aa4385fb80a
+		summarizeBy: none
+		sourceColumn: StartDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column EndDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 63089f62-e450-40c1-8890-16985d11abdc
+		summarizeBy: none
+		sourceColumn: EndDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Period
+		dataType: string
+		lineageTag: 2b46438f-5f2e-4e19-aaa0-d1e3660c010c
+		summarizeBy: none
+		sourceColumn: Period
+		sortByColumn: Order
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimPeriod = m
+		mode: import
+		source = ```
+				let
+				    // Get the max and min dates from fnStockData table
+				    MaxDate = List.Max(fnStockData[Date]),
+				    MinDate = List.Min(fnStockData[Date]),
+				    
+				    // Set the ReferenceDate to be the last date in the data
+				    ReferenceDate = #date(Date.Year(MaxDate), Date.Month(MaxDate), Date.Day(MaxDate)),
+				    
+				    // Create the list of dates for the periods (from 8 days before to the ReferenceDate)
+				    Source = List.Dates(Date.AddDays(ReferenceDate, -10), 11, #duration(1, 0, 0, 0)),
+				    
+				    // EndDate is the ReferenceDate
+				    EndDate = ReferenceDate,
+				    
+				    // Function to calculate StartDate adjusted for weekends
+				    AdjustStartDate = (StartDate as date) =>
+				    let
+				        WeekDay = Date.DayOfWeek(StartDate, Day.Monday),
+				        AdjustedStartDate = 
+				            if WeekDay = 5 then Date.AddDays(StartDate, 2) // Saturday
+				            else if WeekDay = 6 then Date.AddDays(StartDate, 1) // Sunday
+				            else StartDate
+				    in
+				        AdjustedStartDate,
+				    
+				    // Generate the table for periods
+				    Periods = List.Transform(Source, each 
+				        let
+				            BaseDate = _,
+				            Order = 
+				                if BaseDate = ReferenceDate then 1
+				                else if BaseDate = Date.AddDays(ReferenceDate, -1) then 2
+				                else if BaseDate = Date.AddDays(ReferenceDate, -2) then 3
+				                else if BaseDate = Date.AddDays(ReferenceDate, -3) then 4
+				                else if BaseDate = Date.AddDays(ReferenceDate, -4) then 5
+				                else if BaseDate = Date.AddDays(ReferenceDate, -5) then 6
+				                else if BaseDate = Date.AddDays(ReferenceDate, -6) then 7
+				                else if BaseDate = Date.AddDays(ReferenceDate, -7) then 8
+				                else if BaseDate = Date.AddDays(ReferenceDate, -8) then 9
+				                else if BaseDate = Date.AddDays(ReferenceDate, -9) then 10
+				                else if BaseDate = Date.AddDays(ReferenceDate, -10) then 11
+				                else null,
+				            
+				            StartDate = 
+				                if BaseDate = ReferenceDate then Date.AddDays(EndDate, -1)
+				                else if BaseDate = Date.AddDays(ReferenceDate, -1) then Date.AddDays(EndDate, -5)
+				                else if BaseDate = Date.AddDays(ReferenceDate, -2) then Date.AddDays(EndDate, -30)
+				                else if BaseDate = Date.AddDays(ReferenceDate, -3) then Date.AddDays(EndDate, -90)
+				                else if BaseDate = Date.AddDays(ReferenceDate, -4) then Date.AddDays(EndDate, -180)
+				                else if BaseDate = Date.AddDays(ReferenceDate, -5) then #date(Date.Year(BaseDate), 1, 1)
+				                else if BaseDate = Date.AddDays(ReferenceDate, -6) then #date(Date.Year(BaseDate) - 1, Date.Month(BaseDate), Date.Day(ReferenceDate))
+				                else if BaseDate = Date.AddDays(ReferenceDate, -7) then #date(Date.Year(BaseDate) - 2, Date.Month(BaseDate), Date.Day(ReferenceDate))
+				                else if BaseDate = Date.AddDays(ReferenceDate, -8) then #date(Date.Year(BaseDate) - 5, Date.Month(BaseDate), Date.Day(ReferenceDate))
+				                else if BaseDate = Date.AddDays(ReferenceDate, -9) then #date(Date.Year(BaseDate) - 10, Date.Month(BaseDate), Date.Day(ReferenceDate))
+				                else MinDate,
+				            
+				            StartDateAdjusted = AdjustStartDate(StartDate),
+				            
+				            PeriodName = 
+				                if BaseDate = ReferenceDate then "1D"
+				                else if BaseDate = Date.AddDays(ReferenceDate, -1) then "5D"
+				                else if BaseDate = Date.AddDays(ReferenceDate, -2) then "1M"
+				                else if BaseDate = Date.AddDays(ReferenceDate, -3) then "3M"
+				                else if BaseDate = Date.AddDays(ReferenceDate, -4) then "6M"
+				                else if BaseDate = Date.AddDays(ReferenceDate, -5) then "YTD"
+				                else if BaseDate = Date.AddDays(ReferenceDate, -6) then "1Y"
+				                else if BaseDate = Date.AddDays(ReferenceDate, -7) then "2Y"
+				                else if BaseDate = Date.AddDays(ReferenceDate, -8) then "5Y"
+				                else if BaseDate = Date.AddDays(ReferenceDate, -9) then "10Y"
+				                else if BaseDate = Date.AddDays(ReferenceDate, -10) then "MAX"
+				                else null
+				        in
+				            [Date = BaseDate, Order = Order, StartDate = StartDateAdjusted, EndDate = EndDate, Period = PeriodName]
+				    ),
+				    
+				    // Convert the list into a table
+				    PeriodTable = Table.FromList(Periods, Splitter.SplitByNothing(), {"PeriodInfo"}),
+				    ExpandedTable = Table.ExpandRecordColumn(PeriodTable, "PeriodInfo", {"Date", "Order", "StartDate", "EndDate", "Period"}),
+				
+				    // Change the type of the columns
+				    #"Changed Type" = Table.TransformColumnTypes(ExpandedTable,{{"StartDate", type date}, {"EndDate", type date}, {"Date", type date}}),
+				
+				    // Remove the Date column
+				    RemovedDateColumn = Table.RemoveColumns(#"Changed Type", {"Date"})
+				in
+				    RemovedDateColumn
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
