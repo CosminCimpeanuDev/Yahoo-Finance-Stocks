@@ -6006,114 +6006,126 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "Last Close Price Number"
+			          "ConceptualProperty": "LastClosePrice"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "last close Price_Number": {
+			          "last close price number": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "end close price_number": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.591
+			          "price number": {
+			            "State": "Generated",
+			            "Weight": 0.97
 			          }
 			        },
 			        {
-			          "final close price_number": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.591
+			          "close price number": {
+			            "State": "Generated",
+			            "Weight": 0.97
 			          }
 			        },
 			        {
-			          "closing close price_number": {
+			          "last close price no": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.591
+			            "Weight": 0.748
 			          }
 			        },
 			        {
-			          "concluding close price_number": {
+			          "close price no": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.591
+			            "Weight": 0.739
 			          }
 			        },
 			        {
-			          "finishing close price_number": {
+			          "price no": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.591
+			            "Weight": 0.727
 			          }
 			        },
 			        {
-			          "former close price_number": {
+			          "end close price number": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.591
+			            "Weight": 0.599
 			          }
 			        },
 			        {
-			          "latest close price_number": {
+			          "final close price number": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.591
+			            "Weight": 0.599
 			          }
 			        },
 			        {
-			          "latter close price_number": {
+			          "closing close price number": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.591
+			            "Weight": 0.599
 			          }
 			        },
 			        {
-			          "past close price_number": {
+			          "concluding close price number": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.591
+			            "Weight": 0.599
 			          }
 			        },
 			        {
-			          "remaining close price_number": {
+			          "finishing close price number": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.591
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "former close price number": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "latest close price number": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
 			          }
 			        }
 			      ]
@@ -7237,158 +7249,6 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "v_Measures_measure.slicer_sum_of_close": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "Slicer_SumOfClose"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "slicer sum of close": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "Slicer_SumOfClose": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "slicer sum": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "slicer quantity of close": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.786
-			          }
-			        },
-			        {
-			          "slicer summation of close": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.771
-			          }
-			        },
-			        {
-			          "slicer aggregation of close": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.771
-			          }
-			        },
-			        {
-			          "slicer summation": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "slicer aggregation": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "slicer total of close": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.748
-			          }
-			        },
-			        {
-			          "slicer aggregate of close": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.748
-			          }
-			        },
-			        {
-			          "slicer amount of close": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.748
-			          }
-			        },
-			        {
-			          "slicer total": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.727
-			          }
-			        },
-			        {
-			          "slicer aggregate": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.727
-			          }
-			        }
-			      ]
-			    },
-			    "v_Measures_measure.slicer_SVG_sparkline_with_intersect": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "Slicer_SVG_Sparkline_with_Intersect"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "slicer SVG sparkline with intersect": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "Slicer_SVG_Sparkline_with_Intersect": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        }
-			      ]
-			    },
 			    "v_Measures_measure.delta": {
 			      "Definition": {
 			        "Binding": {
@@ -7456,618 +7316,6 @@ cultureInfo en-US
 			      "Terms": [
 			        {
 			          "svg": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "v_Measures_measure.slicer_SVG": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "Slicer_SVG"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "slicer SVG": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "Slicer_SVG": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "SVG": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
-			    "v_Measures_measure.slicer_last_close_price_number": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "Slicer_Last_Close_Price_Number"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "slicer last close price number": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "Slicer_Last_Close_Price_Number": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "price number": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "close price number": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "last close price number": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "slicer last close price no": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.757
-			          }
-			        },
-			        {
-			          "last close price no": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.748
-			          }
-			        },
-			        {
-			          "close price no": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.739
-			          }
-			        },
-			        {
-			          "price no": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.727
-			          }
-			        },
-			        {
-			          "slicer end close price number": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.605
-			          }
-			        },
-			        {
-			          "slicer final close price number": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.605
-			          }
-			        },
-			        {
-			          "slicer closing close price number": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.605
-			          }
-			        },
-			        {
-			          "slicer concluding close price number": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.605
-			          }
-			        },
-			        {
-			          "slicer finishing close price number": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.605
-			          }
-			        },
-			        {
-			          "slicer former close price number": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.605
-			          }
-			        }
-			      ]
-			    },
-			    "v_Measures_measure.slicer_beginning_period_price": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "Slicer_BeginningPeriodPrice"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "slicer beginning period price": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "Slicer_BeginningPeriodPrice": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "price": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "period price": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "beginning period price": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "slicer beginning period value": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.499
-			          }
-			        },
-			        {
-			          "slicer beginning period worth": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.499
-			          }
-			        },
-			        {
-			          "slicer beginning period fee": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.499
-			          }
-			        },
-			        {
-			          "slicer beginning period charge": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.499
-			          }
-			        },
-			        {
-			          "slicer beginning period amount": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.499
-			          }
-			        },
-			        {
-			          "slicer beginning period bill": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.499
-			          }
-			        },
-			        {
-			          "slicer beginning period rate": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.499
-			          }
-			        },
-			        {
-			          "slicer beginning period expense": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.499
-			          }
-			        },
-			        {
-			          "slicer beginning period cost": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.499
-			          }
-			        },
-			        {
-			          "slicer beginning period outlay": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.499
-			          }
-			        }
-			      ]
-			    },
-			    "v_Measures_measure.slicer_delta": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "Slicer_Delta"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "slicer delta": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "Slicer_Delta": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "slicer estuary": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "slicer outlet": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "slicer mouth": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "slicer channel": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        }
-			      ]
-			    },
-			    "v_Measures_measure.slicer_moving_average": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "Slicer_Moving_Average"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "slicer moving average": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "Slicer_Moving_Average": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "slicer moving mode": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.482
-			          }
-			        },
-			        {
-			          "slicer moving norm": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.482
-			          }
-			        },
-			        {
-			          "slicer moving mean": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.468
-			          }
-			        },
-			        {
-			          "slicer moving median": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.468
-			          }
-			        }
-			      ]
-			    },
-			    "v_Measures_measure.v_test_test": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "slicerSumOfClose"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "slicer sum of close": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "slicerSumOfClose": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "slicer sum": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "slicer quantity of close": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.786
-			          }
-			        },
-			        {
-			          "slicer summation of close": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.771
-			          }
-			        },
-			        {
-			          "slicer aggregation of close": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.771
-			          }
-			        },
-			        {
-			          "slicer summation": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "slicer aggregation": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "slicer total of close": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.748
-			          }
-			        },
-			        {
-			          "slicer aggregate of close": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.748
-			          }
-			        },
-			        {
-			          "slicer amount of close": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.748
-			          }
-			        },
-			        {
-			          "slicer total": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.727
-			          }
-			        },
-			        {
-			          "slicer aggregate": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.727
-			          }
-			        },
-			        {
-			          "Close": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
-			    "v_Measures_measure.v_testx2_testx2": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "_testx2"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "_testx2": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "v_Measures_measure.v_tesx3_tesx3": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "_tesx3"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "_tesx3": {
 			            "State": "Generated"
 			          }
 			        }
@@ -9946,763 +9194,6 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "dim_slicer": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "dimSlicer"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "dim slicer": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "dimSlicer": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "slicer": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        }
-			      ]
-			    },
-			    "dim_slicer.symbol": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "dimSlicer",
-			          "ConceptualProperty": "Symbol"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "symbol": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "representation": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "icon": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "pictogram": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "sign": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "character": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "figure": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "mark": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "emblem": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.466
-			          }
-			        },
-			        {
-			          "indication": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.466
-			          }
-			        },
-			        {
-			          "image": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.452
-			          }
-			        }
-			      ]
-			    },
-			    "dim_slicer.company": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "dimSlicer",
-			          "ConceptualProperty": "Company"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "company": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "co": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "corp": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "corporation": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "corps": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "employer": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "enterprise": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "business": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
-			          "conglomerate": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
-			          "co inc": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.589
-			          }
-			        }
-			      ]
-			    },
-			    "dim_slicer.domain": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "dimSlicer",
-			          "ConceptualProperty": "Domain"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "domain": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "province": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "realm": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "dominion": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "territory": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "purview": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "area": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "field": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "sphere": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        }
-			      ]
-			    },
-			    "dim_slicer.logo": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "dimSlicer",
-			          "ConceptualProperty": "Logo"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "logo": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "emblem": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "sign": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "badge": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "insigne": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "design": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        }
-			      ]
-			    },
-			    "dim_slicer.sector": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "dimSlicer",
-			          "ConceptualProperty": "Sector"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "sector": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "subdivision": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "division": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "segment": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "area": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "part": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "region": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.466
-			          }
-			        },
-			        {
-			          "zone": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.452
-			          }
-			        },
-			        {
-			          "quarter": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.452
-			          }
-			        },
-			        {
-			          "district": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.452
-			          }
-			        }
-			      ]
-			    },
-			    "dim_slicer.industry": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "dimSlicer",
-			          "ConceptualProperty": "Industry"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "industry": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "commerce": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "production": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "manufacturing": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "business": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "trade": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "engineering": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "diligence": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.466
-			          }
-			        },
-			        {
-			          "productiveness": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.466
-			          }
-			        },
-			        {
-			          "conscientiousness": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.466
-			          }
-			        },
-			        {
-			          "activity": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.466
-			          }
-			        }
-			      ]
-			    },
-			    "dim_slicer.close": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "dimSlicer",
-			          "ConceptualProperty": "Close"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "close": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "local": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "neighboring": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "intimate": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.452
-			          }
-			        },
-			        {
-			          "familiar": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.452
-			          }
-			        },
-			        {
-			          "dear": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.452
-			          }
-			        },
-			        {
-			          "loving": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.452
-			          }
-			        },
-			        {
-			          "friendly": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.452
-			          }
-			        },
-			        {
-			          "warm": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.452
-			          }
-			        }
-			      ]
-			    },
-			    "dim_slicer.date": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "dimSlicer",
-			          "ConceptualProperty": "Date"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "date": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "moment": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
 			    "dim_currency_symbol": {
 			      "Definition": {
 			        "Binding": {
@@ -11056,9 +9547,695 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "v_Measures_measure.company_name_and_tags": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "companyNameAndTags"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "company name and tags": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "companyNameAndTags": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "company name tags": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "tags": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "co name and tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "corp name and tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "corporation name and tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "corps name and tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "employer name and tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "enterprise name and tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "co name tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "corp name tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "corporation name tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "corps name tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "company name": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.v_0_new_Slicer_SVG0_new_slicer_SVG": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "SVGLineAreaChartTabel"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "SVG line area chart tabel": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "SVGLineAreaChartTabel": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "svg line region chart tabel": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "svg line locale chart tabel": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "svg line locality chart tabel": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "svg line neighbourhood chart tabel": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "svg line district chart tabel": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "svg line continent chart tabel": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "svg line field chart tabel": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "svg line neighborhood chart tabel": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "svg line section chart tabel": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "svg line space chart tabel": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "SVG": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.sum_close_dynamic": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "sumClose_Dynamic"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "sum close dynamic": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "sumClose_Dynamic": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "dynamic": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "close dynamic": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "summation close dynamic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "aggregation close dynamic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "total close dynamic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "aggregate close dynamic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "amount close dynamic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "active": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "go-ahead": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "self-motivated": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "sumClose": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.v_sumClose_Dynamic_FormatString_sumClose_Dynamic_FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "_sumClose_Dynamic FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_sumClose_Dynamic FormatString": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "v_Measures_measure_has_v_01_Slicer_SVG01_slicer_SVG": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.v_01_Slicer_SVG01_slicer_SVG": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.v_01_Slicer_SVG01_slicer_SVG"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.v_01_Slicer_SVG01_slicer_SVG"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_01_slicer_SVG"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_v_0_new_Slicer_SVG0_new_slicer_SVG": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.v_0_new_Slicer_SVG0_new_slicer_SVG": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.v_0_new_Slicer_SVG0_new_slicer_SVG"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.v_0_new_Slicer_SVG0_new_slicer_SVG"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_SVG_line_area_chart_tabel"
+			        }
+			      ]
+			    },
+			    "dim_meta_has_v_Measures_measure_company_name_and_tags": {
+			      "Binding": {
+			        "ConceptualEntity": "dimMeta"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_meta": {
+			          "Target": {
+			            "Entity": "dim_meta"
+			          }
+			        },
+			        "v_Measures_measure.company_name_and_tags": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.company_name_and_tags"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_meta"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.company_name_and_tags"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_meta_have_company_name_and_tags"
+			        }
+			      ]
+			    },
+			    "dim_meta_has_v_Measures_measure_v_abtest_abtest": {
+			      "Binding": {
+			        "ConceptualEntity": "dimMeta"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_meta": {
+			          "Target": {
+			            "Entity": "dim_meta"
+			          }
+			        },
+			        "v_Measures_measure.v_abtest_abtest": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.v_abtest_abtest"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_meta"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.v_abtest_abtest"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_meta_have__abtest"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_v_text99s_text99s": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.v_text99s_text99s": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.v_text99s_text99s"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.v_text99s_text99s"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have__text99s"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_v_text992121_text992121": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.v_text992121_text992121": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.v_text992121_text992121"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.v_text992121_text992121"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have__text992121"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_v_tex12321_tex12321": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.v_tex12321_tex12321": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.v_tex12321_tex12321"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.v_tex12321_tex12321"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have__tex12321"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_v_test999_test999": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.v_test999_test999": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.v_test999_test999"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.v_test999_test999"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have__test999"
+			        }
+			      ]
+			    },
 			    "dim_currency_symbol_has_currency_symbol": {
 			      "Binding": {
 			        "ConceptualEntity": "dimCurrencySymbol"
@@ -11122,270 +10299,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_currency_symbols_have_currencies"
-			        }
-			      ]
-			    },
-			    "dim_slicer_has_date": {
-			      "Binding": {
-			        "ConceptualEntity": "dimSlicer"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_slicer": {
-			          "Target": {
-			            "Entity": "dim_slicer"
-			          }
-			        },
-			        "dim_slicer.date": {
-			          "Target": {
-			            "Entity": "dim_slicer.date"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_slicer"
-			            },
-			            "Object": {
-			              "Role": "dim_slicer.date"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_slicers_have_dates"
-			        }
-			      ]
-			    },
-			    "dim_slicer_has_close": {
-			      "Binding": {
-			        "ConceptualEntity": "dimSlicer"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_slicer": {
-			          "Target": {
-			            "Entity": "dim_slicer"
-			          }
-			        },
-			        "dim_slicer.close": {
-			          "Target": {
-			            "Entity": "dim_slicer.close"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_slicer"
-			            },
-			            "Object": {
-			              "Role": "dim_slicer.close"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_slicers_have_closes"
-			        }
-			      ]
-			    },
-			    "dim_slicer_has_industry": {
-			      "Binding": {
-			        "ConceptualEntity": "dimSlicer"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_slicer": {
-			          "Target": {
-			            "Entity": "dim_slicer"
-			          }
-			        },
-			        "dim_slicer.industry": {
-			          "Target": {
-			            "Entity": "dim_slicer.industry"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_slicer"
-			            },
-			            "Object": {
-			              "Role": "dim_slicer.industry"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_slicers_have_industries"
-			        }
-			      ]
-			    },
-			    "dim_slicer_has_sector": {
-			      "Binding": {
-			        "ConceptualEntity": "dimSlicer"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_slicer": {
-			          "Target": {
-			            "Entity": "dim_slicer"
-			          }
-			        },
-			        "dim_slicer.sector": {
-			          "Target": {
-			            "Entity": "dim_slicer.sector"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_slicer"
-			            },
-			            "Object": {
-			              "Role": "dim_slicer.sector"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_slicers_have_sectors"
-			        }
-			      ]
-			    },
-			    "dim_slicer_has_logo": {
-			      "Binding": {
-			        "ConceptualEntity": "dimSlicer"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_slicer": {
-			          "Target": {
-			            "Entity": "dim_slicer"
-			          }
-			        },
-			        "dim_slicer.logo": {
-			          "Target": {
-			            "Entity": "dim_slicer.logo"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_slicer"
-			            },
-			            "Object": {
-			              "Role": "dim_slicer.logo"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_slicers_have_logos"
-			        }
-			      ]
-			    },
-			    "dim_slicer_has_domain": {
-			      "Binding": {
-			        "ConceptualEntity": "dimSlicer"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_slicer": {
-			          "Target": {
-			            "Entity": "dim_slicer"
-			          }
-			        },
-			        "dim_slicer.domain": {
-			          "Target": {
-			            "Entity": "dim_slicer.domain"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_slicer"
-			            },
-			            "Object": {
-			              "Role": "dim_slicer.domain"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_slicers_have_domains"
-			        }
-			      ]
-			    },
-			    "dim_slicer_has_company": {
-			      "Binding": {
-			        "ConceptualEntity": "dimSlicer"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_slicer": {
-			          "Target": {
-			            "Entity": "dim_slicer"
-			          }
-			        },
-			        "dim_slicer.company": {
-			          "Target": {
-			            "Entity": "dim_slicer.company"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_slicer"
-			            },
-			            "Object": {
-			              "Role": "dim_slicer.company"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_slicers_have_companies"
-			        }
-			      ]
-			    },
-			    "dim_slicer_has_symbol": {
-			      "Binding": {
-			        "ConceptualEntity": "dimSlicer"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_slicer": {
-			          "Target": {
-			            "Entity": "dim_slicer"
-			          }
-			        },
-			        "dim_slicer.symbol": {
-			          "Target": {
-			            "Entity": "dim_slicer.symbol"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_slicer"
-			            },
-			            "Object": {
-			              "Role": "dim_slicer.symbol"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_slicers_have_symbols"
 			        }
 			      ]
 			    },
@@ -11930,15 +10843,15 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "dim_period_has_v_Measures_measure_v_tesx3_tesx3": {
+			    "v_Measures_measure_has_v_tesx3_tesx3": {
 			      "Binding": {
-			        "ConceptualEntity": "dimPeriod"
+			        "ConceptualEntity": "_Measures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_period": {
+			        "v_Measures_measure": {
 			          "Target": {
-			            "Entity": "dim_period"
+			            "Entity": "v_Measures_measure"
 			          }
 			        },
 			        "v_Measures_measure.v_tesx3_tesx3": {
@@ -11951,7 +10864,7 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_period"
+			              "Role": "v_Measures_measure"
 			            },
 			            "Object": {
 			              "Role": "v_Measures_measure.v_tesx3_tesx3"
@@ -11959,7 +10872,7 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_periods_have__tesx3"
+			          "ID": "Phrasing_measures_have__tesx3"
 			        }
 			      ]
 			    },
@@ -11993,39 +10906,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "Phrasing_measures_have__testx2"
-			        }
-			      ]
-			    },
-			    "dim_slicer_has_v_Measures_measure_v_test_test": {
-			      "Binding": {
-			        "ConceptualEntity": "dimSlicer"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_slicer": {
-			          "Target": {
-			            "Entity": "dim_slicer"
-			          }
-			        },
-			        "v_Measures_measure.v_test_test": {
-			          "Target": {
-			            "Entity": "v_Measures_measure.v_test_test"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_slicer"
-			            },
-			            "Object": {
-			              "Role": "v_Measures_measure.v_test_test"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_slicers_have_slicer_sum_of_close"
 			        }
 			      ]
 			    },
@@ -12152,39 +11032,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "slicer_beginning_period_price_indicates_how_expensive__measures_are"
-			        }
-			      ]
-			    },
-			    "dim_slicer_has_v_Measures_measure_slicer_last_close_price_number": {
-			      "Binding": {
-			        "ConceptualEntity": "dimSlicer"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_slicer": {
-			          "Target": {
-			            "Entity": "dim_slicer"
-			          }
-			        },
-			        "v_Measures_measure.slicer_last_close_price_number": {
-			          "Target": {
-			            "Entity": "v_Measures_measure.slicer_last_close_price_number"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_slicer"
-			            },
-			            "Object": {
-			              "Role": "v_Measures_measure.slicer_last_close_price_number"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_slicers_have_slicer_last_close_price_number"
 			        }
 			      ]
 			    },
@@ -12317,39 +11164,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "Phrasing_measures_have_slicer_SVG_sparkline_with_intersect"
-			        }
-			      ]
-			    },
-			    "dim_slicer_has_v_Measures_measure_slicer_sum_of_close": {
-			      "Binding": {
-			        "ConceptualEntity": "dimSlicer"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_slicer": {
-			          "Target": {
-			            "Entity": "dim_slicer"
-			          }
-			        },
-			        "v_Measures_measure.slicer_sum_of_close": {
-			          "Target": {
-			            "Entity": "v_Measures_measure.slicer_sum_of_close"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_slicer"
-			            },
-			            "Object": {
-			              "Role": "v_Measures_measure.slicer_sum_of_close"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_slicers_have_slicer_sum_of_close1"
 			        }
 			      ]
 			    },
@@ -12805,7 +11619,7 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fact_stocks_have_last_close_Price_Number"
+			          "ID": "fact_stocks_have_last_close_price_number"
 			        }
 			      ]
 			    },
@@ -12974,15 +11788,15 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "dim_period_has_v_Measures_measure_at_close": {
+			    "v_Measures_measure_has_at_close": {
 			      "Binding": {
-			        "ConceptualEntity": "dimPeriod"
+			        "ConceptualEntity": "_Measures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_period": {
+			        "v_Measures_measure": {
 			          "Target": {
-			            "Entity": "dim_period"
+			            "Entity": "v_Measures_measure"
 			          }
 			        },
 			        "v_Measures_measure.at_close": {
@@ -12995,7 +11809,7 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_period"
+			              "Role": "v_Measures_measure"
 			            },
 			            "Object": {
 			              "Role": "v_Measures_measure.at_close"
@@ -13003,12 +11817,12 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_periods_have_at_close"
+			          "ID": "Phrasing_measures_have_at_close"
 			        },
 			        {
 			          "Preposition": {
 			            "Subject": {
-			              "Role": "dim_period"
+			              "Role": "v_Measures_measure"
 			            },
 			            "Prepositions": [
 			              {
@@ -13023,7 +11837,7 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_periods_are_at_at_close"
+			          "ID": "Phrasing_measures_are_at_at_close"
 			        }
 			      ]
 			    },
@@ -14467,6 +13281,51 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
+			    "v_Measures_measure_in_v_0_new_Slicer_SVG0_new_slicer_SVG": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.v_0_new_Slicer_SVG0_new_slicer_SVG": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.v_0_new_Slicer_SVG0_new_slicer_SVG"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "Where": {
+			          "Role": "v_Measures_measure.v_0_new_Slicer_SVG0_new_slicer_SVG"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "v_Measures_measure.v_0_new_Slicer_SVG0_new_slicer_SVG"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_are_in_SVG_line_area_chart_tabel"
+			        }
+			      ]
+			    },
 			    "dim_period_is_ended_on_end_date": {
 			      "Binding": {
 			        "ConceptualEntity": "dimPeriod"
@@ -14635,35 +13494,36 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "dim_slicer_slice": {
+			    "fact_stock_has_v_Measures_measure_sum_close_dynamic": {
 			      "Binding": {
-			        "ConceptualEntity": "dimSlicer"
+			        "ConceptualEntity": "factStocks"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_slicer": {
+			        "fact_stock": {
 			          "Target": {
-			            "Entity": "dim_slicer"
+			            "Entity": "fact_stock"
+			          }
+			        },
+			        "v_Measures_measure.sum_close_dynamic": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.sum_close_dynamic"
 			          }
 			        }
 			      },
 			      "Phrasings": [
 			        {
-			          "Verb": {
+			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_slicer"
+			              "Role": "fact_stock"
 			            },
-			            "Verbs": [
-			              {
-			                "slice": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ]
+			            "Object": {
+			              "Role": "v_Measures_measure.sum_close_dynamic"
+			            }
 			          },
 			          "State": "Generated",
-			          "Weight": 0.75,
-			          "ID": "dim_slicers_slice"
+			          "Weight": 0.99,
+			          "ID": "fact_stocks_have_sum_close_dynamic"
 			        }
 			      ]
 			    },

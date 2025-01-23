@@ -85,19 +85,24 @@ table _Measures
 
 	measure BeginingPeriodPrice = ```
 			
-			VAR _StartDate = CALCULATE(MAX(dimPeriod[StartDate]), ALLSELECTED(factStocks))
-			VAR _Price = 
+			VAR _StartDate = CALCULATE(MIN(dimPeriod[StartDate]), ALLSELECTED(dimPeriod))
+			VAR _Price =
 			    CALCULATE(
-			        MAX(factStocks[Close]), 
+			        MAX(factStocks[Close]),
 			        factStocks[Date] = _StartDate
 			    )
-			VAR _AdjustedPrice = 
+			VAR _NextDay =
 			    CALCULATE(
-			        MAX(factStocks[Close]), 
-			        factStocks[Date] = _StartDate + 3
+			        MIN(factStocks[Date]),
+			        factStocks[Date] > _StartDate
+			    )
+			VAR _AdjustedPrice =
+			    CALCULATE(
+			        MAX(factStocks[Close]),
+			        factStocks[Date] = _NextDay
 			    )
 			RETURN
-			    IF(_Price = BLANK(), _AdjustedPrice, _Price)
+			    IF(NOT ISBLANK(_Price), _Price, _AdjustedPrice)
 			
 			```
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
@@ -132,7 +137,7 @@ table _Measures
 
 	measure 'Variation %' =
 			
-			VAR _Variation = DIVIDE([Last Close Price Number], [BeginingPeriodPrice]) - 1
+			VAR _Variation = DIVIDE([LastClosePrice], [BeginingPeriodPrice]) - 1
 			VAR _Arrow = IF(_Variation > 0, UNICHAR(129033), UNICHAR(129035)) & " "
 			RETURN
 			    _Arrow & FORMAT(_Variation, "0.00%")
@@ -153,7 +158,7 @@ table _Measures
 
 	measure 'Variation Indicator' =
 			
-			VAR _Variation = DIVIDE([Last Close Price Number], [BeginingPeriodPrice]) - 1
+			VAR _Variation = DIVIDE([LastClosePrice], [BeginingPeriodPrice]) - 1
 			RETURN
 			IF( _Variation >= 0, 0, 1 )
 		formatString: 0
@@ -278,18 +283,25 @@ table _Measures
 			```
 		lineageTag: feb3128c-ad65-4435-8fea-604e1cb0c27c
 
-	measure 'Last Close Price Number' = ```
+	measure LastClosePrice = ```
 			
 			VAR _EndDate = CALCULATE(MAX(dimPeriod[EndDate]), ALLSELECTED(dimPeriod))
-			VAR _LastDate = 
-			    CALCULATE(
-			        MAX(factStocks[Date]),  // Find the maximum date from factStocks that is less than or equal to _EndDate
-			        FILTER(factStocks, factStocks[Date] <= _EndDate)
+			VAR _LastDate =
+			    MAXX(
+			        FILTER(
+			            factStocks,
+			            factStocks[Date] <= _EndDate
+			        ),
+			        factStocks[Date]
 			    )
 			RETURN
-			    CALCULATE(
-			        AVERAGE(factStocks[Close]),  // Calculate the average close price for that date
-			        FILTER(factStocks, factStocks[Date] = _LastDate)
+			    IF(
+			        ISBLANK(_LastDate),
+			        BLANK(),  // Return BLANK if no valid _LastDate is found
+			        CALCULATE(
+			            MAX(factStocks[Close]),
+			            factStocks[Date] = _LastDate
+			        )
 			    )
 			
 			```
@@ -300,7 +312,7 @@ table _Measures
 
 	measure 'Variation #' = ```
 			
-			VAR _Delta = [Last Close Price Number] - [BeginingPeriodPrice]
+			VAR _Delta = [LastClosePrice] - [BeginingPeriodPrice]
 			VAR _Currency = 
 			    CALCULATE(
 			        SELECTEDVALUE(dimCurrencySymbol[Currency Symbol]),
@@ -543,15 +555,10 @@ table _Measures
 		lineageTag: a7da3cd0-d12d-417a-abf3-e067d37b6643
 		dataCategory: ImageUrl
 
-	measure sumClose = ```
+	measure sumClose =
 			
 			VAR _Period = SELECTEDVALUE(_tParameter[NbOfDays])
-			VAR _EndDate = CALCULATE(MAX(dimPeriod[EndDate]), ALLSELECTED(dimPeriod))
-			VAR _LastDate = 
-			    CALCULATE(
-			        LASTDATE(factStocks[Date]),
-			        factStocks[Date] <= _EndDate
-			    )
+			VAR _LastDate = LASTDATE(factStocks[Date])
 			VAR _DatesInPeriod = DATESINPERIOD(factStocks[Date], _LastDate, -_Period, DAY)
 			VAR _SelectedPeriodStart = SELECTEDVALUE(dimPeriod[StartDate])
 			VAR _SelectedPeriodEnd = SELECTEDVALUE(dimPeriod[EndDate])
@@ -566,125 +573,10 @@ table _Measures
 			        ),
 			        ALLEXCEPT(dimLogo, dimLogo[Company])  // Ensures calculation happens per company
 			    )
-			```
+		formatString: 0.00
 		lineageTag: 3830dde8-d634-4d36-96cf-aaea1bd2bfc6
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure Slicer_SumOfClose = ```
-			
-			VAR _Period = SELECTEDVALUE(_tParameter[NbOfDays])
-			VAR _LastDate = LASTDATE(dimSlicer[Date])
-			VAR _DatesInPeriod = DATESINPERIOD(dimSlicer[Date], _LastDate, -_Period, DAY)
-			VAR _SelectedPeriodStart = SELECTEDVALUE(dimPeriod[StartDate])
-			VAR _SelectedPeriodEnd = SELECTEDVALUE(dimPeriod[EndDate])
-			RETURN
-			    CALCULATE(
-			        SUM(dimSlicer[Close]),
-			        _DatesInPeriod,
-			        FILTER(
-			            dimSlicer,
-			            dimSlicer[Date] >= _SelectedPeriodStart &&
-			            dimSlicer[Date] <= _SelectedPeriodEnd
-			        ),
-			        ALLEXCEPT(dimSlicer, dimSlicer[Company])  // Ensures calculation happens per company
-			    )
-			
-			```
-		formatString: "CHF"\ #,0.00;"CHF"-#,0.00;"CHF"\ #,0.00
-		lineageTag: 5239f793-9bd8-48a9-a93c-d862254d7ab9
-
-		annotation PBI_FormatHint = {"currencyCulture":"en-CH"}
-
-	measure Slicer_SVG_Sparkline_with_Intersect = ```
-			
-			VAR topLineColour = "blue"
-			VAR bottomLineColour = "magenta"
-			
-			// Get the selected period's StartDate and EndDate from dimPeriod
-			VAR _SelectedPeriodStart = SELECTEDVALUE(dimPeriod[StartDate])
-			VAR _SelectedPeriodEnd = SELECTEDVALUE(dimPeriod[EndDate])
-			
-			// Calculate the X-axis range based on the selected period (dimPeriod)
-			VAR XMinDate = _SelectedPeriodStart
-			VAR XMaxDate = _SelectedPeriodEnd
-			
-			// Calculate the minimum and maximum Y values within the selected date range (dimSlicer[Date] within the period)
-			// No filter for dimSlicer[Company], so it applies to all companies
-			VAR YMinValue = MINX(
-			    FILTER(dimSlicer, 
-			        dimSlicer[Date] >= XMinDate && 
-			        dimSlicer[Date] <= XMaxDate),  // Consider all companies
-			    CALCULATE([Slicer_SumOfClose])
-			)
-			
-			VAR YMaxValue = MAXX(
-			    FILTER(dimSlicer, 
-			        dimSlicer[Date] >= XMinDate && 
-			        dimSlicer[Date] <= XMaxDate),  // Consider all companies
-			    CALCULATE([Slicer_SumOfClose])
-			)
-			
-			// Build a table of X & Y coordinates based on the selected period, scaled to fit 50x150 viewbox, and consider all companies
-			VAR SparklineTable = ADDCOLUMNS(
-			    SUMMARIZE(
-			        FILTER(dimSlicer, 
-			            dimSlicer[Date] >= XMinDate && 
-			            dimSlicer[Date] <= XMaxDate),  // Consider all companies
-			        dimSlicer[Date], dimSlicer[Symbol]  // Include Symbol for each company
-			    ),
-			    "X", INT(150 * DIVIDE(dimSlicer[Date] - XMinDate, XMaxDate - XMinDate)),  // Scale X based on the selected period
-			    "Y", INT(50 * DIVIDE([Slicer_SumOfClose] - YMinValue, YMaxValue - YMinValue))  // Scale Y based on the selected period
-			)
-			
-			// Concatenate X & Y coordinates into a polyline for the sparkline
-			VAR Lines = CONCATENATEX(SparklineTable, [X] & "," & (50 - [Y]), " ", dimSlicer[Date])
-			
-			// Calculate the intersection line position based on the selected period's data and for all companies
-			VAR lineIntersection = AVERAGEX(
-			    FILTER(dimSlicer, 
-			        dimSlicer[Date] >= XMinDate && 
-			        dimSlicer[Date] <= XMaxDate),  // Consider all companies
-			    CALCULATE([Slicer_SumOfClose])
-			)
-			VAR intersectScaled = INT(50 * DIVIDE(lineIntersection - YMinValue, YMaxValue - YMinValue))
-			
-			// SVG Definitions for styling and markers
-			VAR Defs = 
-			"<defs>
-			    <clipPath id='cut-bottom'>
-			      <rect x='0' y='0' width='150' height='" & intersectScaled & "' />
-			    </clipPath>
-			
-			    <marker id='circle' markerWidth='4' markerHeight='4' refX='2' refY='2' >
-			      <circle cx='2' cy='2' r='1' fill='steelblue' />
-			    </marker>
-			
-			    <marker id='circleLarge' markerWidth='4' markerHeight='4' refX='2' refY='2' >
-			      <circle cx='2' cy='2' r='1.25' fill='red' stroke='black' />
-			    </marker>
-			
-			    <marker id='arrow' markerWidth='3' markerHeight='3' refX='2' refY='2' orient='auto' >
-			      <path d='M 0 0 L 10 5 L 0 10 z' fill='black' />
-			    </marker>
-			</defs>"
-			
-			// Final SVG construction
-			VAR SVGImageURL = 
-			    "data:image/svg+xml;utf8," & 
-			    "<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='-5 -5 160 60' >" & Defs &
-			    "<polyline fill='none' stroke='" & bottomLineColour & "' stroke-width='3' points='" & Lines & "' stroke-linecap='round' stroke-linejoin='round' marker-start='url(#circle)' marker-mid='url(#circle)' marker-end='url(#circleLarge)' />" & 
-			    "<polyline fill='none' stroke='" & topLineColour & "' stroke-width='3' points='" & Lines & "' stroke-linecap='round' stroke-linejoin='round' clip-path='url(#cut-bottom)' marker-start='url(#circle)' marker-mid='url(#circle)' marker-end='url(#circleLarge)' />" & 
-			    "<line x1='0' y1='" & intersectScaled & "' x2='150' y2='" & intersectScaled & "' stroke ='grey' stroke-width ='2' stroke-dasharray='5,5' />" & 
-			    "</svg>"
-			
-			RETURN SVGImageURL
-			
-			```
-		lineageTag: 13f39096-3e7a-4e25-8d4d-bcc473520bb9
-		dataCategory: ImageUrl
-
-	measure Delta = [Last Close Price Number] - [BeginingPeriodPrice]
+	measure Delta = [LastClosePrice] - [BeginingPeriodPrice]
 		formatString: "CHF"\ #,0.###############;"CHF"-#,0.###############;"CHF"\ #,0.###############
 		lineageTag: d35dbfa1-7998-4249-bbf7-f1e4eeee22d2
 
@@ -773,538 +665,7 @@ table _Measures
 		lineageTag: 018f5a74-c661-4f24-b27e-9ae0e2f700fe
 		dataCategory: ImageUrl
 
-	measure Slicer_SVG = ```
-			
-			    VAR LineColourPositive = "#00A651"  // Green line for positive Slicer_Delta
-			    VAR LineColourNegative = "#FF0000"  // Red line for negative Slicer_Delta
-			    VAR PointColour = "white"           // White points on the line
-			
-			    // Gradient definitions for positive and negative Slicer_Delta
-			    VAR DefsPositive = "<defs>
-			        <linearGradient id='grad' x1='0' y1='22.5' x2='0' y2='45' gradientUnits='userSpaceOnUse'>
-			            <stop stop-color='#00A651' offset='0' />
-			            <stop stop-color='#00A651' offset='0.3' />
-			            <stop stop-color='white' offset='1' />
-			        </linearGradient>
-			    </defs>"
-			
-			    VAR DefsNegative = "<defs>
-			        <linearGradient id='grad' x1='0' y1='22.5' x2='0' y2='45' gradientUnits='userSpaceOnUse'>
-			            <stop stop-color='#FF0000' offset='0' />
-			            <stop stop-color='#FF0000' offset='0.3' />
-			            <stop stop-color='white' offset='1' />
-			        </linearGradient>
-			    </defs>"
-			
-			    // Date range for the sparkline (X axis) from the same dataset as the original logic
-			    VAR XMinDate = SELECTEDVALUE(dimPeriod[StartDate])  // StartDate from dimPeriod table
-			    VAR XMaxDate = CALCULATE(
-			        MAX(dimSlicer[Date]), 
-			        dimSlicer[Date] <= SELECTEDVALUE(dimPeriod[EndDate])
-			    )  // Find the last date in dimSlicer that is <= EndDate from dimPeriod
-			
-			    // Calculate overall min and max stock closing values for the selected date range
-			    VAR YMinValue = MINX(
-			        FILTER(dimSlicer, dimSlicer[Date] >= XMinDate && dimSlicer[Date] <= XMaxDate),
-			        CALCULATE([Slicer_SumOfClose])
-			    )
-			    VAR YMaxValue = MAXX(
-			        FILTER(dimSlicer, dimSlicer[Date] >= XMinDate && dimSlicer[Date] <= XMaxDate),
-			        CALCULATE([Slicer_SumOfClose])
-			    )
-			
-			    // Build table of X & Y coordinates based on the same date range, scaled to the 60x30 viewbox
-			    VAR SparklineTable = ADDCOLUMNS(
-			        SUMMARIZE(
-			            FILTER(dimSlicer, dimSlicer[Date] >= XMinDate && dimSlicer[Date] <= XMaxDate),
-			            dimSlicer[Date]
-			        ),
-			        "X", INT(60 * DIVIDE(dimSlicer[Date] - XMinDate, XMaxDate - XMinDate)),
-			        "Y", INT(30 * DIVIDE([Slicer_SumOfClose] - YMinValue, YMaxValue - YMinValue))
-			    )
-			
-			    // Concatenate X & Y coordinates to form the sparkline line path
-			    VAR Lines = CONCATENATEX(SparklineTable, [X] & "," & 30 - [Y], " ", dimSlicer[Date])
-			
-			    // Last data points for highlighting the final point on the sparkline
-			    VAR LastSparkYValue = MAXX(FILTER(SparklineTable, dimSlicer[Date] = XMaxDate), [Y])
-			    VAR LastSparkXValue = MAXX(FILTER(SparklineTable, dimSlicer[Date] = XMaxDate), [X])
-			
-			    // Determine whether the Slicer_Delta is positive or negative and use the corresponding gradient and line color
-			    VAR Gradient = IF([Slicer_Delta] > 0, DefsPositive, DefsNegative)
-			    VAR LineColour = IF([Slicer_Delta] > 0, LineColourPositive, LineColourNegative)
-			
-			    // Scale the Moving Average value to fit the 30x60 viewbox
-			    VAR ReferenceLineScaled = INT(30 * DIVIDE([Slicer_Moving_Average] - YMinValue, YMaxValue - YMinValue))
-			
-			    // Build the SVG image
-			    VAR SVGImageURL = 
-			        "data:image/svg+xml;utf8," & 
-			        "<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='-4 -4 67 37'>" & 
-			        Gradient &  // Use the correct gradient definition (green or red)
-			        // Opaque area filled with gradient
-			        "<polyline fill='url(#grad)' fill-opacity='0.3' stroke='transparent' stroke-width='0' points='0,30 " & Lines & " 60,30 Z' />" & 
-			        // Line with the defined color and stroke width
-			        "<polyline fill='transparent' stroke='" & LineColour & "' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' points='" & Lines & "' />" & 
-			        // Last point with the circle to highlight it
-			        "<circle cx='" & LastSparkXValue & "' cy='" & 30 - LastSparkYValue & "' r='2.5' stroke='" & LineColour & "' stroke-width='2' fill='" & PointColour & "' />" & 
-			        // Add the reference line (moving average line) at the calculated position
-			        "<line x1='0' y1='" & ReferenceLineScaled & "' x2='60' y2='" & ReferenceLineScaled & "' stroke='grey' stroke-width='1.5' stroke-dasharray='4,4' />" & 
-			        "</svg>"
-			
-			    RETURN 
-			        SVGImageURL
-			
-			```
-		lineageTag: 1ae7e3d7-f205-4625-abce-201b4d97fa59
-		dataCategory: ImageUrl
-
-	measure Slicer_Last_Close_Price_Number = ```
-			
-			VAR _EndDate = CALCULATE(MAX(dimPeriod[EndDate]), ALLSELECTED(dimPeriod))
-			VAR _LastDate = 
-			    CALCULATE(
-			        MAX(dimSlicer[Date]),  // Find the maximum date from dimSlicer that is less than or equal to _EndDate
-			        FILTER(dimSlicer, dimSlicer[Date] <= _EndDate)
-			    )
-			RETURN
-			    CALCULATE(
-			        AVERAGE(dimSlicer[Close]),  // Calculate the average close price for that date
-			        FILTER(dimSlicer, dimSlicer[Date] = _LastDate)
-			    )
-			
-			```
-		formatString: "CHF"\ #,0.###############;"CHF"-#,0.###############;"CHF"\ #,0.###############
-		lineageTag: cad8ced7-b998-44d4-9765-328253638b7b
-
-		annotation PBI_FormatHint = {"currencyCulture":"en-CH"}
-
-	measure Slicer_BeginningPeriodPrice = ```
-			
-			VAR _Price = 
-			    CALCULATE(
-			        MAX(dimSlicer[Close]), 
-			        dimSlicer[Date] = MAX(dimPeriod[StartDate])
-			    )
-			VAR _AdjustedPrice = 
-			    CALCULATE(
-			        MAX(dimSlicer[Close]), 
-			        dimSlicer[Date] = MAX(dimPeriod[StartDate]) + 1
-			    )
-			RETURN
-			IF( 
-			    _Price = BLANK(), 
-			    _AdjustedPrice, 
-			    _Price 
-			)
-			```
-		formatString: "CHF"\ #,0.###############;"CHF"-#,0.###############;"CHF"\ #,0.###############
-		lineageTag: 0dab72eb-b89e-43aa-aad4-b6878f1a3322
-
-		annotation PBI_FormatHint = {"currencyCulture":"en-CH"}
-
-	measure Slicer_Delta = [Slicer_Last_Close_Price_Number] - [Slicer_BeginningPeriodPrice]
-		formatString: "CHF"\ #,0.###############;"CHF"-#,0.###############;"CHF"\ #,0.###############
-		lineageTag: 5a0063e0-64e0-4b25-9788-569e26d8f866
-
-		annotation PBI_FormatHint = {"currencyCulture":"en-CH"}
-
-	measure Slicer_Moving_Average = ```
-			
-			VAR _Period = SELECTEDVALUE(_tParameter[NbOfDays], 10)  -- Default to 7 days if no value selected
-			VAR _MaxDate = LASTDATE(dimSlicer[Date])  -- Get the latest date in the current context
-			VAR _StartDate = _MaxDate - _Period + 1  -- Calculate the start date of the moving window
-			
-			VAR _Numerator = CALCULATE(
-			    SUM(dimSlicer[Close]), 
-			    dimSlicer[Date] >= _StartDate && dimSlicer[Date] <= _MaxDate  -- Filter for the current period
-			)
-			
-			VAR _Denominator = CALCULATE(
-			    COUNT(dimSlicer[Date]), 
-			    dimSlicer[Date] >= _StartDate && dimSlicer[Date] <= _MaxDate  -- Filter for the current period
-			)
-			
-			RETURN 
-			IF(_Denominator > 0, DIVIDE(_Numerator, _Denominator), BLANK())  -- Return the average or blank if no data
-			
-			```
-		formatString: "CHF"\ #,0.###############;"CHF"-#,0.###############;"CHF"\ #,0.###############
-		lineageTag: 7c941390-60b8-4a0a-97b4-cceccd2ce49d
-
-		annotation PBI_FormatHint = {"currencyCulture":"en-CH"}
-
-	measure slicerSumOfClose = ```
-			
-			VAR _Period = SELECTEDVALUE(_tParameter[NbOfDays])  // Number of days for the period
-			VAR _EndDate = CALCULATE(MAX(dimPeriod[EndDate]), ALLSELECTED(dimPeriod))  // Get the EndDate from the period
-			VAR _LastDate = 
-			    CALCULATE(
-			        LASTDATE(dimSlicer[Date]),  // Find the maximum date in dimSlicer that is less than or equal to _EndDate
-			        dimSlicer[Date] <= _EndDate
-			    )
-			VAR _DatesInPeriod = DATESINPERIOD(dimSlicer[Date], _LastDate, -_Period, DAY)  // Get the period range based on _LastDate
-			VAR _SelectedPeriodStart = SELECTEDVALUE(dimPeriod[StartDate])  // Get the StartDate from the selected period
-			VAR _SelectedPeriodEnd = SELECTEDVALUE(dimPeriod[EndDate])  // Get the EndDate from the selected period
-			RETURN
-			    CALCULATE(
-			        SUM(dimSlicer[Close]),  // Sum the Close values
-			        _DatesInPeriod,  // Filter by the period range
-			        FILTER(
-			            dimSlicer,
-			            dimSlicer[Date] >= _SelectedPeriodStart &&  // Filter by the selected start date
-			            dimSlicer[Date] <= _SelectedPeriodEnd  // Filter by the selected end date
-			        ),
-			        ALLEXCEPT(dimSlicer, dimSlicer[Company])  // Ensure calculation is done per company
-			    )
-			
-			```
-		lineageTag: 9d9f9926-df3a-419b-8da0-8f4fa5148b3b
-
-		formatStringDefinition = ```
-				VAR SelectedCurrency = 
-				    CALCULATE(
-				        SELECTEDVALUE(dimCurrencySymbol[Currency Symbol]),
-				        TREATAS(VALUES(dimMeta[Currency]), dimCurrencySymbol[Currency])
-				    )
-				RETURN
-				    "#,0.00#" & " " & SelectedCurrency
-				
-				
-				
-				
-				--"\$#,0.###############;(\$#,0.###############);\$#,0.###############"
-				```
-
-	measure _testx2 = ```
-			
-			VAR SelectedCurrency = 
-			    CALCULATE(
-			        SELECTEDVALUE(dimCurrencySymbol[Currency Symbol]),
-			        TREATAS(VALUES(dimMeta[Currency]), dimCurrencySymbol[Currency])
-			    )
-			VAR Price = AVERAGE('factStocks'[Low])
-			RETURN
-			    FORMAT(Price, "#,0.00#") & " " & SelectedCurrency
-			
-			```
-		lineageTag: dfd3a095-0cd6-47dc-8b0c-5900fdde80ac
-
-	measure _tesx3 = ```
-			[At Close] & UNICHAR(10) & [At Close]
-			
-			```
-		lineageTag: 0839c7e8-ea3a-4b92-a34c-e07581719c75
-
-	measure _test999 = ```
-			
-			    VAR LineColourPositive = "#00A651"  // Verde pentru linie pozitivă
-			    VAR LineColourNegative = "#FF0000"  // Roșu pentru linie negativă
-			    VAR PointColour = "white"           // Alb pentru puncte
-			
-			    // Definiții de gradient pentru zona umplută cu efect fad
-			    VAR DefsPositive = "<defs>
-			        <linearGradient id='grad' x1='0' y1='22.5' x2='0' y2='250' gradientUnits='userSpaceOnUse'>
-			            <stop stop-color='#00A651' offset='0' />
-			            <stop stop-color='#00A651' offset='0.5' />
-			            <stop stop-color='#00A651' offset='1' />
-			        </linearGradient>
-			    </defs>"
-			
-			    VAR DefsNegative = "<defs>
-			        <linearGradient id='grad' x1='0' y1='22.5' x2='0' y2='250' gradientUnits='userSpaceOnUse'>
-			            <stop stop-color='#FF0000' offset='0' />
-			            <stop stop-color='#FF0000' offset='0.5' />
-			            <stop stop-color='#FF0000' offset='1' />
-			        </linearGradient>
-			    </defs>"
-			
-			    VAR XMinDate = SELECTEDVALUE(dimPeriod[StartDate])
-			    VAR XMaxDate = SELECTEDVALUE(dimPeriod[EndDate])
-			
-			    VAR YMinValue = MINX(
-			        FILTER(dimSlicer, dimSlicer[Date] >= XMinDate && dimSlicer[Date] <= XMaxDate),
-			        CALCULATE([Slicer_SumOfClose])
-			    )
-			    VAR YMaxValue = MAXX(
-			        FILTER(dimSlicer, dimSlicer[Date] >= XMinDate && dimSlicer[Date] <= XMaxDate),
-			        CALCULATE([Slicer_SumOfClose])
-			    )
-			
-			    // Dimensiuni mai mari pentru grafic
-			    VAR SparklineTable = ADDCOLUMNS(
-			        SUMMARIZE(
-			            FILTER(dimSlicer, dimSlicer[Date] >= XMinDate && dimSlicer[Date] <= XMaxDate),
-			            dimSlicer[Date]
-			        ),
-			        "X", INT(400 * DIVIDE(dimSlicer[Date] - XMinDate, XMaxDate - XMinDate)), 
-			        "Y", INT(250 * DIVIDE([Slicer_SumOfClose] - YMinValue, YMaxValue - YMinValue))
-			    )
-			
-			    VAR Lines = CONCATENATEX(SparklineTable, [X] & "," & 250 - [Y], " ", dimSlicer[Date])
-			
-			    VAR LastSparkYValue = MAXX(FILTER(SparklineTable, dimSlicer[Date] = XMaxDate), [Y])
-			    VAR LastSparkXValue = MAXX(FILTER(SparklineTable, dimSlicer[Date] = XMaxDate), [X])
-			
-			    VAR Gradient = IF([Slicer_Delta] > 0, DefsPositive, DefsNegative)
-			    VAR LineColour = IF([Slicer_Delta] > 0, LineColourPositive, LineColourNegative)
-			
-			    VAR ReferenceLineScaled = INT(250 * DIVIDE([Slicer_Moving_Average] - YMinValue, YMaxValue - YMinValue))
-			
-			    VAR SVGImageURL = 
-			        "data:image/svg+xml;utf8," & 
-			        "<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='-4 -4 404 254'>" & 
-			        Gradient & 
-			        // Zona de umplere cu gradient fad
-			        "<polyline fill='url(#grad)' fill-opacity='0.2' stroke='transparent' stroke-width='0' points='0,250 " & Lines & " 400,250 Z' />" & 
-			        // Linia principală cu grosime mai mare pentru a o face mai vizibilă
-			        "<polyline fill='transparent' stroke='" & LineColour & "' stroke-linecap='round' stroke-linejoin='round' stroke-width='6' points='" & Lines & "' />" & 
-			        // Punctul final cu un cerc mai vizibil
-			        "<circle cx='" & LastSparkXValue & "' cy='" & 250 - LastSparkYValue & "' r='5' stroke='" & LineColour & "' stroke-width='4' fill='" & PointColour & "' />" & 
-			        // Linia de referință a mediei mobile
-			        "<line x1='0' y1='" & ReferenceLineScaled & "' x2='400' y2='" & ReferenceLineScaled & "' stroke='grey' stroke-width='3' stroke-dasharray='6,6' />" & 
-			        "</svg>"
-			
-			    RETURN 
-			        SVGImageURL
-			
-			```
-		lineageTag: 45ec900d-4228-440f-b595-14d0a283a432
-		dataCategory: ImageUrl
-
-	measure _tex12321 = ```
-			
-			// Static line color - use %23 instead of # for Firefox compatibility (Measure Derived from Eldersveld Modified by Kolosko)
-			VAR LineColour = "%23118DFF"
-			VAR PointColour = "white"
-			VAR Defs = "<defs>
-			    <linearGradient id='grad' x1='0' y1='25' x2='0' y2='50' gradientUnits='userSpaceOnUse'>
-			        <stop stop-color='#118DFF' offset='0' />
-			        <stop stop-color='#118DFF' offset='0.3' />
-			        <stop stop-color='white' offset='1' />
-			    </linearGradient>
-			</defs>"
-			// "Date" field used in this example along the X axis
-			VAR XMinDate = MIN(dimPeriod[StartDate])
-			VAR XMaxDate = MAX(dimPeriod[EndDate])
-			
-			// Obtain overall min and overall max measure values when evaluated for each date
-			VAR YMinValue = MINX(Values(dimSlicer[Date]),CALCULATE([slicerSumOfClose]))
-			VAR YMaxValue = MAXX(Values(dimSlicer[Date]),CALCULATE([slicerSumOfClose]))
-			
-			// Build table of X & Y coordinates and fit to 50 x 150 viewbox
-			VAR SparklineTable = ADDCOLUMNS(
-			    SUMMARIZE('dimSlicer',dimSlicer[Date]),
-			        "X",INT(150 * DIVIDE(dimSlicer[Date] - XMinDate, XMaxDate - XMinDate)),
-			        "Y",INT(50 * DIVIDE([slicerSumOfClose] - YMinValue,YMaxValue - YMinValue)))
-			
-			// Concatenate X & Y coordinates to build the sparkline
-			VAR Lines = CONCATENATEX(SparklineTable,[X] & "," & 50-[Y]," ", dimSlicer[Date])
-			
-			// Last data points on the line
-			VAR LastSparkYValue = MAXX( FILTER(SparklineTable, dimSlicer[Date] = XMaxDate), [Y])
-			VAR LastSparkXValue = MAXX( FILTER(SparklineTable, dimSlicer[Date] = XMaxDate), [X])
-			
-			// Add to SVG, and verify Data Category is set to Image URL for this measure
-			VAR SVGImageURL = 
-			    "data:image/svg+xml;utf8," & 
-			    --- gradient---
-			    "<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='-7 -7 164 64'>" & Defs & 
-			     "<polyline fill='url(#grad)' fill-opacity='0.3' stroke='transparent' 
-			      stroke-width='0' points=' 0 50 " & Lines & 
-			      " 150 150 Z '/>" &
-			    --- Lines---
-			    "<polyline 
-			        fill='transparent' stroke='" & LineColour & "' 
-			        stroke-linecap='round' stroke-linejoin='round' 
-			        stroke-width='3' points=' " & Lines & 
-			      " '/>" &
-			    --- Last Point---
-			        "<circle cx='"& LastSparkXValue & "' cy='" & 50 - LastSparkYValue & "' r='4' stroke='" & LineColour & "' stroke-width='3' fill='" & PointColour & "' />" &
-			        "</svg>"
-			RETURN SVGImageURL
-			```
-		lineageTag: cad17bec-c069-4c4e-956d-f01086684ece
-		dataCategory: ImageUrl
-
-	measure _text992121 = ```
-			
-			    VAR LineColourPositive = "#00A651"
-			    VAR LineColourNegative = "#FF0000"
-			    VAR PointColour = "white"
-			
-			    VAR DefsPositive = "<defs>
-			        <linearGradient id='grad' x1='0' y1='50' x2='0' y2='100' gradientUnits='userSpaceOnUse'>
-			            <stop stop-color='#00A651' offset='0' />
-			            <stop stop-color='#00A651' offset='0.3' />
-			            <stop stop-color='white' offset='1' />
-			        </linearGradient>
-			    </defs>"
-			
-			    VAR DefsNegative = "<defs>
-			        <linearGradient id='grad' x1='0' y1='50' x2='0' y2='100' gradientUnits='userSpaceOnUse'>
-			            <stop stop-color='#FF0000' offset='0' />
-			            <stop stop-color='#FF0000' offset='0.3' />
-			            <stop stop-color='white' offset='1' />
-			        </linearGradient>
-			    </defs>"
-			
-			    VAR XMinDate = SELECTEDVALUE(dimPeriod[StartDate])
-			    VAR XMaxDate = SELECTEDVALUE(dimPeriod[EndDate])
-			
-			    VAR YMinValue = MINX(
-			        FILTER(dimSlicer, dimSlicer[Date] >= XMinDate && dimSlicer[Date] <= XMaxDate),
-			        CALCULATE([Slicer_SumOfClose])
-			    )
-			    VAR YMaxValue = MAXX(
-			        FILTER(dimSlicer, dimSlicer[Date] >= XMinDate && dimSlicer[Date] <= XMaxDate),
-			        CALCULATE([Slicer_SumOfClose])
-			    )
-			
-			    VAR SparklineTable = ADDCOLUMNS(
-			        SUMMARIZE(
-			            FILTER(dimSlicer, dimSlicer[Date] >= XMinDate && dimSlicer[Date] <= XMaxDate),
-			            dimSlicer[Date]
-			        ),
-			        "X", INT(180 * DIVIDE(dimSlicer[Date] - XMinDate, XMaxDate - XMinDate) + 10), // Scaled for larger graph
-			        "Y", INT(90 * DIVIDE([Slicer_SumOfClose] - YMinValue, YMaxValue - YMinValue) + 5) // Scaled for larger graph
-			    )
-			
-			    VAR Lines = CONCATENATEX(SparklineTable, [X] & "," & 100 - [Y], " ", dimSlicer[Date])
-			
-			    VAR LastSparkYValue = MAXX(FILTER(SparklineTable, dimSlicer[Date] = XMaxDate), [Y])
-			    VAR LastSparkXValue = MAXX(FILTER(SparklineTable, dimSlicer[Date] = XMaxDate), [X])
-			
-			    VAR Gradient = IF([Slicer_Delta] > 0, DefsPositive, DefsNegative)
-			    VAR LineColour = IF([Slicer_Delta] > 0, LineColourPositive, LineColourNegative)
-			
-			    VAR ReferenceLineScaled = INT(90 * DIVIDE([Slicer_Moving_Average] - YMinValue, YMaxValue - YMinValue) + 5)
-			
-			    VAR SVGImageURL =
-			        "data:image/svg+xml;utf8," &
-			        "<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='-4 -4 208 108'>" &
-			        Gradient &
-			        "<polyline fill='url(#grad)' fill-opacity='0.3' stroke='transparent' stroke-width='0' points='10,95 " &
-			            CONCATENATEX(SparklineTable, [X] & "," & 100 - [Y], " ", dimSlicer[Date]) &
-			            " 190,95 Z' />" &
-			        "<polyline fill='transparent' stroke='" & LineColour & "' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' points='" &
-			            CONCATENATEX(SparklineTable, [X] & "," & 100 - [Y], " ", dimSlicer[Date]) &
-			            "' />" &
-			        "<circle cx='" & LastSparkXValue & "' cy='" & 100 - LastSparkYValue & "' r='3' stroke='" & LineColour & "' stroke-width='2' fill='" & PointColour & "' />" &
-			        "<line x1='10' y1='" & ReferenceLineScaled & "' x2='190' y2='" & ReferenceLineScaled & "' stroke='grey' stroke-width='1.5' stroke-dasharray='4,4' />" &
-			        "</svg>"
-			
-			RETURN 
-			    SVGImageURL
-			
-			```
-		lineageTag: 0a655a90-f36c-45c3-b097-a43b07838e4b
-		dataCategory: ImageUrl
-
-	measure _text99s = ```
-			
-			    VAR LineColourPositive = "#00A651"
-			    VAR LineColourNegative = "#FF0000"
-			    VAR PointColour = "white"
-			
-			    VAR DefsPositive = "<defs>
-			        <linearGradient id='grad' x1='0' y1='100' x2='0' y2='200' gradientUnits='userSpaceOnUse'>
-			            <stop stop-color='#00A651' offset='0' />
-			            <stop stop-color='#00A651' offset='0.3' />
-			            <stop stop-color='white' offset='1' />
-			        </linearGradient>
-			    </defs>"
-			
-			    VAR DefsNegative = "<defs>
-			        <linearGradient id='grad' x1='0' y1='100' x2='0' y2='200' gradientUnits='userSpaceOnUse'>
-			            <stop stop-color='#FF0000' offset='0' />
-			            <stop stop-color='#FF0000' offset='0.3' />
-			            <stop stop-color='white' offset='1' />
-			        </linearGradient>
-			    </defs>"
-			
-			    VAR XMinDate = SELECTEDVALUE(dimPeriod[StartDate])
-			    VAR XMaxDate = SELECTEDVALUE(dimPeriod[EndDate])
-			
-			    VAR YMinValue = MINX(
-			        FILTER(dimSlicer, dimSlicer[Date] >= XMinDate && dimSlicer[Date] <= XMaxDate),
-			        CALCULATE([Slicer_SumOfClose])
-			    )
-			    VAR YMaxValue = MAXX(
-			        FILTER(dimSlicer, dimSlicer[Date] >= XMinDate && dimSlicer[Date] <= XMaxDate),
-			        CALCULATE([Slicer_SumOfClose])
-			    )
-			
-			    VAR SparklineTable = ADDCOLUMNS(
-			        SUMMARIZE(
-			            FILTER(dimSlicer, dimSlicer[Date] >= XMinDate && dimSlicer[Date] <= XMaxDate),
-			            dimSlicer[Date]
-			        ),
-			        "X", INT(380 * DIVIDE(dimSlicer[Date] - XMinDate, XMaxDate - XMinDate) + 10),
-			        "Y", INT(180 * DIVIDE([Slicer_SumOfClose] - YMinValue, YMaxValue - YMinValue) + 10)
-			    )
-			
-			    VAR Lines = CONCATENATEX(SparklineTable, [X] & "," & 200 - [Y], " ", dimSlicer[Date])
-			
-			    VAR LastSparkYValue = MAXX(FILTER(SparklineTable, dimSlicer[Date] = XMaxDate), [Y])
-			    VAR LastSparkXValue = MAXX(FILTER(SparklineTable, dimSlicer[Date] = XMaxDate), [X])
-			
-			    VAR Gradient = IF([Slicer_Delta] > 0, DefsPositive, DefsNegative)
-			    VAR LineColour = IF([Slicer_Delta] > 0, LineColourPositive, LineColourNegative)
-			
-			    VAR ReferenceLineScaled = INT(180 * DIVIDE([Slicer_Moving_Average] - YMinValue, YMaxValue - YMinValue) + 10)
-			
-			    VAR SVGImageURL =
-			        "data:image/svg+xml;utf8," &
-			        "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200' width='400' height='200' preserveAspectRatio='xMidYMid meet'>" &
-			        Gradient &
-			        "<rect x='0' y='0' width='400' height='200' fill='white' />" &  // Background
-			        "<polyline fill='url(#grad)' fill-opacity='0.3' stroke='transparent' stroke-width='0' points='10,190 " &
-			            CONCATENATEX(SparklineTable, [X] & "," & 200 - [Y], " ", dimSlicer[Date]) &
-			            " 390,190 Z' />" &
-			        "<polyline fill='transparent' stroke='" & LineColour & "' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' points='" &
-			            CONCATENATEX(SparklineTable, [X] & "," & 200 - [Y], " ", dimSlicer[Date]) &
-			            "' />" &
-			        "<circle cx='" & LastSparkXValue & "' cy='" & 200 - LastSparkYValue & "' r='4' stroke='" & LineColour & "' stroke-width='2' fill='" & PointColour & "' />" &
-			        "<line x1='10' y1='" & ReferenceLineScaled & "' x2='390' y2='" & ReferenceLineScaled & "' stroke='grey' stroke-width='2' stroke-dasharray='4,4' />" &
-			        "</svg>"
-			
-			RETURN 
-			    SVGImageURL
-			
-			```
-		lineageTag: e0550893-0a66-4f02-b0e4-fc1a4140c0eb
-		dataCategory: ImageUrl
-
-	measure '_test 01' =
-			
-			VAR _Company = MAX(dimSlicer[Company])
-			VAR _Symbol = MAX(dimSlicer[Symbol])
-			VAR _Industry = MAX(dimSlicer[Industry])
-			VAR _Sector = MAX(dimSlicer[Sector])
-			VAR NewLine =
-			"
-			"
-			RETURN
-			_Company & NewLine & "🏷️:" & _Sector
-		lineageTag: e103cd57-f1ba-45ba-a1bd-8dc54b7ccd50
-		dataCategory: Uncategorized
-
-	measure _abtest =
-			
-			VAR _Company = MAX(dimMeta[Company Name])
-			VAR _Symbol = MAX(dimMeta[Symbol])
-			VAR _MarketRef = MAX(dimMeta[Exchange Name])
-			VAR _Currency = MAX(dimMeta[Currency])
-			VAR NewLine =
-			"
-			"
-			RETURN
-			_Company & NewLine & "🏷️:" & _Symbol & " | " & "🪙:" & _Currency & " | " & "💰:" & _MarketRef
-		lineageTag: ed25ac51-2d01-4b8b-9dfb-0aa5569ec480
-		dataCategory: ImageUrl
-
-	measure '_test 02' =
+	measure companyNameAndTags =
 			
 			VAR _Company = MAX(dimMeta[Company Name])
 			VAR _Symbol = MAX(dimMeta[Symbol])
@@ -1317,7 +678,7 @@ table _Measures
 			_Company & NewLine & "🏷️:" & _Sector
 		lineageTag: 71d51399-5cd6-425e-b078-646b04cc2c7a
 
-	measure _0_new_Slicer_SVG = ```
+	measure SVGLineAreaChartTabel = ```
 			
 			    VAR LineColourPositive = "#00A651"  // Green line for positive Delta
 			    VAR LineColourNegative = "#FF0000"  // Red line for negative Delta
@@ -1409,91 +770,41 @@ table _Measures
 		lineageTag: 59e0d4b2-d73d-40ee-845d-7ad62474ab3c
 		dataCategory: ImageUrl
 
-	measure _01_Slicer_SVG = ```
+	measure sumClose_Dynamic = ```
 			
-			    VAR LineColourPositive = "#00A651"  // Green line for positive Slicer_Delta
-			    VAR LineColourNegative = "#FF0000"  // Red line for negative Slicer_Delta
-			    VAR PointColour = "white"           // White points on the line
-			
-			    // Gradient definitions for positive and negative Slicer_Delta
-			    VAR DefsPositive = "<defs>
-			        <linearGradient id='grad' x1='0' y1='22.5' x2='0' y2='45' gradientUnits='userSpaceOnUse'>
-			            <stop stop-color='#00A651' offset='0' />
-			            <stop stop-color='#00A651' offset='0.3' />
-			            <stop stop-color='white' offset='1' />
-			        </linearGradient>
-			    </defs>"
-			
-			    VAR DefsNegative = "<defs>
-			        <linearGradient id='grad' x1='0' y1='22.5' x2='0' y2='45' gradientUnits='userSpaceOnUse'>
-			            <stop stop-color='#FF0000' offset='0' />
-			            <stop stop-color='#FF0000' offset='0.3' />
-			            <stop stop-color='white' offset='1' />
-			        </linearGradient>
-			    </defs>"
-			
-			    // Date range for the sparkline (X axis) from the same dataset as the original logic
-			    VAR XMinDate = SELECTEDVALUE(dimPeriod[StartDate])  // StartDate from dimPeriod table
-			    VAR XMaxDate = CALCULATE(
-			        MAX(dimCalendar[Date]), 
-			        dimCalendar[Date] <= SELECTEDVALUE(dimPeriod[EndDate])
-			    )  // Find the last date in dimSlicer that is <= EndDate from dimPeriod
-			
-			    // Calculate overall min and max stock closing values for the selected date range
-			    VAR YMinValue = MINX(
-			        FILTER(dimCalendar, dimCalendar[Date] >= XMinDate && dimCalendar[Date] <= XMaxDate),
-			        CALCULATE([sumClose])
+			VAR _Period = SELECTEDVALUE(_tParameter[NbOfDays])  // Number of days for the period
+			VAR _LastDate = LASTDATE(factStocks[Date])
+			VAR _DatesInPeriod = DATESINPERIOD(factStocks[Date], _LastDate, -_Period, DAY)  // Get the period range based on _LastDate
+			VAR _SelectedPeriodStart = SELECTEDVALUE(dimPeriod[StartDate])  // Get the StartDate from the selected period
+			VAR _SelectedPeriodEnd = SELECTEDVALUE(dimPeriod[EndDate])  // Get the EndDate from the selected period
+			RETURN
+			    CALCULATE(
+			        SUM(factStocks[Close]),  // Sum the Close values
+			        _DatesInPeriod,  // Filter by the period range
+			        FILTER(
+			            factStocks,
+			            factStocks[Date] >= _SelectedPeriodStart &&  // Filter by the selected start date
+			            factStocks[Date] <= _SelectedPeriodEnd  // Filter by the selected end date
+			        )
 			    )
-			    VAR YMaxValue = MAXX(
-			        FILTER(dimCalendar, dimCalendar[Date] >= XMinDate && dimCalendar[Date] <= XMaxDate),
-			        CALCULATE([sumClose])
-			    )
-			
-			    // Build table of X & Y coordinates based on the same date range, scaled to the 60x30 viewbox
-			    VAR SparklineTable = ADDCOLUMNS(
-			        SUMMARIZE(
-			            FILTER(dimCalendar, dimCalendar[Date] >= XMinDate && dimCalendar[Date] <= XMaxDate),
-			            dimCalendar[Date]
-			        ),
-			        "X", INT(60 * DIVIDE(dimCalendar[Date] - XMinDate, XMaxDate - XMinDate)),
-			        "Y", INT(30 * DIVIDE([sumClose] - YMinValue, YMaxValue - YMinValue))
-			    )
-			
-			    // Concatenate X & Y coordinates to form the sparkline line path
-			    VAR Lines = CONCATENATEX(SparklineTable, [X] & "," & 30 - [Y], " ", dimCalendar[Date])
-			
-			    // Last data points for highlighting the final point on the sparkline
-			    VAR LastSparkYValue = MAXX(FILTER(SparklineTable, dimCalendar[Date] = XMaxDate), [Y])
-			    VAR LastSparkXValue = MAXX(FILTER(SparklineTable, dimCalendar[Date] = XMaxDate), [X])
-			
-			    // Determine whether the Slicer_Delta is positive or negative and use the corresponding gradient and line color
-			    VAR Gradient = IF([Delta] > 0, DefsPositive, DefsNegative)
-			    VAR LineColour = IF([Delta] > 0, LineColourPositive, LineColourNegative)
-			
-			    // Scale the Moving Average value to fit the 30x60 viewbox
-			    VAR ReferenceLineScaled = INT(30 * DIVIDE([Moving Average] - YMinValue, YMaxValue - YMinValue))
-			
-			    // Build the SVG image
-			    VAR SVGImageURL = 
-			        "data:image/svg+xml;utf8," & 
-			        "<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='-4 -4 67 37'>" & 
-			        Gradient &  // Use the correct gradient definition (green or red)
-			        // Opaque area filled with gradient
-			        "<polyline fill='url(#grad)' fill-opacity='0.3' stroke='transparent' stroke-width='0' points='0,30 " & Lines & " 60,30 Z' />" & 
-			        // Line with the defined color and stroke width
-			        "<polyline fill='transparent' stroke='" & LineColour & "' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' points='" & Lines & "' />" & 
-			        // Last point with the circle to highlight it
-			        "<circle cx='" & LastSparkXValue & "' cy='" & 30 - LastSparkYValue & "' r='2.5' stroke='" & LineColour & "' stroke-width='2' fill='" & PointColour & "' />" & 
-			        // Add the reference line (moving average line) at the calculated position
-			        "<line x1='0' y1='" & ReferenceLineScaled & "' x2='60' y2='" & ReferenceLineScaled & "' stroke='grey' stroke-width='1.5' stroke-dasharray='4,4' />" & 
-			        "</svg>"
-			
-			    RETURN 
-			        SVGImageURL
 			
 			```
-		lineageTag: 092692d8-272a-4108-a2b3-fc6c13379a37
-		dataCategory: ImageUrl
+		lineageTag: 919216b5-7bd9-498c-85ba-b8fda88cf385
+
+		formatStringDefinition = ```
+				VAR SelectedCurrency = 
+				    CALCULATE(
+				        SELECTEDVALUE(dimCurrencySymbol[Currency Symbol]),
+				        TREATAS(VALUES(dimMeta[Currency]), dimCurrencySymbol[Currency])
+				    )
+				RETURN
+				    "#,0.00#" & " " & SelectedCurrency
+				
+				
+				
+				
+				--"\$#,0.###############;(\$#,0.###############);\$#,0.###############"
+				```
 
 	column _Blank
 		formatString: 0

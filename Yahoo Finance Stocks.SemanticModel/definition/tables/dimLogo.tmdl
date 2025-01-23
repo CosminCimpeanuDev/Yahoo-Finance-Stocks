@@ -42,15 +42,10 @@ table dimLogo
 				    Source = dimInputStocks,
 				
 				    // Select the columns you need (Symbol, Company, Domain, Logo)
-				    SelectedColumns = Table.SelectColumns(Source, {"Symbol", "Company", "Domain", "Logo"}),
+				    SelectedColumns = Table.SelectColumns(Source, {"Symbol", "Company", "Domain", "Logo"})
 				
-				    // Remove duplicates based on Symbol column
-				    DistinctTable = Table.Distinct(SelectedColumns),
-				
-				    // Sort by Symbol
-				    SortedTable = Table.Sort(DistinctTable, {{"Symbol", Order.Ascending}})
 				in
-				    SortedTable
+				    SelectedColumns
 
 	annotation PBI_NavigationStepName = Navigation
 

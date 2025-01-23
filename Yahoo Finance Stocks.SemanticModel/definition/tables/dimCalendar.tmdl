@@ -66,21 +66,29 @@ table dimCalendar
 				    // Generate date list from MinDate to MaxDate
 				    DateList = List.Dates(MinDate, Duration.Days(MaxDate - MinDate) + 1, #duration(1, 0, 0, 0)),
 				    
-				    // Convert to Table and change the type
+				    // Convert to Table and set the type for the Date column
 				    DateTable = Table.FromList(DateList, Splitter.SplitByNothing(), {"Date"}),
 				    DateTableWithTypes = Table.TransformColumnTypes(DateTable, {{"Date", type date}}),
-				
-				    // Adding year, month, and other columns in a single transformation
-				    DateTableWithAllColumns = Table.AddColumn(DateTableWithTypes, "DateDetails", each [
-				        Year = Date.Year([Date]),
-				        Month = Date.Month([Date]),
-				        MonthName = Date.MonthName([Date]),
-				        DayOfWeek = Date.DayOfWeek([Date]),
-				        DayName = Date.DayOfWeekName([Date])
-				    ]),
-				
-				    // Expand DateDetails in a single step to avoid multiple transformations
-				    FinalDateTable = Table.ExpandRecordColumn(DateTableWithAllColumns, "DateDetails", {"Year", "Month", "MonthName", "DayOfWeek", "DayName"})
+				    
+				    // Adding all derived columns in a single step
+				    DateTableWithAllColumns = Table.AddColumn(
+				        DateTableWithTypes,
+				        "DateDetails",
+				        each [
+				            Year = Date.Year([Date]),
+				            Month = Date.Month([Date]),
+				            MonthName = Text.Proper(Date.ToText([Date], "MMMM")),
+				            DayOfWeek = Date.DayOfWeek([Date], Day.Sunday),
+				            DayName = Text.Proper(Date.ToText([Date], "dddd"))
+				        ]
+				    ),
+				    
+				    // Expand DateDetails
+				    FinalDateTable = Table.ExpandRecordColumn(
+				        DateTableWithAllColumns,
+				        "DateDetails",
+				        {"Year", "Month", "MonthName", "DayOfWeek", "DayName"}
+				    )
 				in
 				    FinalDateTable
 				```

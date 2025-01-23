@@ -131,20 +131,6 @@
         },
         {
           "location": {
-            "x": 2.857142857142847,
-            "y": 350.64285714285711
-          },
-          "nodeIndex": "dimSlicer",
-          "nodeLineageTag": "54c97e25-6179-4e55-a1a3-adc66c91b1f8",
-          "size": {
-            "height": 72,
-            "width": 234
-          },
-          "zIndex": 8,
-          "expandedHeight": 176
-        },
-        {
-          "location": {
             "x": 824.428558349609,
             "y": 0
           },

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
   "name": "124b8630c96d68e91eb2",
   "position": {
-    "x": 699.73934483973233,
-    "y": 229.39908418457202,
+    "x": 640,
+    "y": 228.97777777777779,
     "z": 4000,
-    "height": 300.09439943642127,
-    "width": 579.99013737231417,
+    "height": 300.0888888888889,
+    "width": 640,
     "tabOrder": 4000
   },
   "visual": {
@@ -37,11 +37,12 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "_test 02"
+                  "Property": "companyNameAndTags"
                 }
               },
               "queryRef": "_Measures._test 02",
-              "nativeQueryRef": "_test 02"
+              "nativeQueryRef": "company name",
+              "displayName": "company name"
             },
             {
               "field": {
@@ -51,11 +52,12 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "_0_new_Slicer_SVG"
+                  "Property": "SVGLineAreaChartTabel"
                 }
               },
               "queryRef": "_Measures._0_new_Slicer_SVG",
-              "nativeQueryRef": "_0_new_Slicer_SVG"
+              "nativeQueryRef": "SVG",
+              "displayName": "SVG"
             },
             {
               "field": {
@@ -65,25 +67,12 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "_01_Slicer_SVG"
+                  "Property": "sumClose_Dynamic"
                 }
               },
-              "queryRef": "_Measures._01_Slicer_SVG",
-              "nativeQueryRef": "_01_Slicer_SVG"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "sumClose"
-                }
-              },
-              "queryRef": "_Measures.sumClose",
-              "nativeQueryRef": "sumClose"
+              "queryRef": "_Measures.sumClose_Dynamic",
+              "nativeQueryRef": "sumClose",
+              "displayName": "sumClose"
             }
           ]
         }
@@ -98,7 +87,7 @@
                     "Entity": "_Measures"
                   }
                 },
-                "Property": "_test 02"
+                "Property": "companyNameAndTags"
               }
             },
             "direction": "Ascending"
@@ -225,20 +214,6 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "70D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Measures.sumClose"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
                   "Value": "108.61727969523204D"
                 }
               }
@@ -281,13 +256,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "211D"
+                  "Value": "121D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "_Measures._01_Slicer_SVG"
+            "metadata": "_Measures.sumClose_Dynamic"
           }
         }
       ],

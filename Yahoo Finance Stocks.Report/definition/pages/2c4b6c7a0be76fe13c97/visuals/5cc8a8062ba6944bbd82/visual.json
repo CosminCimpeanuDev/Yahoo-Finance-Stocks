@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
-  "name": "2091408712163f24c825",
+  "name": "5cc8a8062ba6944bbd82",
   "position": {
-    "x": 1458.0152671755725,
-    "y": 332.06106870229007,
-    "z": 10000,
-    "height": 566.79389312977094,
-    "width": 541.98473282442751,
-    "tabOrder": 10000
+    "x": 1427.2727272727273,
+    "y": 315.90909090909093,
+    "z": 10001,
+    "height": 565.90909090909088,
+    "width": 572.72727272727275,
+    "tabOrder": 10001
   },
   "visual": {
     "visualType": "tableEx",
@@ -20,15 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dimSlicer"
+                      "Entity": "dimLogo"
                     }
                   },
                   "Property": "Logo"
                 }
               },
-              "queryRef": "dimSlicer.Logo",
-              "nativeQueryRef": "Logo",
-              "displayName": "Logo"
+              "queryRef": "dimLogo.Logo",
+              "nativeQueryRef": "Logo1"
             },
             {
               "field": {
@@ -38,11 +37,12 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "_test 01"
+                  "Property": "companyNameAndTags"
                 }
               },
-              "queryRef": "_Measures._test 01",
-              "nativeQueryRef": "_test 01"
+              "queryRef": "_Measures._test 02",
+              "nativeQueryRef": "company name",
+              "displayName": "company name"
             },
             {
               "field": {
@@ -52,10 +52,10 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Slicer_SVG"
+                  "Property": "SVGLineAreaChartTabel"
                 }
               },
-              "queryRef": "_Measures._black_new",
+              "queryRef": "_Measures._0_new_Slicer_SVG",
               "nativeQueryRef": "SVG",
               "displayName": "SVG"
             },
@@ -67,15 +67,32 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "slicerSumOfClose"
+                  "Property": "sumClose_Dynamic"
                 }
               },
-              "queryRef": "_Measures._test",
-              "nativeQueryRef": "Close",
-              "displayName": "Close"
+              "queryRef": "_Measures.sumClose_Dynamic",
+              "nativeQueryRef": "sumClose",
+              "displayName": "sumClose"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  }
+                },
+                "Property": "companyNameAndTags"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
       }
     },
     "objects": {
@@ -95,13 +112,6 @@
       "columnHeaders": [
         {
           "properties": {
-            "wordWrap": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
             "autoSizeColumnWidth": {
               "expr": {
                 "Literal": {
@@ -116,13 +126,6 @@
                 }
               }
             },
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Center'"
-                }
-              }
-            },
             "fontColor": {
               "solid": {
                 "color": {
@@ -134,6 +137,20 @@
                   }
                 }
               }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
@@ -141,17 +158,22 @@
       "grid": [
         {
           "properties": {
-            "imageHeight": {
-              "expr": {
-                "Literal": {
-                  "Value": "60D"
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
                 }
               }
             },
-            "imageWidth": {
+            "gridHorizontal": {
               "expr": {
                 "Literal": {
-                  "Value": "200D"
+                  "Value": "true"
                 }
               }
             },
@@ -169,22 +191,17 @@
                 }
               }
             },
-            "outlineColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": 0
-                    }
-                  }
+            "imageHeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "60D"
                 }
               }
             },
-            "gridHorizontal": {
+            "imageWidth": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "200D"
                 }
               }
             }
@@ -247,18 +264,128 @@
           "selector": {
             "metadata": "_Measures._test 01"
           }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "147.38977673571222D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "dimLogo.Logo"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "118.7005719565904D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures._test 02"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "165.4176044948954D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures._0_new_Slicer_SVG"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "129D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.sumClose_Dynamic"
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "urlIcon": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "accessibility": [
+        {
+          "properties": {
+            "rowWithReferenceText": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
         }
       ],
       "columnFormatting": [
         {
           "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "2L"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            },
             "styleValues": {
               "expr": {
                 "Literal": {
                   "Value": "true"
                 }
               }
-            },
+            }
+          },
+          "selector": {
+            "metadata": "_Measures._test"
+          }
+        },
+        {
+          "properties": {
             "alignment": {
               "expr": {
                 "Literal": {
@@ -270,6 +397,13 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             },
@@ -304,67 +438,6 @@
           },
           "selector": {
             "metadata": "_Measures._black_new"
-          }
-        },
-        {
-          "properties": {
-            "styleValues": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Right'"
-                }
-              }
-            },
-            "labelPrecision": {
-              "expr": {
-                "Literal": {
-                  "Value": "2L"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Measures._test"
-          }
-        }
-      ],
-      "values": [
-        {
-          "properties": {
-            "urlIcon": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "wordWrap": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "accessibility": [
-        {
-          "properties": {
-            "rowWithReferenceText": {
-              "expr": {
-                "Literal": {
-                  "Value": "''"
-                }
-              }
-            }
           }
         }
       ]
@@ -419,6 +492,13 @@
                 }
               }
             },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
             "left": {
               "expr": {
                 "Literal": {
@@ -427,13 +507,6 @@
               }
             },
             "right": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
-            "bottom": {
               "expr": {
                 "Literal": {
                   "Value": "0D"
@@ -452,6 +525,13 @@
                   "Value": "false"
                 }
               }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
             }
           }
         }
@@ -463,6 +543,13 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
                 }
               }
             }
@@ -496,6 +583,13 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
