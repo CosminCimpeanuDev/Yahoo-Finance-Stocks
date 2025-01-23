@@ -201,17 +201,23 @@ table fnStockData
 
 	column 'Company Name'
 		dataType: string
+		isHidden
 		lineageTag: fd7b869d-d10d-4eff-8c4b-751145b69d55
 		summarizeBy: none
 		sourceColumn: Company Name
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column '52 Week High'
 		dataType: double
+		isHidden
 		lineageTag: e9e3cbfd-f696-45d0-91c9-bdfe01f46cc1
 		summarizeBy: sum
 		sourceColumn: 52 Week High
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -219,9 +225,12 @@ table fnStockData
 
 	column '52 Week Low'
 		dataType: double
+		isHidden
 		lineageTag: bad37bbf-887c-44c3-93a6-6d2f41f68430
 		summarizeBy: sum
 		sourceColumn: 52 Week Low
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -229,10 +238,13 @@ table fnStockData
 
 	column 'First Trade Date'
 		dataType: dateTime
+		isHidden
 		formatString: Long Date
 		lineageTag: 15b73d52-95ae-4113-adc8-babfd3deb457
 		summarizeBy: none
 		sourceColumn: First Trade Date
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -240,10 +252,13 @@ table fnStockData
 
 	column 'Regular Market Time'
 		dataType: dateTime
+		isHidden
 		formatString: Long Date
 		lineageTag: 1264e5c9-0eff-498f-a4a6-4f02f9533995
 		summarizeBy: none
 		sourceColumn: Regular Market Time
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

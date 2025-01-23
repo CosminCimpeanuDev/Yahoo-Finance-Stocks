@@ -52,14 +52,12 @@ table dimSlicer
 
 	column Close
 		dataType: double
-		formatString: "CHF"\ #,0.###############;"CHF"-#,0.###############;"CHF"\ #,0.###############
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		lineageTag: e7686047-ec6b-4693-bfe4-f7b615dca7f5
 		summarizeBy: sum
 		sourceColumn: Close
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"currencyCulture":"en-CH"}
 
 	column Date
 		dataType: dateTime
