@@ -67,12 +67,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "sumClose_Dynamic"
+                  "Property": "sumClose_Dynamic_Symbol"
                 }
               },
-              "queryRef": "_Measures.sumClose_Dynamic",
-              "nativeQueryRef": "sumClose",
-              "displayName": "sumClose"
+              "queryRef": "_Measures._02_text",
+              "nativeQueryRef": "sumClose_Dynamic_Symbol"
             }
           ]
         }
@@ -194,14 +193,14 @@
             "imageHeight": {
               "expr": {
                 "Literal": {
-                  "Value": "60D"
+                  "Value": "53D"
                 }
               }
             },
             "imageWidth": {
               "expr": {
                 "Literal": {
-                  "Value": "200D"
+                  "Value": "150D"
                 }
               }
             }
@@ -312,13 +311,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "129D"
+                  "Value": "121D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "_Measures.sumClose_Dynamic"
+            "metadata": "_Measures._02_text"
           }
         }
       ],

@@ -667,7 +667,7 @@ table _Measures
 
 	measure companyNameAndTags =
 			
-			VAR _Company = MAX(dimMeta[Company Name])
+			VAR _Company = MAX(dimLogo[Company])
 			VAR _Symbol = MAX(dimMeta[Symbol])
 			VAR _Industry = MAX(dimMeta[Industry])
 			VAR _Sector = MAX(dimMeta[Sector])
@@ -770,25 +770,7 @@ table _Measures
 		lineageTag: 59e0d4b2-d73d-40ee-845d-7ad62474ab3c
 		dataCategory: ImageUrl
 
-	measure sumClose_Dynamic = ```
-			
-			VAR _Period = SELECTEDVALUE(_tParameter[NbOfDays])  // Number of days for the period
-			VAR _LastDate = LASTDATE(factStocks[Date])
-			VAR _DatesInPeriod = DATESINPERIOD(factStocks[Date], _LastDate, -_Period, DAY)  // Get the period range based on _LastDate
-			VAR _SelectedPeriodStart = SELECTEDVALUE(dimPeriod[StartDate])  // Get the StartDate from the selected period
-			VAR _SelectedPeriodEnd = SELECTEDVALUE(dimPeriod[EndDate])  // Get the EndDate from the selected period
-			RETURN
-			    CALCULATE(
-			        SUM(factStocks[Close]),  // Sum the Close values
-			        _DatesInPeriod,  // Filter by the period range
-			        FILTER(
-			            factStocks,
-			            factStocks[Date] >= _SelectedPeriodStart &&  // Filter by the selected start date
-			            factStocks[Date] <= _SelectedPeriodEnd  // Filter by the selected end date
-			        )
-			    )
-			
-			```
+	measure sumClose_Dynamic = [sumClose]
 		lineageTag: 919216b5-7bd9-498c-85ba-b8fda88cf385
 
 		formatStringDefinition = ```
@@ -798,13 +780,35 @@ table _Measures
 				        TREATAS(VALUES(dimMeta[Currency]), dimCurrencySymbol[Currency])
 				    )
 				RETURN
-				    "#,0.00#" & " " & SelectedCurrency
-				
-				
-				
-				
-				--"\$#,0.###############;(\$#,0.###############);\$#,0.###############"
+				    "#,0.0#" & " " & SelectedCurrency
 				```
+
+	measure selectedCurrencySymbol = ```
+			
+			    CALCULATE(
+			        SELECTEDVALUE(dimCurrencySymbol[Currency Symbol]),
+			        TREATAS(VALUES(dimMeta[Currency]), dimCurrencySymbol[Currency])
+			    )
+			```
+		lineageTag: 4af61efb-a953-4ec9-861c-e215cf92e235
+
+	measure sumClose_Dynamic_Symbol = ```
+			
+			VAR NewLine = 
+			"
+			"
+			VAR _Variation = DIVIDE([LastClosePrice], [BeginingPeriodPrice]) - 1
+			VAR VariationText = 
+			    IF(
+			        _Variation > 0,
+			        FORMAT([Variation %], "#,0.0#") & " " & UNICHAR(128994),  -- Green Dot
+			        FORMAT([Variation %], "#,0.0#") & " " & UNICHAR(128308)   -- Red Dot
+			    )
+			RETURN
+			FORMAT([sumClose_Dynamic], "#,0.0#") & " " & [selectedCurrencySymbol] & NewLine & VariationText
+			
+			```
+		lineageTag: 4d7d6e7a-320c-4530-81be-d2f81f390ffd
 
 	column _Blank
 		formatString: 0
