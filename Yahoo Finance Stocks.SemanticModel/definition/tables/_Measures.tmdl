@@ -8,23 +8,12 @@ table _Measures
 			-- Retrieve the currency for the current context
 			VAR _Currency = SELECTEDVALUE(dimMeta[Currency])
 			
-			-- Map the currency code to its symbol
-			VAR _CurrencySymbol = 
-			    SWITCH(
-			        _Currency,
-			        "USD", "$",
-			        "EUR", "€",
-			        "GBP", "£",
-			        "JPY", "¥",
-			        _Currency -- Fallback to the currency code
-			    )
-			
 			-- Calculate the last close price
 			VAR _LastClose = CALCULATE(AVERAGE(factStocks[Close]), factStocks[Date] = _LastDate)
 			
 			-- Format the value with the currency symbol and custom separators
 			RETURN 
-			FORMAT(_LastClose, "#,0.00", "de-DE") & _CurrencySymbol
+			FORMAT(_LastClose, "#,0.00") & [selectedCurrencySymbol]
 			```
 		lineageTag: 6c3f1083-d7e4-4d91-a990-b9fdaa6f1d75
 
@@ -167,16 +156,12 @@ table _Measures
 	measure 'At Close' =
 			
 			VAR _MaxDate = LASTDATE(factStocks[Date])
-			VAR _MarketRef = " · USD · NASDAQ"
 			VAR NewLine =
 			"
 			"
 			RETURN
-			"At close: " & FORMAT( _MaxDate, "d mmmm yyyy", "en-CA") & _MarketRef & "👌" & NewLine & "😎" & "TESTTTTTTTTTTTTTT"
+			"🕒Closed at " & FORMAT( _MaxDate, "d mmmm yyyy", "en-CA")
 		lineageTag: e8dd6baa-1172-41d9-9fea-332cb5c18ab7
-
-	measure CompanyName = MAX(dimMeta[Company Name])
-		lineageTag: c5791ee4-ebe3-4e7f-bfa4-2334e88ef379
 
 	measure 'Green Volume' = ```
 			
@@ -802,13 +787,43 @@ table _Measures
 			    IF(
 			        _Variation > 0,
 			        FORMAT([Variation %], "#,0.0#") & " " & UNICHAR(128994),  -- Green Dot
-			        FORMAT([Variation %], "#,0.0#") & " " & UNICHAR(128308)   -- Red Dot
+			        FORMAT([Variation %], "#,0.0#") & " " & UNICHAR(128308)  -- Red Dot
 			    )
 			RETURN
-			FORMAT([sumClose_Dynamic], "#,0.0#") & " " & [selectedCurrencySymbol] & NewLine & VariationText
+			FORMAT([_0_sumClose], "#,0.0#") & " " & [selectedCurrencySymbol] & NewLine & VariationText
 			
 			```
 		lineageTag: 4d7d6e7a-320c-4530-81be-d2f81f390ffd
+
+	measure companyNameAndTags_v2 =
+			
+			VAR _Company = MAX(dimLogo[Company])
+			VAR _Symbol = MAX(dimMeta[Symbol])
+			VAR _Industry = MAX(dimMeta[Industry])
+			VAR _Sector = MAX(dimMeta[Sector])
+			VAR _CurrencyName = MAX(dimMeta[Currency])
+			VAR _exchangeName = MAX(dimMeta[Exchange Name])
+			VAR NewLine =
+			"
+			"
+			RETURN
+			"🏷️:" & _Symbol & " | 🪙:" & _CurrencyName & " | 💰:" & _exchangeName
+		lineageTag: 07a13af8-3334-4044-867d-59f8ea5c34ed
+
+	measure _0_sumClose = ```
+			
+			VAR _LastDate = LASTDATE(factStocks[Date])
+			RETURN
+			    CALCULATE(
+			        AVERAGE(factStocks[Close]),
+			        factStocks[Date] = _LastDate
+			          // Ensures calculation happens per company
+			    )
+			
+			```
+		lineageTag: 2691be47-fb96-49f9-ab1c-3b5a31ea0bbb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column _Blank
 		formatString: 0
