@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
   "name": "dae501e3b4bb87ee8844",
   "position": {
-    "x": 1000,
-    "y": 228,
+    "x": 940.95939634879983,
+    "y": 228.32102999639997,
     "z": 6000,
     "height": 38,
-    "width": 160,
+    "width": 159.13283908839998,
     "tabOrder": 7000
   },
   "visual": {
@@ -33,21 +33,6 @@
         }
       },
       "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "_Measures"
-                  }
-                },
-                "Property": "Last Close Price"
-              }
-            },
-            "direction": "Descending"
-          }
-        ],
         "isDefaultSort": true
       }
     },

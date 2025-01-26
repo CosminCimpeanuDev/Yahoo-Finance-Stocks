@@ -141,6 +141,18 @@
             "width": 234
           },
           "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1625.2857142857142,
+            "y": 250.71428571428572
+          },
+          "nodeIndex": "_tFilters",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",

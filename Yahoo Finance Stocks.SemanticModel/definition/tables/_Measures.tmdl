@@ -1,22 +1,6 @@
 table _Measures
 	lineageTag: 68253867-a07a-4580-a050-238c2bf45128
 
-	measure 'Last Close Price' = ```
-			
-			VAR _LastDate = CALCULATE(MAX(dimPeriod[EndDate]), ALLSELECTED(factStocks))
-			
-			-- Retrieve the currency for the current context
-			VAR _Currency = SELECTEDVALUE(dimMeta[Currency])
-			
-			-- Calculate the last close price
-			VAR _LastClose = CALCULATE(AVERAGE(factStocks[Close]), factStocks[Date] = _LastDate)
-			
-			-- Format the value with the currency symbol and custom separators
-			RETURN 
-			FORMAT(_LastClose, "#,0.00") & [selectedCurrencySymbol]
-			```
-		lineageTag: 6c3f1083-d7e4-4d91-a990-b9fdaa6f1d75
-
 	measure BearishCandle =
 			
 			VAR _Diff = ABS(MAXX(factStocks, [Close]-[Open]))
@@ -126,10 +110,16 @@ table _Measures
 
 	measure 'Variation %' =
 			
-			VAR _Variation = DIVIDE([LastClosePrice], [BeginingPeriodPrice]) - 1
-			VAR _Arrow = IF(_Variation > 0, UNICHAR(129033), UNICHAR(129035)) & " "
+			VAR _variation = (DIVIDE([LastClosePrice], [BeginingPeriodPrice]) - 1)*100
+			
+			-- Format the scaled variation
+			VAR _variationFormat = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT(_Variation, "#,0.00;" ), ".", "@" ), ",", "." ), "@", "," )
+			
+			-- Add the up or down arrow
+			VAR _Arrow = IF(_variation > 0, UNICHAR(129033) & " ", UNICHAR(129035)) & " "
+			
 			RETURN
-			    _Arrow & FORMAT(_Variation, "0.00%")
+			    _Arrow & _variationFormat & "%"
 		lineageTag: f8bd3b3d-248d-4011-b302-df196c66e07a
 
 	measure 'Variation Curr Vs Prec' = ```
@@ -221,15 +211,23 @@ table _Measures
 			        TREATAS(VALUES(dimMeta[Currency]), dimCurrencySymbol[Currency])
 			    )
 			
+			VAR _OpenFormated = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT(MAX(factStocks[Open]), "#,0.00;" ), ".", "@" ), ",", "." ), "@", "," )
+			VAR _HighFormated = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT(MAX(factStocks[High]), "#,0.00;" ), ".", "@" ), ",", "." ), "@", "," )
+			VAR _LowFormated = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT(MAX(factStocks[Low]), "#,0.00;" ), ".", "@" ), ",", "." ), "@", "," )
+			VAR _CloseFormated = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT(MAX(factStocks[Close]), "#,0.00;" ), ".", "@" ), ",", "." ), "@", "," )
+			
 			-- Format Open, High, Low, Close with the currency symbol on the right
-			VAR _Open = FORMAT(MAX(factStocks[Open]), "0.00") & _CurrencySymbol
-			VAR _High = FORMAT(MAX(factStocks[High]), "0.00") & _CurrencySymbol
-			VAR _Low = FORMAT(MAX(factStocks[Low]), "0.00") & _CurrencySymbol
-			VAR _Close = FORMAT(MAX(factStocks[Close]), "0.00") & _CurrencySymbol
+			VAR _Open = _OpenFormated & _CurrencySymbol
+			VAR _High = _HighFormated & _CurrencySymbol
+			VAR _Low = _LowFormated & _CurrencySymbol
+			VAR _Close = _CloseFormated & _CurrencySymbol
+			
+			//VAR _VolumeFormated = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT(MAX(factStocks[Volume]), "#,0.00;" ), ".", "@" ), ",", "." ), "@", "," )
+			VAR _VariationFormated = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT([Variation Curr Vs Prec] * 100, "#,0.00;" ), ".", "@" ), ",", "." ), "@", "," )
 			
 			-- Format Volume and Variation as before
 			VAR _Volume = FORMAT(MAX(factStocks[Volume]), "0,,.00M")
-			VAR _Variation = FORMAT([Variation Curr Vs Prec], "0.00%")
+			VAR _Variation = _VariationFormated & "%"
 			
 			-- Define layout variables with reduced space
 			VAR _Espace = "‎ " -- white space
@@ -298,6 +296,7 @@ table _Measures
 	measure 'Variation #' = ```
 			
 			VAR _Delta = [LastClosePrice] - [BeginingPeriodPrice]
+			VAR _deltaFormated = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT(_Delta, "#,0.00;" ), ".", "@" ), ",", "." ), "@", "," )
 			VAR _Currency = 
 			    CALCULATE(
 			        SELECTEDVALUE(dimCurrencySymbol[Currency Symbol]),
@@ -311,8 +310,7 @@ table _Measures
 			        UNICHAR(129035)
 			    ) & " "
 			RETURN
-			    _Arrow & FORMAT(_Delta, "0.00") & _Currency & " : " & _Period
-			
+			    _Arrow & _deltaFormated & _Currency & " | △(" & _Period & ")"
 			```
 		lineageTag: e4834ebc-bf0c-45ce-8894-a228b4c78c8b
 
@@ -782,16 +780,16 @@ table _Measures
 			VAR NewLine = 
 			"
 			"
+			VAR _sumClose = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT([sumClose_simple], "#,0.00;" ), ".", "@" ), ",", "." ), "@", "," )
 			VAR _Variation = DIVIDE([LastClosePrice], [BeginingPeriodPrice]) - 1
 			VAR VariationText = 
 			    IF(
 			        _Variation > 0,
-			        FORMAT([Variation %], "#,0.0#") & " " & UNICHAR(128994),  -- Green Dot
-			        FORMAT([Variation %], "#,0.0#") & " " & UNICHAR(128308)  -- Red Dot
+			        [Variation %],
+			        [Variation %]
 			    )
 			RETURN
-			FORMAT([_0_sumClose], "#,0.0#") & " " & [selectedCurrencySymbol] & NewLine & VariationText
-			
+			_sumClose & "" & [selectedCurrencySymbol] & NewLine & VariationText
 			```
 		lineageTag: 4d7d6e7a-320c-4530-81be-d2f81f390ffd
 
@@ -810,7 +808,7 @@ table _Measures
 			"🏷️:" & _Symbol & " | 🪙:" & _CurrencyName & " | 💰:" & _exchangeName
 		lineageTag: 07a13af8-3334-4044-867d-59f8ea5c34ed
 
-	measure _0_sumClose = ```
+	measure sumClose_simple = ```
 			
 			VAR _LastDate = LASTDATE(factStocks[Date])
 			RETURN
@@ -821,9 +819,39 @@ table _Measures
 			    )
 			
 			```
-		lineageTag: 2691be47-fb96-49f9-ab1c-3b5a31ea0bbb
+		lineageTag: 66e4838e-5942-40d0-8bf9-63448ca65133
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure tabelRank =
+			
+			IF(SELECTEDVALUE(_tFilters[Order]) = "ASC",
+			RANKX(ALLSELECTED(dimLogo),[Variation], , ASC),
+			RANKX(ALLSELECTED(dimLogo),[Variation], , DESC)
+			)
+		formatString: 0
+		lineageTag: c7dc4ddf-d208-4e61-9409-6b5768c4f7f1
+
+	measure Variation = DIVIDE([LastClosePrice], [BeginingPeriodPrice]) - 1
+		lineageTag: f91b8c60-c286-441e-af6a-4280daa4c0d0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Last Close Price' = ```
+			
+			VAR _LastDate = CALCULATE(MAX(dimPeriod[EndDate]), ALLSELECTED(factStocks))
+			
+			-- Retrieve the currency for the current context
+			VAR _Currency = SELECTEDVALUE(dimMeta[Currency])
+			
+			-- Calculate the last close price
+			VAR _LastClose = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT(CALCULATE(AVERAGE(factStocks[Close]), factStocks[Date] = _LastDate), "#,0.00;" ), ".", "@" ), ",", "." ), "@", "," )
+			
+			-- Format the value with the currency symbol and custom separators
+			RETURN 
+			_LastClose & [selectedCurrencySymbol]
+			```
+		lineageTag: f1660a84-8746-4053-b0b6-b188ee8b5858
 
 	column _Blank
 		formatString: 0

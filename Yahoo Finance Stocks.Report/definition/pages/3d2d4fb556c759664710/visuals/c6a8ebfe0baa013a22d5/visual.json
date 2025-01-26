@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
   "name": "c6a8ebfe0baa013a22d5",
   "position": {
-    "x": 1427.2727272727273,
-    "y": 315.90909090909093,
+    "x": 1459.8708281588,
+    "y": 315.9594051465333,
     "z": 9000,
-    "height": 565.90909090909088,
-    "width": 572.72727272727275,
+    "height": 565.03689241533323,
+    "width": 539.66788908239994,
     "tabOrder": 10000
   },
   "visual": {
@@ -15,6 +15,20 @@
       "queryState": {
         "Values": {
           "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "tabelRank"
+                }
+              },
+              "queryRef": "_Measures.0_SalesRank",
+              "nativeQueryRef": "tabelRank"
+            },
             {
               "field": {
                 "Column": {
@@ -86,10 +100,10 @@
                     "Entity": "_Measures"
                   }
                 },
-                "Property": "companyNameAndTags"
+                "Property": "tabelRank"
               }
             },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
         ]
       }
@@ -269,7 +283,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "147.38977673571222D"
+                  "Value": "154.27826561068636D"
                 }
               }
             }
@@ -283,7 +297,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "118.7005719565904D"
+                  "Value": "116.38846967517539D"
                 }
               }
             }
@@ -297,7 +311,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "165.4176044948954D"
+                  "Value": "138.67153475787768D"
                 }
               }
             }
@@ -311,13 +325,27 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "121D"
+                  "Value": "106.8814522735282D"
                 }
               }
             }
           },
           "selector": {
             "metadata": "_Measures._02_text"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.0_SalesRank"
           }
         }
       ],
@@ -517,6 +545,51 @@
           },
           "selector": {
             "metadata": "_Measures._black_new"
+          }
+        },
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "styleValues": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.0_SalesRank"
           }
         }
       ]

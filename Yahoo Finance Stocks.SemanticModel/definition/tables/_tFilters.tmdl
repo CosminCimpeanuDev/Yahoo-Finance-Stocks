@@ -1,0 +1,37 @@
+table _tFilters
+	lineageTag: 15ca34b9-5fdd-42d9-a2aa-0d61ed9dbd01
+
+	column Filter
+		dataType: string
+		lineageTag: 012bebc1-5529-411a-9a39-c4a47cd699ba
+		summarizeBy: none
+		sourceColumn: Filter
+
+		annotation SummarizationSetBy = Automatic
+
+	column Order
+		dataType: string
+		lineageTag: 624b419e-4ddd-4ef8-aeb2-9a4bda27ecfd
+		summarizeBy: none
+		sourceColumn: Order
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _tFilters = m
+		mode: import
+		source =
+				let
+				    CurrencyTable = #table(
+				        {"Filter", "Order"},
+				        {
+				            {"Gainers", "ASC"},
+				            {"Losers", "DESC"}
+				        }
+				    )
+				in
+				    CurrencyTable
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
