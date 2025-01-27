@@ -50,6 +50,27 @@
           "type": "BaseTheme"
         }
       ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "Poza_-_Copy12546187494778072.jpg",
+          "path": "Poza_-_Copy12546187494778072.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "1748578007124423793825.png",
+          "path": "1748578007124423793825.png",
+          "type": "Image"
+        },
+        {
+          "name": "png-transparent-github-compute8954505020581045.png",
+          "path": "png-transparent-github-compute8954505020581045.png",
+          "type": "Image"
+        }
+      ]
     }
   ],
   "settings": {

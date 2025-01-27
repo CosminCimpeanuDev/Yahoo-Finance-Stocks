@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
   "name": "6712776164c3ad653927",
   "position": {
-    "x": 1206,
-    "y": 228,
+    "x": 1202.3529411764707,
+    "y": 197.64705882352942,
     "z": 8000,
-    "height": 38,
-    "width": 222,
+    "height": 38.235294117647058,
+    "width": 202.35294117647058,
     "tabOrder": 9000
   },
   "visual": {
@@ -169,6 +169,33 @@
                               },
                               "Right": {
                                 "Literal": {
+                                  "Value": "1D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#FBDFE0'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "_Measures"
+                                    }
+                                  },
+                                  "Property": "Variation Indicator"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
                                   "Value": "0D"
                                 }
                               }
@@ -176,10 +203,42 @@
                           },
                           "Value": {
                             "Literal": {
-                              "Value": "'#E1FFE0'"
+                              "Value": "'#F3FFE9'"
                             }
                           }
-                        },
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
                         {
                           "Condition": {
                             "Comparison": {
@@ -203,43 +262,38 @@
                           },
                           "Value": {
                             "Literal": {
-                              "Value": "'#efb5b9'"
+                              "Value": "'#FBDFE0'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "_Measures"
+                                    }
+                                  },
+                                  "Property": "Variation Indicator"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "0D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#F3FFE9'"
                             }
                           }
                         }
                       ]
-                    }
-                  }
-                }
-              }
-            },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "50D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "border": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": 0
                     }
                   }
                 }

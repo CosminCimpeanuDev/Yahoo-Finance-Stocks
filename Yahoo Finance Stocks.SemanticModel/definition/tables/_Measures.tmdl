@@ -150,7 +150,7 @@ table _Measures
 			"
 			"
 			RETURN
-			"🕒Closed at " & FORMAT( _MaxDate, "d mmmm yyyy", "en-CA")
+			"🕒Closed at " & FORMAT( _MaxDate, "dddd, d mmmm yyyy")
 		lineageTag: e8dd6baa-1172-41d9-9fea-332cb5c18ab7
 
 	measure 'Green Volume' = ```
@@ -839,7 +839,7 @@ table _Measures
 
 	measure 'Last Close Price' = ```
 			
-			VAR _LastDate = CALCULATE(MAX(dimPeriod[EndDate]), ALLSELECTED(factStocks))
+			VAR _LastDate = LASTDATE(factStocks[Date])
 			
 			-- Retrieve the currency for the current context
 			VAR _Currency = SELECTEDVALUE(dimMeta[Currency])
@@ -852,6 +852,86 @@ table _Measures
 			_LastClose & [selectedCurrencySymbol]
 			```
 		lineageTag: f1660a84-8746-4053-b0b6-b188ee8b5858
+
+	measure PreviousClosePrice = ```
+			
+			VAR PrevClose = 
+			CALCULATE(
+			    AVERAGE(factStocks[PrevClose]),
+			    LASTDATE(factStocks[Date])
+			)
+			VAR PreCloseFormated = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT(PrevClose, "#,0.00;" ), ".", "@" ), ",", "." ), "@", "," )
+			RETURN
+			PreCloseFormated & [selectedCurrencySymbol]
+			```
+		lineageTag: dbda4284-5b97-459d-a1a9-2211986203f0
+
+	measure LastOpenPrice = ```
+			
+			VAR OpenPrice = 
+			CALCULATE(
+			    AVERAGE(factStocks[Open]),
+			    LASTDATE(factStocks[Date])
+			)
+			VAR OpenPriceFormated = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT(OpenPrice, "#,0.00;" ), ".", "@" ), ",", "." ), "@", "," )
+			RETURN
+			OpenPriceFormated & [selectedCurrencySymbol]
+			```
+		lineageTag: e76470ca-0ac4-4608-99f1-059e0a395b30
+
+	measure LastVolume = ```
+			
+			VAR Volume = 
+			CALCULATE(
+			    AVERAGE(factStocks[Volume]),
+			    LASTDATE(factStocks[Date])
+			)
+			VAR VolumeFormated = FORMAT(Volume, "0,,.00M")
+			//VAR VolumeFormated = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT(Volume, "#,0.00;" ), ".", "@" ), ",", "." ), "@", "," )
+			RETURN
+			VolumeFormated & [selectedCurrencySymbol]
+			```
+		lineageTag: 34bfc549-d2a9-464f-b36d-2a27ccd0a43c
+
+	measure 52WeeksRange = ```
+			
+			VAR _WeeksRangeLow = 
+			CALCULATE(
+			    AVERAGE(dimMeta[52 Week Low]),
+			    LASTDATE(factStocks[Date])
+			)
+			VAR _WeeksRangeLowFormated = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT(_WeeksRangeLow, "#,0.00;" ), ".", "@" ), ",", "." ), "@", "," )
+			VAR _WeeksRangeHigh =
+			CALCULATE(
+			    AVERAGE(dimMeta[52 Week High]),
+			    LASTDATE(factStocks[Date])
+			)
+			
+			VAR _WeeksRangeHighFormated = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT(_WeeksRangeHigh, "#,0.00;" ), ".", "@" ), ",", "." ), "@", "," )
+			RETURN
+			_WeeksRangeLowFormated & [selectedCurrencySymbol] & " - " & _WeeksRangeHighFormated & [selectedCurrencySymbol]
+			```
+		lineageTag: 8788732f-3a7b-455e-9f79-0e7c7fe149ac
+
+	measure DaysRange = ```
+			
+			VAR _DaysRangeLow = 
+			CALCULATE(
+			    AVERAGE(factStocks[Low]),
+			    LASTDATE(factStocks[Date])
+			)
+			VAR _DaysRangeLowFormated = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT(_DaysRangeLow, "#,0.00;" ), ".", "@" ), ",", "." ), "@", "," )
+			VAR _DaysRangeHigh =
+			CALCULATE(
+			    AVERAGE(factStocks[High]),
+			    LASTDATE(factStocks[Date])
+			)
+			
+			VAR _DaysRangeHighFormated = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT(_DaysRangeHigh, "#,0.00;" ), ".", "@" ), ",", "." ), "@", "," )
+			RETURN
+			_DaysRangeLowFormated & [selectedCurrencySymbol] & " - " & _DaysRangeHighFormated & [selectedCurrencySymbol]
+			```
+		lineageTag: ddf872ac-580b-4ca7-9627-876cc55dcc1c
 
 	column _Blank
 		formatString: 0

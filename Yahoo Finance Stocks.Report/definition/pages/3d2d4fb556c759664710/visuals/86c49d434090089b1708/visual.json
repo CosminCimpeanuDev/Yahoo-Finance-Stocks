@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
   "name": "86c49d434090089b1708",
   "position": {
-    "x": 1100,
-    "y": 228,
+    "x": 1060,
+    "y": 197.64705882352942,
     "z": 7000,
-    "height": 38,
-    "width": 106,
+    "height": 38.235294117647058,
+    "width": 154.70588235294119,
     "tabOrder": 8000
   },
   "visual": {
@@ -176,7 +176,7 @@
                           },
                           "Value": {
                             "Literal": {
-                              "Value": "'#efb5b9'"
+                              "Value": "'#FBDFE0'"
                             }
                           }
                         },
@@ -216,7 +216,7 @@
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "50D"
+                  "Value": "0D"
                 }
               }
             }
@@ -237,9 +237,63 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": 0
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "_Measures"
+                                    }
+                                  },
+                                  "Property": "Variation Indicator"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "1D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#FBDFE0'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "_Measures"
+                                    }
+                                  },
+                                  "Property": "Variation Indicator"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "0D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#F3FFE9'"
+                            }
+                          }
+                        }
+                      ]
                     }
                   }
                 }
