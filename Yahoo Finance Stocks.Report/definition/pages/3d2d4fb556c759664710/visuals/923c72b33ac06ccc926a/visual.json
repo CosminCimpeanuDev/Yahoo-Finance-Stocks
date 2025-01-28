@@ -42,7 +42,7 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Green Volume"
+                  "Property": "barChart_Green Volume"
                 }
               },
               "queryRef": "_Measures.Green Volume",
@@ -56,7 +56,7 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Red Volume"
+                  "Property": "barChart_Red Volume"
                 }
               },
               "queryRef": "_Measures.Red Volume",
@@ -337,7 +337,7 @@
                 "Entity": "_Measures"
               }
             },
-            "Property": "BearishCandle"
+            "Property": "lineChart_BearishCandle"
           }
         },
         "type": "Advanced",
@@ -353,7 +353,7 @@
                 "Entity": "_Measures"
               }
             },
-            "Property": "BullishCandle"
+            "Property": "lineChart_BullishCandle"
           }
         },
         "type": "Advanced",
@@ -385,7 +385,7 @@
                 "Entity": "_Measures"
               }
             },
-            "Property": "Low"
+            "Property": "lineChart_Low"
           }
         },
         "type": "Advanced",
@@ -401,7 +401,7 @@
                 "Entity": "_Measures"
               }
             },
-            "Property": "LowDistance"
+            "Property": "lineChart_LowDistance"
           }
         },
         "type": "Advanced",
@@ -432,7 +432,7 @@
                 "Entity": "_Measures"
               }
             },
-            "Property": "Green Volume"
+            "Property": "barChart_Green Volume"
           }
         },
         "type": "Advanced"
@@ -497,7 +497,7 @@
                 "Entity": "_Measures"
               }
             },
-            "Property": "Red Volume"
+            "Property": "barChart_Red Volume"
           }
         },
         "type": "Advanced"

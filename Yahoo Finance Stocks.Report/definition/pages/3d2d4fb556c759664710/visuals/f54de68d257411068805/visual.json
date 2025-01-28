@@ -42,7 +42,7 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Low"
+                  "Property": "lineChart_Low"
                 }
               },
               "queryRef": "_Measures.Low",
@@ -56,7 +56,7 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "LowDistance"
+                  "Property": "lineChart_LowDistance"
                 }
               },
               "queryRef": "_Measures.LowDistance",
@@ -70,7 +70,7 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "BearishCandle"
+                  "Property": "lineChart_BearishCandle"
                 }
               },
               "queryRef": "_Measures.BearishCandle",
@@ -84,7 +84,7 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "BullishCandle"
+                  "Property": "lineChart_BullishCandle"
                 }
               },
               "queryRef": "_Measures.BullishCandle",
@@ -102,7 +102,7 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Low"
+                  "Property": "lineChart_Low"
                 }
               },
               "queryRef": "_Measures.Low",
@@ -116,7 +116,7 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "High"
+                  "Property": "lineChart_High"
                 }
               },
               "queryRef": "_Measures.High",
@@ -130,7 +130,7 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Moving Average"
+                  "Property": "lineChart_Moving Average"
                 }
               },
               "queryRef": "_Measures.Moving average",
@@ -144,7 +144,7 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Lower Band"
+                  "Property": "lineChart_Lower Band"
                 }
               },
               "queryRef": "_Measures.Lower Band",
@@ -158,7 +158,7 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Upper Band"
+                  "Property": "lineChart_Upper Band"
                 }
               },
               "queryRef": "_Measures.Upper Band",
@@ -457,7 +457,7 @@
                           "Entity": "_Measures"
                         }
                       },
-                      "Property": "LowDistance"
+                      "Property": "lineChart_LowDistance"
                     }
                   }
                 }
@@ -666,7 +666,7 @@
                           "Entity": "_Measures"
                         }
                       },
-                      "Property": "Lower Band"
+                      "Property": "lineChart_Lower Band"
                     }
                   }
                 },
@@ -678,7 +678,7 @@
                           "Entity": "_Measures"
                         }
                       },
-                      "Property": "Upper Band"
+                      "Property": "lineChart_Upper Band"
                     }
                   }
                 }
@@ -1063,7 +1063,7 @@
                 "Entity": "_Measures"
               }
             },
-            "Property": "BearishCandle"
+            "Property": "lineChart_BearishCandle"
           }
         },
         "type": "Advanced"
@@ -1078,7 +1078,7 @@
                 "Entity": "_Measures"
               }
             },
-            "Property": "BullishCandle"
+            "Property": "lineChart_BullishCandle"
           }
         },
         "type": "Advanced"
@@ -1109,7 +1109,7 @@
                 "Entity": "_Measures"
               }
             },
-            "Property": "Low"
+            "Property": "lineChart_Low"
           }
         },
         "type": "Advanced"
@@ -1124,7 +1124,7 @@
                 "Entity": "_Measures"
               }
             },
-            "Property": "LowDistance"
+            "Property": "lineChart_LowDistance"
           }
         },
         "type": "Advanced"
@@ -1139,7 +1139,7 @@
                 "Entity": "_Measures"
               }
             },
-            "Property": "High"
+            "Property": "lineChart_High"
           }
         },
         "type": "Advanced"
@@ -1154,7 +1154,7 @@
                 "Entity": "_Measures"
               }
             },
-            "Property": "Moving Average"
+            "Property": "lineChart_Moving Average"
           }
         },
         "type": "Advanced"

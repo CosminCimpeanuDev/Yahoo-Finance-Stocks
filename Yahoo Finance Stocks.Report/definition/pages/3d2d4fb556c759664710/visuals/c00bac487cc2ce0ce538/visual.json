@@ -23,7 +23,7 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "DaysRange"
+                  "Property": "summaryDaysRange"
                 }
               },
               "queryRef": "_Measures.DaysRange",

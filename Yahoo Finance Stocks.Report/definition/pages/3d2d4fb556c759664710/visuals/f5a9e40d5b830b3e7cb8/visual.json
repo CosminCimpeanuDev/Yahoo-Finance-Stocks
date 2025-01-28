@@ -23,7 +23,7 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "LastOpenPrice"
+                  "Property": "summaryLastOpenPrice"
                 }
               },
               "queryRef": "_Measures.LastOpenPrice",

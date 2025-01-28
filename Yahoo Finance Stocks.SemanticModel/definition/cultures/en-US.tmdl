@@ -4112,7 +4112,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "BearishCandle"
+			          "ConceptualProperty": "lineChart_BearishCandle"
 			        }
 			      },
 			      "State": "Generated",
@@ -4241,7 +4241,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "BullishCandle"
+			          "ConceptualProperty": "lineChart_BullishCandle"
 			        }
 			      },
 			      "State": "Generated",
@@ -4370,7 +4370,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "High"
+			          "ConceptualProperty": "lineChart_High"
 			        }
 			      },
 			      "State": "Generated",
@@ -4406,7 +4406,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "Low"
+			          "ConceptualProperty": "lineChart_Low"
 			        }
 			      },
 			      "State": "Generated",
@@ -4719,7 +4719,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "LowDistance"
+			          "ConceptualProperty": "lineChart_LowDistance"
 			        }
 			      },
 			      "State": "Generated",
@@ -5100,7 +5100,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "Moving Average"
+			          "ConceptualProperty": "lineChart_Moving Average"
 			        }
 			      },
 			      "State": "Generated",
@@ -5330,7 +5330,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "At Close"
+			          "ConceptualProperty": "portofolio_#1_At_Close"
 			        }
 			      },
 			      "State": "Generated",
@@ -5351,7 +5351,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "Green Volume"
+			          "ConceptualProperty": "barChart_Green Volume"
 			        }
 			      },
 			      "State": "Generated",
@@ -5437,7 +5437,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "Red Volume"
+			          "ConceptualProperty": "barChart_Red Volume"
 			        }
 			      },
 			      "State": "Generated",
@@ -5985,7 +5985,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "Lower Band"
+			          "ConceptualProperty": "lineChart_Lower Band"
 			        }
 			      },
 			      "State": "Generated",
@@ -6107,7 +6107,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "Upper Band"
+			          "ConceptualProperty": "lineChart_Upper Band"
 			        }
 			      },
 			      "State": "Generated",
@@ -9301,7 +9301,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "companyNameAndTags"
+			          "ConceptualProperty": "tabel_companyNameAndTags"
 			        }
 			      },
 			      "State": "Generated",
@@ -9446,7 +9446,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "SVGLineAreaChartTabel"
+			          "ConceptualProperty": "tabel_SVGLineAreaChartTabel"
 			        }
 			      },
 			      "State": "Generated",

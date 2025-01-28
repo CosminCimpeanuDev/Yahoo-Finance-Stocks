@@ -23,7 +23,7 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "At Close"
+                  "Property": "portofolio_#1_At_Close"
                 }
               },
               "queryRef": "_Measures.At Close",

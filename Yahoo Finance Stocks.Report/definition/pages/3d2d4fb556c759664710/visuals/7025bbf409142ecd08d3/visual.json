@@ -23,7 +23,7 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "LastVolume"
+                  "Property": "summaryLastVolume"
                 }
               },
               "queryRef": "_Measures.LastVolume",

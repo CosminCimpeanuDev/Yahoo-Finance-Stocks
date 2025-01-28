@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
   "name": "c6a8ebfe0baa013a22d5",
   "position": {
-    "x": 1498,
-    "y": 436,
+    "x": 1480.9160305343512,
+    "y": 435.1145038167939,
     "z": 9000,
-    "height": 564,
-    "width": 502,
+    "height": 564.8854961832061,
+    "width": 519.08396946564881,
     "tabOrder": 10000
   },
   "visual": {
@@ -23,7 +23,7 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "tabelRank"
+                  "Property": "tabel_Rank"
                 }
               },
               "queryRef": "_Measures.0_SalesRank",
@@ -51,7 +51,7 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "companyNameAndTags"
+                  "Property": "tabel_companyNameAndTags"
                 }
               },
               "queryRef": "_Measures._test 02",
@@ -66,7 +66,7 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "SVGLineAreaChartTabel"
+                  "Property": "tabel_SVGLineAreaChartTabel"
                 }
               },
               "queryRef": "_Measures._0_new_Slicer_SVG",
@@ -81,7 +81,7 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "sumClose_Dynamic_Symbol"
+                  "Property": "tabel_sumClose_Dynamic_Symbol"
                 }
               },
               "queryRef": "_Measures._02_text",
@@ -100,7 +100,7 @@
                     "Entity": "_Measures"
                   }
                 },
-                "Property": "tabelRank"
+                "Property": "tabel_Rank"
               }
             },
             "direction": "Descending"
@@ -325,7 +325,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "81.85367084981623D"
+                  "Value": "89.5133651275623D"
                 }
               }
             }

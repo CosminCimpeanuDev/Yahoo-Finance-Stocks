@@ -95,6 +95,8 @@ table dimMeta
 		summarizeBy: none
 		sourceColumn: Company Name
 
+		changedProperty = SortByColumn
+
 		annotation SummarizationSetBy = Automatic
 
 	column '52 Week High'

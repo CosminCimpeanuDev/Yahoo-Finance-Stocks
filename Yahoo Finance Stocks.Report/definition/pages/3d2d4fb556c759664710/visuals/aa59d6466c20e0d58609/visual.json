@@ -23,7 +23,7 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "PreviousClosePrice"
+                  "Property": "summaryPreviousClosePrice"
                 }
               },
               "queryRef": "_Measures.PreviousClosePrice",
@@ -42,7 +42,7 @@
                     "Entity": "_Measures"
                   }
                 },
-                "Property": "PreviousClosePrice"
+                "Property": "summaryPreviousClosePrice"
               }
             },
             "direction": "Descending"
