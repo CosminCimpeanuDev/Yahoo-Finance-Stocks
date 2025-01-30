@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
   "name": "3434fb98b4bee57b6dad",
   "position": {
-    "x": 323.07692307692304,
-    "y": 106.15384615384615,
-    "z": 36000,
-    "height": 39.230769230769226,
-    "width": 200.76923076923077,
-    "tabOrder": 36000
+    "x": 286.66666666666669,
+    "y": 151.66666666666669,
+    "z": 38000,
+    "height": 28.333333333333336,
+    "width": 105,
+    "tabOrder": 35000
   },
   "visual": {
     "visualType": "card",
@@ -56,7 +56,19 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "14D"
+                  "Value": "10D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0.6
+                    }
+                  }
                 }
               }
             }
@@ -105,6 +117,31 @@
               "expr": {
                 "Literal": {
                   "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "portofolio_#1_Period"
                 }
               }
             }

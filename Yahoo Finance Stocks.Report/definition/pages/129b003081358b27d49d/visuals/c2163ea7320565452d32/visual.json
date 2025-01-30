@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
   "name": "c2163ea7320565452d32",
   "position": {
-    "x": 1213.7404580152672,
-    "y": 0,
-    "z": 40000,
-    "height": 131.67938931297709,
-    "width": 190.83969465648855,
-    "tabOrder": 40000
+    "x": 1333.0258114941332,
+    "y": 9.2250921210666661,
+    "z": 35000,
+    "height": 131.45756272519998,
+    "width": 191.42066151213331,
+    "tabOrder": 39000
   },
   "visual": {
     "visualType": "advancedSlicerVisual",
@@ -89,91 +89,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Adobe'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'Altria'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'American Express'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'Apple'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'BP'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'Costco'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'Deere & Co.'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'ExxonMobil'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'FedEx'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'HANG SENG INDEX'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'Philip Morris International'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'Procter & Gamble'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'Prologis'"
+                                "Value": "'3M'"
                               }
                             }
                           ]

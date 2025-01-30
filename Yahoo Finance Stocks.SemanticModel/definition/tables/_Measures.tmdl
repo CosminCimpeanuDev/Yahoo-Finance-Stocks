@@ -953,10 +953,28 @@ table _Measures
 	measure portofolio_#1_Company = ```
 			
 			VAR _SelectedValues = VALUES(dimLogo[Company])
+			
+			-- Ensure a company is selected before proceeding
+			VAR _HasSelection = ISFILTERED(dimLogo[Company])
+			
 			VAR _TOP1 = TOPN(1, _SelectedValues, dimLogo[Company], ASC)
-			VAR _firstValue = MAXX(_TOP1, dimLogo[Company])
+			VAR _FirstCompany = MAXX(_TOP1, dimLogo[Company])
+			
+			-- Get the corresponding symbol for the selected company
+			VAR _Symbol = 
+			    MAXX(
+			        FILTER(dimLogo, dimLogo[Company] = _FirstCompany),
+			        dimLogo[Symbol]
+			    )
+			
+			VAR NewLine = UNICHAR(10)
+			
 			RETURN
-			    IF(COUNTROWS(_SelectedValues) >= 1, _firstValue, BLANK())
+			    IF(
+			        _HasSelection, 
+			        _FirstCompany & NewLine & "🏷️: " & _Symbol, 
+			        BLANK()
+			    )
 			
 			```
 		lineageTag: 62afe595-077a-4a6a-9ce0-d1bc8800535e
@@ -1202,7 +1220,7 @@ table _Measures
 			    VAR LineColourNegative = "#FF0000"  // Red line for negative portofolio_#1_SVG_Delta
 			    VAR PointColour = "white"           // White points on the line
 			
-			    // Gradient definitions for positive and negative portofolio_#1_SVG_Delta
+			    -- Gradient definitions for positive and negative portofolio_#1_SVG_Delta
 			    VAR DefsPositive = "<defs>
 			        <linearGradient id='grad' x1='0' y1='22.5' x2='0' y2='45' gradientUnits='userSpaceOnUse'>
 			            <stop stop-color='#00A651' offset='0' />
@@ -1219,6 +1237,9 @@ table _Measures
 			        </linearGradient>
 			    </defs>"
 			
+			    -- Check if a company is selected
+			    VAR _HasSelection = ISFILTERED(dimLogo[Company])
+			    
 			    -- Top selected company and symbol logic
 			    VAR _SelectedValues = VALUES(dimLogo[Company])
 			    VAR _FirstCompany =
@@ -1253,7 +1274,7 @@ table _Measures
 			            factStocks[Date] <= XMaxDate && 
 			            factStocks[Symbol] = _FilteredSymbol
 			        ),
-			        [portofolio_#1_SVG_sumClose]  -- Ensure sumClose is used consistently
+			        [portofolio_#1_SVG_sumClose]  
 			    )
 			    VAR YMaxValue = MAXX(
 			        FILTER(
@@ -1262,7 +1283,7 @@ table _Measures
 			            factStocks[Date] <= XMaxDate && 
 			            factStocks[Symbol] = _FilteredSymbol
 			        ),
-			        [portofolio_#1_SVG_sumClose]  -- Ensure sumClose is used consistently
+			        [portofolio_#1_SVG_sumClose]  
 			    )
 			
 			    -- Build table of X & Y coordinates based on the same date range, scaled to the 60x30 viewbox
@@ -1277,10 +1298,8 @@ table _Measures
 			            factStocks[Date]
 			        ),
 			        "X", 
-			            -- Ensure X values start from 0 and adjust for potential rounding errors
 			            ROUND(60 * DIVIDE(DATEDIFF(XMinDate, factStocks[Date], DAY), DATEDIFF(XMinDate, XMaxDate, DAY)), 2), 
 			        "Y", 
-			            -- Calculate Y values with the proper sumClose context
 			            INT(30 * DIVIDE([portofolio_#1_SVG_sumClose] - YMinValue, YMaxValue - YMinValue))
 			    )
 			
@@ -1313,19 +1332,19 @@ table _Measures
 			    VAR SVGImageURL = 
 			        "data:image/svg+xml;utf8," & 
 			        "<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='-4 -4 67 37'>" & 
-			        Gradient &  -- Use the correct gradient definition (green or red)
-			        -- Opaque area filled with gradient
+			        Gradient &  
 			        "<polyline fill='url(#grad)' fill-opacity='0.3' stroke='transparent' stroke-width='0' points='0,30 " & Lines & " 60,30 Z' />" & 
-			        -- Line with the defined color and stroke width
 			        "<polyline fill='transparent' stroke='" & LineColour & "' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' points='" & Lines & "' />" & 
-			        -- Last point with the circle to highlight it
 			        "<circle cx='" & LastSparkXValue & "' cy='" & 30 - LastSparkYValue & "' r='2.5' stroke='" & LineColour & "' stroke-width='2' fill='" & PointColour & "' />" & 
-			        -- Add the reference line (moving average line) at the calculated position
 			        "<line x1='0' y1='" & ReferenceLineScaled & "' x2='60' y2='" & ReferenceLineScaled & "' stroke='grey' stroke-width='1.5' stroke-dasharray='4,4' />" & 
 			        "</svg>"
 			
 			    RETURN 
-			        SVGImageURL
+			        IF(
+			            _HasSelection, 
+			            SVGImageURL, 
+			            BLANK()
+			        )
 			
 			```
 		lineageTag: f50e954b-67c8-49a3-9a8e-28447f26f445
@@ -1333,18 +1352,27 @@ table _Measures
 
 	measure portofolio_#1_SVG_sumClose = ```
 			
+			
 			VAR _SelectedValues = VALUES(dimLogo[Company])  -- Get the selected companies
 			VAR _FirstCompany =
-			    MAXX(
-			        TOPN(1, _SelectedValues, dimLogo[Company], ASC),  -- Select the top company
-			        dimLogo[Company]
+			    IF(
+			        COUNTROWS(_SelectedValues) = 0, 
+			        BLANK(),  -- Return blank if no companies are selected
+			        MAXX(
+			            TOPN(1, _SelectedValues, dimLogo[Company], ASC),  -- Select the top company
+			            dimLogo[Company]
+			        )
 			    )
 			
 			-- Retrieve the symbol for the selected top company
 			VAR _FilteredSymbol =
-			    CALCULATE(
-			        MAX(dimLogo[Symbol]),  -- Get the symbol from dimLogo
-			        dimLogo[Company] = _FirstCompany  -- Filter by the selected top company
+			    IF(
+			        NOT ISBLANK(_FirstCompany),
+			        CALCULATE(
+			            MAX(dimLogo[Symbol]),  -- Get the symbol from dimLogo
+			            dimLogo[Company] = _FirstCompany  -- Filter by the selected top company
+			        ),
+			        BLANK()  -- Return blank if no top company selected
 			    )
 			
 			-- Period and date logic
@@ -1368,7 +1396,7 @@ table _Measures
 			    )
 			
 			-- Calculate the sum of 'Close' prices, filtered by the symbol and the selected date range
-			RETURN 
+			RETURN
 			    IF(
 			        ISBLANK(_FilteredSymbol), 
 			        DebugNoData,  -- Handle no symbol scenario
@@ -1600,6 +1628,604 @@ table _Measures
 			```
 		formatString: 0
 		lineageTag: c14af90e-61da-4f5d-a2e8-60157f726412
+
+	measure 0_sumClose_Test = ```
+			
+			VAR _LastDate = LASTDATE(factStocks[Date])
+			RETURN
+			    CALCULATE(
+			        AVERAGE(factStocks[Close]),
+			        factStocks[Date] = _LastDate
+			          // Ensures calculation happens per company
+			    )
+			
+			```
+		lineageTag: 76b30fbc-ffb7-43db-8c87-991bc6e19338
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure portofolio_#1_CompanyMatch =
+			
+			VAR _SelectedValues = VALUES(dimLogo[Company])  -- Get the selected companies
+			VAR _TOP1 = TOPN(1, _SelectedValues, dimLogo[Company], ASC)  -- Get the top company in ascending order
+			VAR _FirstValue = MAXX(_TOP1, dimLogo[Company])  -- Extract the first value
+			RETURN
+			    _FirstValue
+		lineageTag: e589f286-ebbd-4b05-aa0d-a314b3332c68
+
+	measure portofolio_#1_FilterTEST = ```
+			
+			VAR _SelectedValues = VALUES(dimLogo[Company])  -- Get the selected companies
+			VAR _TOP1 = TOPN(1, _SelectedValues, dimLogo[Company], ASC)  -- Get the top company in ascending order
+			VAR _FirstValue = MAXX(_TOP1, dimLogo[Company])  -- Extract the first value
+			RETURN
+			    IF(
+			        _FirstValue = SELECTEDVALUE(dimLogo[Company]),  -- Ensure comparison is made against a single value
+			        1,  -- Return 1 if the top company matches the current row
+			        0   -- Return 0 otherwise
+			    )
+			
+			```
+		formatString: 0
+		lineageTag: ec9a5b9f-2bda-4eae-ae63-e69ddae349b7
+
+	measure 0_test = ```
+			
+			 
+			    VAR LineColourPositive = "#00A651"  // Green line for positive portofolio_#1_SVG_Delta
+			    VAR LineColourNegative = "#FF0000"  // Red line for negative portofolio_#1_SVG_Delta
+			    VAR PointColour = "white"           // White points on the line
+			
+			    // Gradient definitions for positive and negative portofolio_#1_SVG_Delta
+			    VAR DefsPositive = "<defs>
+			        <linearGradient id='grad' x1='0' y1='22.5' x2='0' y2='45' gradientUnits='userSpaceOnUse'>
+			            <stop stop-color='#00A651' offset='0' />
+			            <stop stop-color='#00A651' offset='0.3' />
+			            <stop stop-color='white' offset='1' />
+			        </linearGradient>
+			    </defs>"
+			
+			    VAR DefsNegative = "<defs>
+			        <linearGradient id='grad' x1='0' y1='22.5' x2='0' y2='45' gradientUnits='userSpaceOnUse'>
+			            <stop stop-color='#FF0000' offset='0' />
+			            <stop stop-color='#FF0000' offset='0.3' />
+			            <stop stop-color='white' offset='1' />
+			        </linearGradient>
+			    </defs>"
+			
+			    // Top selected company and symbol logic with error handling
+			    VAR _SelectedValues = VALUES(dimLogo[Company])
+			
+			    VAR _FirstCompany = 
+			        IF(
+			            ISBLANK(_SelectedValues), 
+			            BLANK(), -- Handle no selection gracefully
+			            MAXX(
+			                TOPN(1, _SelectedValues, dimLogo[Company], ASC), 
+			                dimLogo[Company]
+			            )
+			        )
+			
+			    VAR _FilteredSymbol = 
+			        IF(
+			            ISBLANK(_FirstCompany), 
+			            BLANK(), -- Handle no valid company
+			            MAXX(
+			                FILTER(dimLogo, dimLogo[Company] = _FirstCompany), 
+			                dimLogo[Symbol]
+			            )
+			        )
+			
+			    -- Date range for the sparkline (X axis)
+			    VAR XMinDate = 
+			        IF (
+			            ISBLANK(SELECTEDVALUE(dimPeriod[StartDate])), 
+			            MIN(factStocks[Date]), 
+			            SELECTEDVALUE(dimPeriod[StartDate]) 
+			        ) 
+			    VAR XMaxDate = CALCULATE(
+			        MAX(factStocks[Date]), 
+			        factStocks[Date] <= SELECTEDVALUE(dimPeriod[EndDate])
+			    )
+			
+			    -- Calculate overall min and max stock closing values for the selected date range and symbol
+			    VAR YMinValue = MINX(
+			        FILTER(
+			            factStocks, 
+			            factStocks[Date] >= XMinDate && 
+			            factStocks[Date] <= XMaxDate && 
+			            factStocks[Symbol] = _FilteredSymbol
+			        ),
+			        [portofolio_#1_SVG_sumClose]  
+			    )
+			    VAR YMaxValue = MAXX(
+			        FILTER(
+			            factStocks, 
+			            factStocks[Date] >= XMinDate && 
+			            factStocks[Date] <= XMaxDate && 
+			            factStocks[Symbol] = _FilteredSymbol
+			        ),
+			        [portofolio_#1_SVG_sumClose]  
+			    )
+			
+			    -- Build table of X & Y coordinates based on the same date range, scaled to the 60x30 viewbox
+			    VAR SparklineTable = ADDCOLUMNS(
+			        SUMMARIZE(
+			            FILTER(
+			                factStocks, 
+			                factStocks[Date] >= XMinDate && 
+			                factStocks[Date] <= XMaxDate && 
+			                factStocks[Symbol] = _FilteredSymbol
+			            ),
+			            factStocks[Date]
+			        ),
+			        "X", 
+			            ROUND(60 * DIVIDE(DATEDIFF(XMinDate, factStocks[Date], DAY), DATEDIFF(XMinDate, XMaxDate, DAY)), 2), 
+			        "Y", 
+			            INT(30 * DIVIDE([portofolio_#1_SVG_sumClose] - YMinValue, YMaxValue - YMinValue))
+			    )
+			
+			    -- Concatenate X & Y coordinates to form the sparkline line path
+			    VAR Lines = CONCATENATEX(SparklineTable, [X] & "," & 30 - [Y], " ", factStocks[Date])
+			
+			    -- Last data points for highlighting the final point on the sparkline
+			    VAR LastSparkYValue = 
+			        MAXX(
+			            FILTER(SparklineTable, factStocks[Date] = XMaxDate), 
+			            [Y]
+			        )
+			    VAR LastSparkXValue = 
+			        MAXX(
+			            FILTER(SparklineTable, factStocks[Date] = XMaxDate), 
+			            [X]
+			        )
+			
+			    -- Calculate Delta for coloring
+			    VAR Delta = [portofolio_#1_SVG_Delta]
+			
+			    -- Determine whether the portofolio_#1_SVG_Delta is positive or negative and use the corresponding gradient and line color
+			    VAR Gradient = IF(Delta > 0, DefsPositive, DefsNegative)
+			    VAR LineColour = IF(Delta > 0, LineColourPositive, LineColourNegative)
+			
+			    -- Scale the Moving Average value to fit the 30x60 viewbox
+			    VAR ReferenceLineScaled = INT(30 * DIVIDE([portofolio_#1_SVG_MovingAverage] - YMinValue, YMaxValue - YMinValue))
+			
+			    -- Build the SVG image
+			    VAR SVGImageURL = 
+			        "data:image/svg+xml;utf8," & 
+			        "<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='-4 -4 67 37'>" & 
+			        Gradient & 
+			        "<polyline fill='url(#grad)' fill-opacity='0.3' stroke='transparent' stroke-width='0' points='0,30 " & Lines & " 60,30 Z' />" & 
+			        "<polyline fill='transparent' stroke='" & LineColour & "' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' points='" & Lines & "' />" & 
+			        "<circle cx='" & LastSparkXValue & "' cy='" & 30 - LastSparkYValue & "' r='2.5' stroke='" & LineColour & "' stroke-width='2' fill='" & PointColour & "' />" & 
+			        "<line x1='0' y1='" & ReferenceLineScaled & "' x2='60' y2='" & ReferenceLineScaled & "' stroke='grey' stroke-width='1.5' stroke-dasharray='4,4' />" & 
+			        "</svg>"
+			
+			    RETURN 
+			        SVGImageURL
+			
+			```
+		lineageTag: 5f5d57d7-2b42-4030-9439-38cc3d7d3ac3
+		dataCategory: ImageUrl
+
+	measure 0_test_1 = ```
+			
+			VAR _SelectedValues = VALUES(dimLogo[Company])  -- Get all selected companies as a table
+			VAR _TopCompany = 
+			    IF(
+			        COUNTROWS(_SelectedValues) = 0, 
+			        BLANK(),  -- Handle the case where no company is selected
+			        MAXX(
+			            TOPN(1, _SelectedValues, dimLogo[Company], ASC),  -- Get the top company
+			            dimLogo[Company]
+			        )
+			    )
+			RETURN 
+			    _TopCompany
+			
+			```
+		lineageTag: 91e0b3fb-b05a-42cc-afda-2c133d3d83a4
+
+	measure 0_0_svg = ```
+			
+			
+			    VAR LineColourPositive = "#00A651"  // Green line for positive portofolio_#1_SVG_Delta
+			    VAR LineColourNegative = "#FF0000"  // Red line for negative portofolio_#1_SVG_Delta
+			    VAR PointColour = "white"           // White points on the line
+			
+			    // Gradient definitions for positive and negative portofolio_#1_SVG_Delta
+			    VAR DefsPositive = "<defs>
+			        <linearGradient id='grad' x1='0' y1='22.5' x2='0' y2='45' gradientUnits='userSpaceOnUse'>
+			            <stop stop-color='#00A651' offset='0' />
+			            <stop stop-color='#00A651' offset='0.3' />
+			            <stop stop-color='white' offset='1' />
+			        </linearGradient>
+			    </defs>"
+			
+			    VAR DefsNegative = "<defs>
+			        <linearGradient id='grad' x1='0' y1='22.5' x2='0' y2='45' gradientUnits='userSpaceOnUse'>
+			            <stop stop-color='#FF0000' offset='0' />
+			            <stop stop-color='#FF0000' offset='0.3' />
+			            <stop stop-color='white' offset='1' />
+			        </linearGradient>
+			    </defs>"
+			
+			    -- Top selected company and symbol logic
+			    VAR _SelectedValues = VALUES(dimLogo[Company])  -- Get all selected companies as a table
+			    VAR _FirstCompany = 
+			        IF(
+			            COUNTROWS(_SelectedValues) = 0, 
+			            BLANK(),  -- Return blank if no companies are selected
+			            MAXX(
+			                TOPN(1, _SelectedValues, dimLogo[Company], ASC),  -- Get the top company alphabetically
+			                dimLogo[Company]
+			            )
+			        )
+			
+			    VAR _FilteredSymbol =
+			        IF(
+			            NOT ISBLANK(_FirstCompany),
+			            MAXX(
+			                FILTER(dimLogo, dimLogo[Company] = _FirstCompany),
+			                dimLogo[Symbol]
+			            ),
+			            BLANK()  -- If no company selected, return blank
+			        )
+			
+			    -- Date range for the sparkline (X axis)
+			    VAR XMinDate = 
+			        IF (
+			            ISBLANK(SELECTEDVALUE(dimPeriod[StartDate])), 
+			            MIN(factStocks[Date]), 
+			            SELECTEDVALUE(dimPeriod[StartDate]) 
+			        ) 
+			    VAR XMaxDate = CALCULATE(
+			        MAX(factStocks[Date]), 
+			        factStocks[Date] <= SELECTEDVALUE(dimPeriod[EndDate])
+			    )
+			
+			    -- Calculate overall min and max stock closing values for the selected date range and symbol
+			    VAR YMinValue = MINX(
+			        FILTER(
+			            factStocks, 
+			            factStocks[Date] >= XMinDate && 
+			            factStocks[Date] <= XMaxDate && 
+			            factStocks[Symbol] = _FilteredSymbol
+			        ),
+			        [portofolio_#1_SVG_sumClose]  -- Ensure sumClose is used consistently
+			    )
+			    VAR YMaxValue = MAXX(
+			        FILTER(
+			            factStocks, 
+			            factStocks[Date] >= XMinDate && 
+			            factStocks[Date] <= XMaxDate && 
+			            factStocks[Symbol] = _FilteredSymbol
+			        ),
+			        [portofolio_#1_SVG_sumClose]  -- Ensure sumClose is used consistently
+			    )
+			
+			    -- Build table of X & Y coordinates based on the same date range, scaled to the 60x30 viewbox
+			    VAR SparklineTable = ADDCOLUMNS(
+			        SUMMARIZE(
+			            FILTER(
+			                factStocks, 
+			                factStocks[Date] >= XMinDate && 
+			                factStocks[Date] <= XMaxDate && 
+			                factStocks[Symbol] = _FilteredSymbol
+			            ),
+			            factStocks[Date]
+			        ),
+			        "X", 
+			            -- Ensure X values start from 0 and adjust for potential rounding errors
+			            ROUND(60 * DIVIDE(DATEDIFF(XMinDate, factStocks[Date], DAY), DATEDIFF(XMinDate, XMaxDate, DAY)), 2), 
+			        "Y", 
+			            -- Calculate Y values with the proper sumClose context
+			            INT(30 * DIVIDE([portofolio_#1_SVG_sumClose] - YMinValue, YMaxValue - YMinValue))
+			    )
+			
+			    -- Concatenate X & Y coordinates to form the sparkline line path
+			    VAR Lines = CONCATENATEX(SparklineTable, [X] & "," & 30 - [Y], " ", factStocks[Date])
+			
+			    -- Last data points for highlighting the final point on the sparkline
+			    VAR LastSparkYValue = 
+			        MAXX(
+			            FILTER(SparklineTable, factStocks[Date] = XMaxDate), 
+			            [Y]
+			        )
+			    VAR LastSparkXValue = 
+			        MAXX(
+			            FILTER(SparklineTable, factStocks[Date] = XMaxDate), 
+			            [X]
+			        )
+			
+			    -- Calculate Delta for coloring
+			    VAR Delta = [portofolio_#1_SVG_Delta]
+			
+			    -- Determine whether the portofolio_#1_SVG_Delta is positive or negative and use the corresponding gradient and line color
+			    VAR Gradient = IF(Delta > 0, DefsPositive, DefsNegative)
+			    VAR LineColour = IF(Delta > 0, LineColourPositive, LineColourNegative)
+			
+			    -- Scale the Moving Average value to fit the 30x60 viewbox
+			    VAR ReferenceLineScaled = INT(30 * DIVIDE([portofolio_#1_SVG_MovingAverage] - YMinValue, YMaxValue - YMinValue))
+			
+			    -- Build the SVG image
+			    VAR SVGImageURL = 
+			        "data:image/svg+xml;utf8," & 
+			        "<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='-4 -4 67 37'>" & 
+			        Gradient &  -- Use the correct gradient definition (green or red)
+			        -- Opaque area filled with gradient
+			        "<polyline fill='url(#grad)' fill-opacity='0.3' stroke='transparent' stroke-width='0' points='0,30 " & Lines & " 60,30 Z' />" & 
+			        -- Line with the defined color and stroke width
+			        "<polyline fill='transparent' stroke='" & LineColour & "' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' points='" & Lines & "' />" & 
+			        -- Last point with the circle to highlight it
+			        "<circle cx='" & LastSparkXValue & "' cy='" & 30 - LastSparkYValue & "' r='2.5' stroke='" & LineColour & "' stroke-width='2' fill='" & PointColour & "' />" & 
+			        -- Add the reference line (moving average line) at the calculated position
+			        "<line x1='0' y1='" & ReferenceLineScaled & "' x2='60' y2='" & ReferenceLineScaled & "' stroke='grey' stroke-width='1.5' stroke-dasharray='4,4' />" & 
+			        "</svg>"
+			
+			    RETURN 
+			        SVGImageURL
+			
+			```
+		lineageTag: 3034e1af-371c-4709-bd34-190ddd32596f
+		dataCategory: ImageUrl
+
+	measure 0_portofolio_#1_LastClosePrice = ```
+			
+			VAR _SelectedValues = VALUES(dimLogo[Company])
+			VAR _FirstCompany = 
+			    IF(
+			        COUNTROWS(_SelectedValues) = 0, 
+			        BLANK(), 
+			        MAXX(
+			            TOPN(1, _SelectedValues, dimLogo[Company], ASC),
+			            dimLogo[Company]
+			        )
+			    )
+			VAR _FilteredSymbol = 
+			    IF(
+			        ISBLANK(_FirstCompany),
+			        BLANK(),
+			        MAXX(
+			            FILTER(dimLogo, dimLogo[Company] = _FirstCompany),
+			            dimLogo[Symbol]
+			        )
+			    )
+			VAR _LastDate =
+			    IF(
+			        ISBLANK(_FilteredSymbol),
+			        BLANK(),
+			        CALCULATE(
+			            MAX(factStocks[Date]),
+			            factStocks[Symbol] = _FilteredSymbol
+			        )
+			    )
+			VAR _LastClose =
+			    IF(
+			        ISBLANK(_LastDate),
+			        BLANK(),
+			        CALCULATE(
+			            AVERAGE(factStocks[Close]),
+			            factStocks[Date] = _LastDate &&
+			            factStocks[Symbol] = _FilteredSymbol
+			        )
+			    )
+			RETURN 
+			    _LastClose
+			
+			
+			// VAR _SelectedValues = VALUES(dimLogo[Company])
+			// VAR _FirstCompany =
+			//     MAXX(
+			//         TOPN(1, _SelectedValues, dimLogo[Company], ASC),
+			//         dimLogo[Company]
+			//     )
+			// VAR _FilteredSymbol =
+			//     MAXX(
+			//         FILTER(dimLogo, dimLogo[Company] = _FirstCompany),
+			//         dimLogo[Symbol]
+			//     )
+			// VAR _FilteredCurrency =
+			//     MAXX(
+			//         FILTER(dimMeta, dimMeta[Symbol] = _FilteredSymbol),
+			//         dimMeta[Symbol]
+			//     )
+			
+			// VAR _LastDate =
+			//     CALCULATE(
+			//         MAX(factStocks[Date]),
+			//         FILTER(factStocks, factStocks[Symbol] = _FilteredSymbol)
+			//     )
+			// VAR _LastClose =
+			//     CALCULATE(
+			//                         AVERAGE(factStocks[Close]),
+			//                         factStocks[Date] = _LastDate &&
+			//                         factStocks[Symbol] = _FilteredSymbol
+			//                     )
+			// RETURN
+			//     _LastClose
+			```
+		lineageTag: b621d660-2b09-4349-846c-31c18841a43a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 0_0_portofolio_#1_SVG = ```
+			
+			    VAR LineColourPositive = "#00A651"  // Green line for positive portofolio_#1_SVG_Delta
+			    VAR LineColourNegative = "#FF0000"  // Red line for negative portofolio_#1_SVG_Delta
+			    VAR PointColour = "white"           // White points on the line
+			
+			    // Gradient definitions for positive and negative portofolio_#1_SVG_Delta
+			    VAR DefsPositive = "<defs>
+			        <linearGradient id='grad' x1='0' y1='22.5' x2='0' y2='45' gradientUnits='userSpaceOnUse'>
+			            <stop stop-color='#00A651' offset='0' />
+			            <stop stop-color='#00A651' offset='0.3' />
+			            <stop stop-color='white' offset='1' />
+			        </linearGradient>
+			    </defs>"
+			
+			    VAR DefsNegative = "<defs>
+			        <linearGradient id='grad' x1='0' y1='22.5' x2='0' y2='45' gradientUnits='userSpaceOnUse'>
+			            <stop stop-color='#FF0000' offset='0' />
+			            <stop stop-color='#FF0000' offset='0.3' />
+			            <stop stop-color='white' offset='1' />
+			        </linearGradient>
+			    </defs>"
+			
+			    -- Top selected company and symbol logic
+			    VAR _SelectedValues = VALUES(dimLogo[Company])
+			    VAR _FirstCompany =
+			        MAXX(
+			            TOPN(1, _SelectedValues, dimLogo[Company], ASC),
+			            dimLogo[Company]
+			        )
+			
+			    VAR _FilteredSymbol =
+			        MAXX(
+			            FILTER(dimLogo, dimLogo[Company] = _FirstCompany),
+			            dimLogo[Symbol]
+			        )
+			
+			    -- Date range for the sparkline (X axis)
+			    VAR XMinDate = 
+			        IF (
+			            ISBLANK(SELECTEDVALUE(dimPeriod[StartDate])), 
+			            MIN(factStocks[Date]), 
+			            SELECTEDVALUE(dimPeriod[StartDate]) 
+			        ) 
+			    VAR XMaxDate = CALCULATE(
+			        MAX(factStocks[Date]), 
+			        factStocks[Date] <= SELECTEDVALUE(dimPeriod[EndDate])
+			    )
+			
+			    -- Calculate overall min and max stock closing values for the selected date range and symbol
+			    VAR YMinValue = MINX(
+			        FILTER(
+			            factStocks, 
+			            factStocks[Date] >= XMinDate && 
+			            factStocks[Date] <= XMaxDate && 
+			            factStocks[Symbol] = _FilteredSymbol
+			        ),
+			        [0_portofolio_#1_LastClosePrice]  -- Ensure sumClose is used consistently
+			    )
+			    VAR YMaxValue = MAXX(
+			        FILTER(
+			            factStocks, 
+			            factStocks[Date] >= XMinDate && 
+			            factStocks[Date] <= XMaxDate && 
+			            factStocks[Symbol] = _FilteredSymbol
+			        ),
+			        [0_portofolio_#1_LastClosePrice]  -- Ensure sumClose is used consistently
+			    )
+			
+			    -- Build table of X & Y coordinates based on the same date range, scaled to the 60x30 viewbox
+			    VAR SparklineTable = ADDCOLUMNS(
+			        SUMMARIZE(
+			            FILTER(
+			                factStocks, 
+			                factStocks[Date] >= XMinDate && 
+			                factStocks[Date] <= XMaxDate && 
+			                factStocks[Symbol] = _FilteredSymbol
+			            ),
+			            factStocks[Date]
+			        ),
+			        "X", 
+			            -- Ensure X values start from 0 and adjust for potential rounding errors
+			            ROUND(60 * DIVIDE(DATEDIFF(XMinDate, factStocks[Date], DAY), DATEDIFF(XMinDate, XMaxDate, DAY)), 2), 
+			        "Y", 
+			            -- Calculate Y values with the proper sumClose context
+			            INT(30 * DIVIDE([0_portofolio_#1_LastClosePrice] - YMinValue, YMaxValue - YMinValue))
+			    )
+			
+			    -- Concatenate X & Y coordinates to form the sparkline line path
+			    VAR Lines = CONCATENATEX(SparklineTable, [X] & "," & 30 - [Y], " ", factStocks[Date])
+			
+			    -- Last data points for highlighting the final point on the sparkline
+			    VAR LastSparkYValue = 
+			        MAXX(
+			            FILTER(SparklineTable, factStocks[Date] = XMaxDate), 
+			            [Y]
+			        )
+			    VAR LastSparkXValue = 
+			        MAXX(
+			            FILTER(SparklineTable, factStocks[Date] = XMaxDate), 
+			            [X]
+			        )
+			
+			    -- Calculate Delta for coloring
+			    VAR Delta = [portofolio_#1_SVG_Delta]
+			
+			    -- Determine whether the portofolio_#1_SVG_Delta is positive or negative and use the corresponding gradient and line color
+			    VAR Gradient = IF(Delta > 0, DefsPositive, DefsNegative)
+			    VAR LineColour = IF(Delta > 0, LineColourPositive, LineColourNegative)
+			
+			    -- Scale the Moving Average value to fit the 30x60 viewbox
+			    VAR ReferenceLineScaled = INT(30 * DIVIDE([portofolio_#1_SVG_MovingAverage] - YMinValue, YMaxValue - YMinValue))
+			
+			    -- Build the SVG image
+			    VAR SVGImageURL = 
+			        "data:image/svg+xml;utf8," & 
+			        "<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='-4 -4 67 37'>" & 
+			        Gradient &  -- Use the correct gradient definition (green or red)
+			        -- Opaque area filled with gradient
+			        "<polyline fill='url(#grad)' fill-opacity='0.3' stroke='transparent' stroke-width='0' points='0,30 " & Lines & " 60,30 Z' />" & 
+			        -- Line with the defined color and stroke width
+			        "<polyline fill='transparent' stroke='" & LineColour & "' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' points='" & Lines & "' />" & 
+			        -- Last point with the circle to highlight it
+			        "<circle cx='" & LastSparkXValue & "' cy='" & 30 - LastSparkYValue & "' r='2.5' stroke='" & LineColour & "' stroke-width='2' fill='" & PointColour & "' />" & 
+			        -- Add the reference line (moving average line) at the calculated position
+			        "<line x1='0' y1='" & ReferenceLineScaled & "' x2='60' y2='" & ReferenceLineScaled & "' stroke='grey' stroke-width='1.5' stroke-dasharray='4,4' />" & 
+			        "</svg>"
+			
+			    RETURN 
+			        SVGImageURL
+			
+			```
+		lineageTag: b62450ed-d65f-4698-a4f6-23e9f6e6a9a3
+		dataCategory: ImageUrl
+
+	measure portofolio_#1_Logo = ```
+			
+			VAR _SelectedValues = VALUES(dimLogo[Company])
+			
+			-- Ensure a company is selected before proceeding
+			VAR _HasSelection = ISFILTERED(dimLogo[Company])
+			
+			VAR _TOP1 = TOPN(1, _SelectedValues, dimLogo[Company], ASC)
+			VAR _FirstCompany = MAXX(_TOP1, dimLogo[Company])
+			
+			-- Get the corresponding logo for the selected company
+			VAR _Logo = 
+			    MAXX(
+			        FILTER(dimLogo, dimLogo[Company] = _FirstCompany),
+			        dimLogo[Logo]
+			    )
+			
+			RETURN
+			    IF(
+			        _HasSelection, 
+			        _Logo, 
+			        BLANK()
+			    )
+			
+			```
+		lineageTag: 227d2db9-97e7-4bc5-985e-993932065f6d
+		dataCategory: ImageUrl
+
+	measure '0_0_Text Measure' =
+			
+			// svg essentials
+			    var svg_start = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>"
+			    var svg_end = "</svg>"
+			    VAR _company = MAX(dimLogo[Company])
+			    VAR _symbol = MAX(dimLogo[Symbol])
+			// text element including a style tag
+			    var svg_text1 ="<text x='50' y='20' style='font:normal 20px sans-serif;' text-anchor='start'>" & _company & "</text>"
+			    var svg_text2 ="<text x='50' y='50' style='font:normal 20px sans-serif;' text-anchor='middle'>" & _symbol & "</text>"
+			return
+			    svg_start & svg_text1 & svg_text2 & svg_end
+		lineageTag: 36a88d8d-79e7-48d2-940d-20c4327ac87d
+		dataCategory: ImageUrl
 
 	column _Blank
 		formatString: 0

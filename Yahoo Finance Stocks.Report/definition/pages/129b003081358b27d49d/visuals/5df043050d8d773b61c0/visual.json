@@ -591,6 +591,20 @@
           "selector": {
             "metadata": "_Measures.0_SalesRank"
           }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "dimLogo.Logo"
+          }
         }
       ]
     },
