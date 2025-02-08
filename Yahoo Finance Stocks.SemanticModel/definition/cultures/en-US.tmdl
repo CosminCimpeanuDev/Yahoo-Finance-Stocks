@@ -9662,37 +9662,25 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "companyNameAndTags_v2"
+			          "ConceptualProperty": "companyNameAndTags"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "company name and tags v 2": {
+			          "company name and tags": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "companyNameAndTags_v2": {
+			          "companyNameAndTags": {
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
 			          }
 			        },
 			        {
-			          "company name tags v 2": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "tags v 2": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "v 2": {
+			          "company name tags": {
 			            "State": "Generated",
 			            "Weight": 0.97
 			          }
@@ -9704,108 +9692,103 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "co name tag v 2": {
+			          "co name and tag": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.624
+			            "Weight": 0.617
 			          }
 			        },
 			        {
-			          "corp name tag v 2": {
+			          "corp name and tag": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.624
+			            "Weight": 0.617
 			          }
 			        },
 			        {
-			          "corporation name tag v 2": {
+			          "corporation name and tag": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.624
+			            "Weight": 0.617
 			          }
 			        },
 			        {
-			          "corps name tag v 2": {
+			          "corps name and tag": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.624
+			            "Weight": 0.617
 			          }
 			        },
 			        {
-			          "employer name tag v 2": {
+			          "employer name and tag": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.624
+			            "Weight": 0.617
 			          }
 			        },
 			        {
-			          "enterprise name tag v 2": {
+			          "enterprise name and tag": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.624
+			            "Weight": 0.617
 			          }
 			        },
 			        {
-			          "business name tag v 2": {
+			          "co name tag": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.605
+			            "Weight": 0.609
 			          }
 			        },
 			        {
-			          "group name tag v 2": {
+			          "corp name tag": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.605
+			            "Weight": 0.609
 			          }
 			        },
 			        {
-			          "conglomerate name tag v 2": {
+			          "corporation name tag": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.605
+			            "Weight": 0.609
 			          }
 			        },
 			        {
-			          "company nickname tag v 2": {
+			          "corps name tag": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.605
-			          }
-			        },
-			        {
-			          "2": {
-			            "State": "Generated"
+			            "Weight": 0.609
 			          }
 			        }
 			      ]
@@ -10874,59 +10857,13 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "company": {
+			          "Company": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
 			              "Agent": "PowerBI.VisualColumnRename"
 			            },
 			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
-			    "v_Measures_measure.portofolio_1_Symbol": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "portofolio_#1_Symbol"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "portofolio_#1_Symbol": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "portofolio_ no 1_symbol": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.599
-			          }
-			        },
-			        {
-			          "portofolio_ num 1_symbol": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.599
-			          }
-			        },
-			        {
-			          "portofolio_ number 1_symbol": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.599
 			          }
 			        }
 			      ]
@@ -11198,52 +11135,6 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "v_Measures_measure.portofolio_1_Period": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "portofolio_#1_Period"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "portofolio_#1_Period": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "portofolio_ no 1_period": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.599
-			          }
-			        },
-			        {
-			          "portofolio_ num 1_period": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.599
-			          }
-			        },
-			        {
-			          "portofolio_ number 1_period": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.599
-			          }
-			        }
-			      ]
-			    },
 			    "v_Measures_measure.portofolio_1_LastClosePrice": {
 			      "Definition": {
 			        "Binding": {
@@ -11447,7 +11338,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "svg": {
+			          "SVG": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -11596,681 +11487,6 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "v_Measures_measure.portofolio_1_SVG_test": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "portofolio_#1_SVG_test"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "portofolio_#1_SVG_test": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "portofolio_ no 1_svg_test": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.599
-			          }
-			        },
-			        {
-			          "portofolio_ num 1_svg_test": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.599
-			          }
-			        },
-			        {
-			          "portofolio_ number 1_svg_test": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.599
-			          }
-			        }
-			      ]
-			    },
-			    "v_Measures_measure.v0_sort0_sort": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "0_sort"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "0 sort": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "0_sort": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "0 category": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "0 genus": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "0 species": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "0 variety": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "0 nature": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "0 kind": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "0 class": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "0 type": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "0 ilk": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "0 order": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        }
-			      ]
-			    },
-			    "v_Measures_measure.v0_sumClose_Test0_sum_close_test": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "0_sumClose_Test"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "0 sum close test": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "0_sumClose_Test": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "test": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "close test": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "sum close test": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "0 summation close test": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.617
-			          }
-			        },
-			        {
-			          "0 aggregation close test": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.617
-			          }
-			        },
-			        {
-			          "summation close test": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.609
-			          }
-			        },
-			        {
-			          "aggregation close test": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.609
-			          }
-			        },
-			        {
-			          "0 total close test": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.599
-			          }
-			        },
-			        {
-			          "0 aggregate close test": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.599
-			          }
-			        },
-			        {
-			          "0 amount close test": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.599
-			          }
-			        },
-			        {
-			          "total close test": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.591
-			          }
-			        },
-			        {
-			          "aggregate close test": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.591
-			          }
-			        },
-			        {
-			          "amount close test": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.591
-			          }
-			        }
-			      ]
-			    },
-			    "v_Measures_measure.portofolio_1_CompanyMatch": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "portofolio_#1_CompanyMatch"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "portofolio_#1_CompanyMatch": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "portofolio_ no 1_companymatch": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.599
-			          }
-			        },
-			        {
-			          "portofolio_ num 1_companymatch": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.599
-			          }
-			        },
-			        {
-			          "portofolio_ number 1_companymatch": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.599
-			          }
-			        }
-			      ]
-			    },
-			    "v_Measures_measure.portofolio_1_FilterTEST": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "portofolio_#1_FilterTEST"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "portofolio_#1_FilterTEST": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "portofolio_ no 1_filtertest": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.599
-			          }
-			        },
-			        {
-			          "portofolio_ num 1_filtertest": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.599
-			          }
-			        },
-			        {
-			          "portofolio_ number 1_filtertest": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.599
-			          }
-			        }
-			      ]
-			    },
-			    "v_Measures_measure.v0_test0_test": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "0_test"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "0 test": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "0_test": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "test": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "0 examination": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "0 exam": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "0 assessment": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "0 investigation": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "0 analysis": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "examination": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "exam": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "assessment": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "investigation": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "analysis": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        }
-			      ]
-			    },
-			    "v_Measures_measure.v0_test_10_test_1": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "0_test_1"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "0 test 1": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "0_test_1": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "test 1": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        }
-			      ]
-			    },
-			    "v_Measures_measure.v0_0_svg0_0_svg": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "0_0_svg"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "0 0 svg": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "0_0_svg": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        }
-			      ]
-			    },
-			    "v_Measures_measure.v0_portofolio__1_LastClosePrice0_portofolio_1_LastClosePrice": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "0_portofolio_#1_LastClosePrice"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "0_portofolio_#1_LastClosePrice": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "0_portofolio_ no 1_lastcloseprice": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.591
-			          }
-			        },
-			        {
-			          "0_portofolio_ num 1_lastcloseprice": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.591
-			          }
-			        },
-			        {
-			          "0_portofolio_ number 1_lastcloseprice": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.591
-			          }
-			        }
-			      ]
-			    },
-			    "v_Measures_measure.v0_0_portofolio__1_SVG0_0_portofolio_1_SVG": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "0_0_portofolio_#1_SVG"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "0_0_portofolio_#1_SVG": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "0_0_portofolio_ no 1_svg": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.591
-			          }
-			        },
-			        {
-			          "0_0_portofolio_ num 1_svg": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.591
-			          }
-			        },
-			        {
-			          "0_0_portofolio_ number 1_svg": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.591
-			          }
-			        }
-			      ]
-			    },
 			    "v_Measures_measure.portofolio_1_Logo": {
 			      "Definition": {
 			        "Binding": {
@@ -12316,7 +11532,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "logo": {
+			          "Logo": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -12533,9 +11749,3082 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "v_Measures_measure.v0__useful_Text_Measure0_useful_Text_measure": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "0_#useful_Text Measure"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "0_#useful_Text measure": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "0_ no useful_text measure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "0_ num useful_text measure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "0_ number useful_text measure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "0_#useful_text degree": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "0_#useful_text quantity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "0_#useful_text quota": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "0_#useful_text extent": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "0_#useful_text amount": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "0_#useful_text portion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "0_#useful_text ration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_2_Logo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#2_Logo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#2_Logo": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 2_logo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 2_logo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 2_logo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "Logo": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_2_Company": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#2_Company"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#2_Company": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 2_company": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 2_company": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 2_company": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "Company": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_2_SVG": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#2_SVG"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#2_SVG": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 2_svg": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 2_svg": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 2_svg": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "SVG": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_2_SVG_sumClose": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#2_SVG_sumClose"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#2_SVG_sumClose": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 2_svg_sumclose": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 2_svg_sumclose": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 2_svg_sumclose": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_2_SVG_Delta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#2_SVG_Delta"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#2_SVG_Delta": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 2_svg_delta": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 2_svg_delta": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 2_svg_delta": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_2_SVG_MovingAverage": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#2_SVG_MovingAverage"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#2_SVG_MovingAverage": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 2_svg_movingaverage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 2_svg_movingaverage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 2_svg_movingaverage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_2_At_Close": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#2_At_Close"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#2_At_Close": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 2_at_close": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 2_at_close": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 2_at_close": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_2_Variation_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#2_Variation %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#2_Variation %": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_#2_variation percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "portofolio_#2_variation pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        },
+			        {
+			          "portofolio_ no 2_variation %": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "portofolio_ num 2_variation %": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "portofolio_ number 2_variation %": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_2_VariationIndicator": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#2_VariationIndicator"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#2_VariationIndicator": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 2_variationindicator": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 2_variationindicator": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 2_variationindicator": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_2_LastClosePrice": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#2_LastClosePrice"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#2_LastClosePrice": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 2_lastcloseprice": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 2_lastcloseprice": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 2_lastcloseprice": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_3_At_Close": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#3_At_Close"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#3_At_Close": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 3_at_close": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 3_at_close": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 3_at_close": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_1_Period": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#1_Period"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#1_Period": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 1_period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 1_period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 1_period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_2_Period": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#2_Period"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#2_Period": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 2_period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 2_period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 2_period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_3_Period": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#3_Period"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#3_Period": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 3_period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 3_period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 3_period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_4_Period": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#4_Period"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#4_Period": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 4_period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 4_period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 4_period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_3_Variation_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#3_Variation %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#3_Variation %": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_#3_variation percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "portofolio_#3_variation pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        },
+			        {
+			          "portofolio_ no 3_variation %": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "portofolio_ num 3_variation %": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "portofolio_ number 3_variation %": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_3_VariationIndicator": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#3_VariationIndicator"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#3_VariationIndicator": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 3_variationindicator": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 3_variationindicator": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 3_variationindicator": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_3_LastClosePrice": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#3_LastClosePrice"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#3_LastClosePrice": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 3_lastcloseprice": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 3_lastcloseprice": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 3_lastcloseprice": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_3_Company": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#3_Company"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#3_Company": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 3_company": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 3_company": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 3_company": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "Company": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_3_Logo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#3_Logo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#3_Logo": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 3_logo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 3_logo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 3_logo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "Logo": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_3_SVG": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#3_SVG"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#3_SVG": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 3_svg": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 3_svg": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 3_svg": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "SVG": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_3_SVG_Delta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#3_SVG_Delta"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#3_SVG_Delta": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 3_svg_delta": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 3_svg_delta": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 3_svg_delta": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_3_SVG_MovingAverage": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#3_SVG_MovingAverage"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#3_SVG_MovingAverage": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 3_svg_movingaverage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 3_svg_movingaverage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 3_svg_movingaverage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_3_SVG_sumClose": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#3_SVG_sumClose"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#3_SVG_sumClose": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 3_svg_sumclose": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 3_svg_sumclose": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 3_svg_sumclose": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_4_At_Close": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#4_At_Close"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#4_At_Close": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 4_at_close": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 4_at_close": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 4_at_close": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_4_Variation_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#4_Variation %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#4_Variation %": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_#4_variation percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "portofolio_#4_variation pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        },
+			        {
+			          "portofolio_ no 4_variation %": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "portofolio_ num 4_variation %": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "portofolio_ number 4_variation %": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_4_VariationIndicator": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#4_VariationIndicator"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#4_VariationIndicator": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 4_variationindicator": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 4_variationindicator": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 4_variationindicator": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_4_LastClosePrice": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#4_LastClosePrice"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#4_LastClosePrice": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 4_lastcloseprice": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 4_lastcloseprice": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 4_lastcloseprice": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_4_Company": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#4_Company"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#4_Company": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 4_company": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 4_company": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 4_company": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "Company": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_4_Logo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#4_Logo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#4_Logo": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 4_logo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 4_logo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 4_logo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "Logo": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_4_SVG": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#4_SVG"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#4_SVG": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 4_svg": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 4_svg": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 4_svg": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "SVG": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_4_SVG_Delta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#4_SVG_Delta"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#4_SVG_Delta": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 4_svg_delta": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 4_svg_delta": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 4_svg_delta": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_4_SVG_MovingAverage": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#4_SVG_MovingAverage"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#4_SVG_MovingAverage": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 4_svg_movingaverage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 4_svg_movingaverage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 4_svg_movingaverage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.portofolio_4_SVG_sumClose": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "portofolio_#4_SVG_sumClose"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "portofolio_#4_SVG_sumClose": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "portofolio_ no 4_svg_sumclose": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ num 4_svg_sumclose": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "portofolio_ number 4_svg_sumclose": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "v_Measures_measure.v____0_movingtext_0_movingtext": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "// _0_movingtext"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "// _0_movingtext": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "_0_movingtext": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "v_Measures_measure_has_v____0_movingtext_0_movingtext": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.v____0_movingtext_0_movingtext": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.v____0_movingtext_0_movingtext"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.v____0_movingtext_0_movingtext"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_____0_movingtext"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_4_SVG_sumClose": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_4_SVG_sumClose": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_4_SVG_sumClose"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_4_SVG_sumClose"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_4_SVG_sumClose"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_4_SVG_MovingAverage": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_4_SVG_MovingAverage": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_4_SVG_MovingAverage"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_4_SVG_MovingAverage"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_4_SVG_MovingAverage"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_4_SVG_Delta": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_4_SVG_Delta": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_4_SVG_Delta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_4_SVG_Delta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_4_SVG_Delta"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_4_SVG": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_4_SVG": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_4_SVG"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_4_SVG"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_4_SVG"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_4_Logo": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_4_Logo": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_4_Logo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_4_Logo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_4_Logo"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_4_Company": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_4_Company": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_4_Company"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_4_Company"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_4_Company"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_4_LastClosePrice": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_4_LastClosePrice": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_4_LastClosePrice"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_4_LastClosePrice"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_4_LastClosePrice"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_4_VariationIndicator": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_4_VariationIndicator": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_4_VariationIndicator"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_4_VariationIndicator"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_4_VariationIndicator"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_4_Variation_": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_4_Variation_": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_4_Variation_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_4_Variation_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_4_Variation_"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_4_At_Close": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_4_At_Close": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_4_At_Close"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_4_At_Close"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_4_At_Close"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_3_SVG_sumClose": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_3_SVG_sumClose": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_3_SVG_sumClose"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_3_SVG_sumClose"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_3_SVG_sumClose"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_3_SVG_MovingAverage": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_3_SVG_MovingAverage": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_3_SVG_MovingAverage"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_3_SVG_MovingAverage"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_3_SVG_MovingAverage"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_3_SVG_Delta": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_3_SVG_Delta": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_3_SVG_Delta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_3_SVG_Delta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_3_SVG_Delta"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_3_SVG": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_3_SVG": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_3_SVG"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_3_SVG"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_3_SVG"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_3_Logo": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_3_Logo": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_3_Logo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_3_Logo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_3_Logo"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_3_Company": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_3_Company": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_3_Company"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_3_Company"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_3_Company"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_3_LastClosePrice": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_3_LastClosePrice": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_3_LastClosePrice"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_3_LastClosePrice"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_3_LastClosePrice"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_3_VariationIndicator": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_3_VariationIndicator": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_3_VariationIndicator"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_3_VariationIndicator"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_3_VariationIndicator"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_3_Variation_": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_3_Variation_": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_3_Variation_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_3_Variation_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_3_Variation_"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_4_Period": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_4_Period": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_4_Period"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_4_Period"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_4_Period"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_3_Period": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_3_Period": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_3_Period"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_3_Period"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_3_Period"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_2_Period": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_2_Period": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_2_Period"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_2_Period"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_2_Period"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_1_Period": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_1_Period": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_1_Period"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_1_Period"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_1_Period"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_3_At_Close": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_3_At_Close": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_3_At_Close"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_3_At_Close"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_3_At_Close"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_2_LastClosePrice": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_2_LastClosePrice": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_2_LastClosePrice"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_2_LastClosePrice"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_2_LastClosePrice"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_2_VariationIndicator": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_2_VariationIndicator": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_2_VariationIndicator"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_2_VariationIndicator"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_2_VariationIndicator"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_2_Variation_": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_2_Variation_": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_2_Variation_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_2_Variation_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_2_Variation_"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_2_At_Close": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_2_At_Close": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_2_At_Close"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_2_At_Close"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_2_At_Close"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_2_SVG_MovingAverage": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_2_SVG_MovingAverage": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_2_SVG_MovingAverage"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_2_SVG_MovingAverage"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_2_SVG_MovingAverage"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_2_SVG_Delta": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_2_SVG_Delta": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_2_SVG_Delta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_2_SVG_Delta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_2_SVG_Delta"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_2_SVG_sumClose": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_2_SVG_sumClose": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_2_SVG_sumClose"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_2_SVG_sumClose"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_2_SVG_sumClose"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_2_SVG": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_2_SVG": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_2_SVG"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_2_SVG"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_2_SVG"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_2_Company": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_2_Company": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_2_Company"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_2_Company"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_2_Company"
+			        }
+			      ]
+			    },
+			    "v_Measures_measure_has_portofolio_2_Logo": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.portofolio_2_Logo": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.portofolio_2_Logo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.portofolio_2_Logo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_portofolio_2_Logo"
+			        }
+			      ]
+			    },
+			    "dim_logo_has_v_Measures_measure_v0__useful_Text_Measure0_useful_Text_measure": {
+			      "Binding": {
+			        "ConceptualEntity": "dimLogo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_logo": {
+			          "Target": {
+			            "Entity": "dim_logo"
+			          }
+			        },
+			        "v_Measures_measure.v0__useful_Text_Measure0_useful_Text_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.v0__useful_Text_Measure0_useful_Text_measure"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_logo"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.v0__useful_Text_Measure0_useful_Text_measure"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_logos_have_0_useful_Text_measure"
+			        }
+			      ]
+			    },
+			    "v_tFilters_tFilter_has_order": {
+			      "Binding": {
+			        "ConceptualEntity": "_tFilters"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_tFilters_tFilter": {
+			          "Target": {
+			            "Entity": "v_tFilters_tFilter"
+			          }
+			        },
+			        "v_tFilters_tFilter.order": {
+			          "Target": {
+			            "Entity": "v_tFilters_tFilter.order"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_tFilters_tFilter"
+			            },
+			            "Object": {
+			              "Role": "v_tFilters_tFilter.order"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_tFilters_have_orders"
+			        }
+			      ]
+			    },
 			    "v_tFilters_tFilter_has_filter": {
 			      "Binding": {
 			        "ConceptualEntity": "_tFilters"
@@ -12599,336 +14888,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "Phrasing_measures_have_portofolio_1_Logo"
-			        }
-			      ]
-			    },
-			    "v_Measures_measure_has_v0_0_portofolio__1_SVG0_0_portofolio_1_SVG": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "v_Measures_measure": {
-			          "Target": {
-			            "Entity": "v_Measures_measure"
-			          }
-			        },
-			        "v_Measures_measure.v0_0_portofolio__1_SVG0_0_portofolio_1_SVG": {
-			          "Target": {
-			            "Entity": "v_Measures_measure.v0_0_portofolio__1_SVG0_0_portofolio_1_SVG"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "v_Measures_measure"
-			            },
-			            "Object": {
-			              "Role": "v_Measures_measure.v0_0_portofolio__1_SVG0_0_portofolio_1_SVG"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_0_0_portofolio_1_SVG"
-			        }
-			      ]
-			    },
-			    "v_Measures_measure_has_v0_portofolio__1_LastClosePrice0_portofolio_1_LastClosePrice": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "v_Measures_measure": {
-			          "Target": {
-			            "Entity": "v_Measures_measure"
-			          }
-			        },
-			        "v_Measures_measure.v0_portofolio__1_LastClosePrice0_portofolio_1_LastClosePrice": {
-			          "Target": {
-			            "Entity": "v_Measures_measure.v0_portofolio__1_LastClosePrice0_portofolio_1_LastClosePrice"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "v_Measures_measure"
-			            },
-			            "Object": {
-			              "Role": "v_Measures_measure.v0_portofolio__1_LastClosePrice0_portofolio_1_LastClosePrice"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_0_portofolio_1_LastClosePrice"
-			        }
-			      ]
-			    },
-			    "v_Measures_measure_has_v0_0_svg0_0_svg": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "v_Measures_measure": {
-			          "Target": {
-			            "Entity": "v_Measures_measure"
-			          }
-			        },
-			        "v_Measures_measure.v0_0_svg0_0_svg": {
-			          "Target": {
-			            "Entity": "v_Measures_measure.v0_0_svg0_0_svg"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "v_Measures_measure"
-			            },
-			            "Object": {
-			              "Role": "v_Measures_measure.v0_0_svg0_0_svg"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_0_0_svg"
-			        }
-			      ]
-			    },
-			    "v_Measures_measure_has_v0_test_10_test_1": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "v_Measures_measure": {
-			          "Target": {
-			            "Entity": "v_Measures_measure"
-			          }
-			        },
-			        "v_Measures_measure.v0_test_10_test_1": {
-			          "Target": {
-			            "Entity": "v_Measures_measure.v0_test_10_test_1"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "v_Measures_measure"
-			            },
-			            "Object": {
-			              "Role": "v_Measures_measure.v0_test_10_test_1"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_0_test_1"
-			        }
-			      ]
-			    },
-			    "v_Measures_measure_has_v0_test0_test": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "v_Measures_measure": {
-			          "Target": {
-			            "Entity": "v_Measures_measure"
-			          }
-			        },
-			        "v_Measures_measure.v0_test0_test": {
-			          "Target": {
-			            "Entity": "v_Measures_measure.v0_test0_test"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "v_Measures_measure"
-			            },
-			            "Object": {
-			              "Role": "v_Measures_measure.v0_test0_test"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_0_test"
-			        }
-			      ]
-			    },
-			    "v_Measures_measure_has_portofolio_1_FilterTEST": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "v_Measures_measure": {
-			          "Target": {
-			            "Entity": "v_Measures_measure"
-			          }
-			        },
-			        "v_Measures_measure.portofolio_1_FilterTEST": {
-			          "Target": {
-			            "Entity": "v_Measures_measure.portofolio_1_FilterTEST"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "v_Measures_measure"
-			            },
-			            "Object": {
-			              "Role": "v_Measures_measure.portofolio_1_FilterTEST"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_portofolio_1_FilterTEST"
-			        }
-			      ]
-			    },
-			    "v_Measures_measure_has_portofolio_1_CompanyMatch": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "v_Measures_measure": {
-			          "Target": {
-			            "Entity": "v_Measures_measure"
-			          }
-			        },
-			        "v_Measures_measure.portofolio_1_CompanyMatch": {
-			          "Target": {
-			            "Entity": "v_Measures_measure.portofolio_1_CompanyMatch"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "v_Measures_measure"
-			            },
-			            "Object": {
-			              "Role": "v_Measures_measure.portofolio_1_CompanyMatch"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_portofolio_1_CompanyMatch"
-			        }
-			      ]
-			    },
-			    "fact_stock_has_v_Measures_measure_v0_sumClose_Test0_sum_close_test": {
-			      "Binding": {
-			        "ConceptualEntity": "factStocks"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_stock": {
-			          "Target": {
-			            "Entity": "fact_stock"
-			          }
-			        },
-			        "v_Measures_measure.v0_sumClose_Test0_sum_close_test": {
-			          "Target": {
-			            "Entity": "v_Measures_measure.v0_sumClose_Test0_sum_close_test"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_stock"
-			            },
-			            "Object": {
-			              "Role": "v_Measures_measure.v0_sumClose_Test0_sum_close_test"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_stocks_have_0_sum_close_test"
-			        }
-			      ]
-			    },
-			    "v_Measures_measure_has_v0_sort0_sort": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "v_Measures_measure": {
-			          "Target": {
-			            "Entity": "v_Measures_measure"
-			          }
-			        },
-			        "v_Measures_measure.v0_sort0_sort": {
-			          "Target": {
-			            "Entity": "v_Measures_measure.v0_sort0_sort"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "v_Measures_measure"
-			            },
-			            "Object": {
-			              "Role": "v_Measures_measure.v0_sort0_sort"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_0_sort"
-			        }
-			      ]
-			    },
-			    "v_Measures_measure_has_portofolio_1_SVG_test": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "v_Measures_measure": {
-			          "Target": {
-			            "Entity": "v_Measures_measure"
-			          }
-			        },
-			        "v_Measures_measure.portofolio_1_SVG_test": {
-			          "Target": {
-			            "Entity": "v_Measures_measure.portofolio_1_SVG_test"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "v_Measures_measure"
-			            },
-			            "Object": {
-			              "Role": "v_Measures_measure.portofolio_1_SVG_test"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_portofolio_1_SVG_test"
 			        }
 			      ]
 			    },
@@ -13163,39 +15122,6 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "dim_period_has_v_Measures_measure_portofolio_1_Period": {
-			      "Binding": {
-			        "ConceptualEntity": "dimPeriod"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_period": {
-			          "Target": {
-			            "Entity": "dim_period"
-			          }
-			        },
-			        "v_Measures_measure.portofolio_1_Period": {
-			          "Target": {
-			            "Entity": "v_Measures_measure.portofolio_1_Period"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_period"
-			            },
-			            "Object": {
-			              "Role": "v_Measures_measure.portofolio_1_Period"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_periods_have_portofolio_1_Period"
-			        }
-			      ]
-			    },
 			    "v_Measures_measure_has_at_close1": {
 			      "Binding": {
 			        "ConceptualEntity": "_Measures"
@@ -13312,39 +15238,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_meta_have_summary_sector"
-			        }
-			      ]
-			    },
-			    "v_Measures_measure_has_portofolio_1_Symbol": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "v_Measures_measure": {
-			          "Target": {
-			            "Entity": "v_Measures_measure"
-			          }
-			        },
-			        "v_Measures_measure.portofolio_1_Symbol": {
-			          "Target": {
-			            "Entity": "v_Measures_measure.portofolio_1_Symbol"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "v_Measures_measure"
-			            },
-			            "Object": {
-			              "Role": "v_Measures_measure.portofolio_1_Symbol"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_portofolio_1_Symbol"
 			        }
 			      ]
 			    },
@@ -13707,58 +15600,7 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_meta_have_company_name_and_tags_v_2"
-			        },
-			        {
-			          "Verb": {
-			            "Subject": {
-			              "Role": "dim_meta"
-			            },
-			            "Verbs": [
-			              {
-			                "tag": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "PrepositionalPhrases": [
-			              {
-			                "Prepositions": [
-			                  {
-			                    "v": {
-			                      "State": "Generated"
-			                    }
-			                  }
-			                ],
-			                "Object": {
-			                  "Role": "v_Measures_measure.company_name_and_tags_v_2"
-			                }
-			              }
-			            ]
-			          },
-			          "State": "Generated",
-			          "Weight": 0.95,
-			          "ID": "dim_meta_tag_v_company_name_and_tags_v_2"
-			        },
-			        {
-			          "Preposition": {
-			            "Subject": {
-			              "Role": "dim_meta"
-			            },
-			            "Prepositions": [
-			              {
-			                "v": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Object": {
-			              "Role": "v_Measures_measure.company_name_and_tags_v_2"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_meta_are_v_company_name_and_tags_v_2"
+			          "ID": "dim_meta_have_company_name_and_tags"
 			        }
 			      ]
 			    },
@@ -16898,39 +18740,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.9,
 			          "ID": "dim_meta_are_traded_on_first_trade_dates"
-			        }
-			      ]
-			    },
-			    "v_tFilters_tFilter_has_order": {
-			      "Binding": {
-			        "ConceptualEntity": "_tFilters"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "v_tFilters_tFilter": {
-			          "Target": {
-			            "Entity": "v_tFilters_tFilter"
-			          }
-			        },
-			        "v_tFilters_tFilter.order": {
-			          "Target": {
-			            "Entity": "v_tFilters_tFilter.order"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "v_tFilters_tFilter"
-			            },
-			            "Object": {
-			              "Role": "v_tFilters_tFilter.order"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_tFilters_have_orders"
 			        }
 			      ]
 			    },

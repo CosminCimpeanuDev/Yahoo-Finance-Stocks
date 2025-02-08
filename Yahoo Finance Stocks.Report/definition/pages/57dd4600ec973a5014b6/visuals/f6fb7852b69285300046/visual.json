@@ -96,7 +96,28 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'3M'"
+                                "Value": "'AbbVie'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'AMD'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'Apple'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'Adobe'"
                               }
                             }
                           ]

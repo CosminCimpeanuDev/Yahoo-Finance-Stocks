@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
   "name": "2e577c45960240e6610b",
   "position": {
-    "x": 516.66666666666674,
-    "y": 158.33333333333334,
-    "z": 40000,
-    "height": 33.333333333333336,
-    "width": 81.666666666666671,
-    "tabOrder": 38000
+    "x": 259.21875,
+    "y": 124.375,
+    "z": 3000,
+    "height": 20,
+    "width": 78.75,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "card",
@@ -262,6 +262,33 @@
                               },
                               "Right": {
                                 "Literal": {
+                                  "Value": "null"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#FFFFFF'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "_Measures"
+                                    }
+                                  },
+                                  "Property": "portofolio_#1_VariationIndicator"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
                                   "Value": "1D"
                                 }
                               }
@@ -335,8 +362,22 @@
             }
           }
         }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
-  }
+  },
+  "parentGroupName": "86b4835b0bd580200356"
 }

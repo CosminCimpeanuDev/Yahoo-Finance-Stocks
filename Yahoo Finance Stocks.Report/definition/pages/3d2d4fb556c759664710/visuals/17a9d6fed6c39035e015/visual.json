@@ -23,7 +23,7 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "companyNameAndTags_v2"
+                  "Property": "companyNameAndTags"
                 }
               },
               "queryRef": "_Measures.companyNameAndTags_v2",

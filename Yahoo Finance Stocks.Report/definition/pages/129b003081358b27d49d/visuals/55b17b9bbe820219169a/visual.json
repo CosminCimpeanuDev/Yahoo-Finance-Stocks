@@ -3,11 +3,11 @@
   "name": "55b17b9bbe820219169a",
   "position": {
     "x": 10,
-    "y": 175,
-    "z": 30000,
+    "y": 181.25,
+    "z": 27250,
     "height": 10,
     "width": 185,
-    "tabOrder": 30000
+    "tabOrder": 16000
   },
   "visual": {
     "visualType": "shape",
@@ -105,5 +105,6 @@
     },
     "drillFilterOtherVisuals": true
   },
+  "parentGroupName": "ff0064abe550e8e6329a",
   "howCreated": "InsertVisualButton"
 }

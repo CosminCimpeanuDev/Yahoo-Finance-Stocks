@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
-  "name": "3434fb98b4bee57b6dad",
+  "name": "952dfb21bab9ad8d7596",
   "position": {
-    "x": 286.66666666666669,
-    "y": 151.66666666666669,
-    "z": 38000,
-    "height": 28.333333333333336,
-    "width": 105,
-    "tabOrder": 35000
+    "x": 0.026041666666642982,
+    "y": 123.671875,
+    "z": 2000,
+    "height": 30,
+    "width": 251.25,
+    "tabOrder": 1000
   },
   "visual": {
-    "visualType": "card",
+    "visualType": "multiRowCard",
     "query": {
       "queryState": {
         "Values": {
@@ -23,17 +23,14 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "portofolio_#1_Period"
+                  "Property": "portofolio_#2_At_Close"
                 }
               },
-              "queryRef": "_Measures.portofolio_#1_Variation",
-              "nativeQueryRef": "portofolio_#1_Period"
+              "queryRef": "_Measures.portofolio_#2_At_Close",
+              "nativeQueryRef": "portofolio_#2_At_Close"
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "isDefaultSort": true
       }
     },
     "objects": {
@@ -50,7 +47,33 @@
           }
         }
       ],
-      "labels": [
+      "dataLabels": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "card": [
+        {
+          "properties": {
+            "barShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "cardTitle": [
         {
           "properties": {
             "fontSize": {
@@ -77,6 +100,40 @@
       ]
     },
     "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
+                }
+              }
+            }
+          }
+        }
+      ],
       "visualHeader": [
         {
           "properties": {
@@ -93,6 +150,13 @@
       "background": [
         {
           "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
             "transparency": {
               "expr": {
                 "Literal": {
@@ -106,42 +170,10 @@
       "border": [
         {
           "properties": {
-            "show": {
+            "width": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "radius": {
-              "expr": {
-                "Literal": {
-                  "Value": "8D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "title": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "text": {
-              "expr": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "portofolio_#1_Period"
+                  "Value": "1D"
                 }
               }
             }
@@ -150,5 +182,6 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  }
+  },
+  "parentGroupName": "fed8a359502eac011306"
 }

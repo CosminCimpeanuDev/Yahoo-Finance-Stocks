@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
   "name": "2c0d0f249d4325125e13",
   "position": {
-    "x": 0,
+    "x": 10,
     "y": 110,
-    "z": 29000,
-    "height": 65,
-    "width": 206.66666666666669,
-    "tabOrder": 29000
+    "z": 3000,
+    "height": 75.714285714285722,
+    "width": 185.71428571428572,
+    "tabOrder": 15000
   },
   "visual": {
     "visualType": "textbox",
@@ -19,7 +19,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "Cosmin Cimpeanu"
+                    "value": "Cosmin Cimpeanu",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
                   }
                 ],
                 "horizontalTextAlignment": "center"
@@ -58,6 +61,41 @@
         }
       ]
     },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
-  }
+  },
+  "parentGroupName": "182e752b22d08b887632"
 }

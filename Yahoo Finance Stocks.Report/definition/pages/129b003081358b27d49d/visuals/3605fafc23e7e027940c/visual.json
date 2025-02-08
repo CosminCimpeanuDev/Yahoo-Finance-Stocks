@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
   "name": "3605fafc23e7e027940c",
   "position": {
-    "x": 365,
-    "y": 248.33333333333334,
-    "z": 11000,
+    "x": 365.14931608946114,
+    "y": 348.333371480306,
+    "z": 10000,
     "height": 30,
     "width": 436.66666666666669,
-    "tabOrder": 11000
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "multiRowCard",
@@ -23,11 +23,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "companyNameAndTags_v2"
+                  "Property": "companyNameAndTags"
                 }
               },
               "queryRef": "_Measures.companyNameAndTags_v2",
-              "nativeQueryRef": "companyNameAndTags_v2"
+              "nativeQueryRef": "companyNameAndTags"
             }
           ]
         }
