@@ -38,7 +38,8 @@
   },
   "publicCustomVisuals": [
     "simpleImageEBC4593F96F1425FB3D84C5BF02B5075",
-    "ScrollingTextVisual1448795304508"
+    "ScrollingTextVisual1448795304508",
+    "PBI_CV_886A053E_9DFD_4EA0_A47D_CCAEB89AF969"
   ],
   "resourcePackages": [
     {
@@ -69,6 +70,16 @@
         {
           "name": "png-transparent-github-compute8954505020581045.png",
           "path": "png-transparent-github-compute8954505020581045.png",
+          "type": "Image"
+        },
+        {
+          "name": "Filter3810389504275191.png",
+          "path": "Filter3810389504275191.png",
+          "type": "Image"
+        },
+        {
+          "name": "Filter19979756428414275.png",
+          "path": "Filter19979756428414275.png",
           "type": "Image"
         }
       ]

@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
   "name": "3e729936697de512956d",
   "position": {
-    "x": 338.75,
-    "y": 110,
-    "z": 18000,
-    "height": 87.5,
-    "width": 92.5,
-    "tabOrder": 17000
+    "x": 341.8604651162791,
+    "y": 88.372093023255815,
+    "z": 7000,
+    "height": 109.30232558139535,
+    "width": 93.023255813953483,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "actionButton",
@@ -18,7 +18,7 @@
             "shapeType": {
               "expr": {
                 "Literal": {
-                  "Value": "'applyAllSlicers'"
+                  "Value": "'custom'"
                 }
               }
             },
@@ -53,6 +53,40 @@
                   "Value": "25D"
                 }
               }
+            },
+            "image": {
+              "image": {
+                "name": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'Filter.png'"
+                    }
+                  }
+                },
+                "url": {
+                  "expr": {
+                    "ResourcePackageItem": {
+                      "PackageName": "RegisteredResources",
+                      "PackageType": 1,
+                      "ItemName": "Filter3810389504275191.png"
+                    }
+                  }
+                },
+                "scaling": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'Normal'"
+                    }
+                  }
+                }
+              }
+            },
+            "iconSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "90D"
+                }
+              }
             }
           },
           "selector": {
@@ -64,7 +98,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }
@@ -88,7 +122,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'💼'"
+                  "Value": "'Filter'"
                 }
               }
             },
@@ -102,7 +136,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "50D"
+                  "Value": "12D"
                 }
               }
             },
@@ -131,6 +165,32 @@
               "expr": {
                 "Literal": {
                   "Value": "0L"
+                }
+              }
+            },
+            "verticalAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'bottom'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

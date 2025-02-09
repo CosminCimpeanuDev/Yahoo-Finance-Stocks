@@ -4,7 +4,7 @@
   "name": "9909b271bdccad278c5e",
   "options": {
     "targetVisualNames": [
-      "44eaf093690c0bc03a57"
+      "c2163ea7320565452d32"
     ],
     "suppressData": true
   },
@@ -14,88 +14,31 @@
     "sections": {
       "129b003081358b27d49d": {
         "visualContainers": {
-          "8e8a749056a105419da0": {
+          "5df043050d8d773b61c0": {
             "singleVisual": {
-              "visualType": "advancedSlicerVisual",
-              "objects": {
-                "merge": {
-                  "general": [
-                    {
-                      "properties": {
-                        "filter": {
-                          "filter": {
-                            "Version": 2,
-                            "From": [
-                              {
-                                "Name": "d",
-                                "Entity": "dimLogo",
-                                "Type": 0
-                              }
-                            ],
-                            "Where": [
-                              {
-                                "Condition": {
-                                  "In": {
-                                    "Expressions": [
-                                      {
-                                        "Column": {
-                                          "Expression": {
-                                            "SourceRef": {
-                                              "Source": "d"
-                                            }
-                                          },
-                                          "Property": "Company"
-                                        }
-                                      }
-                                    ],
-                                    "Values": [
-                                      [
-                                        {
-                                          "Literal": {
-                                            "Value": "'Moody''s'"
-                                          }
-                                        }
-                                      ]
-                                    ]
-                                  }
-                                }
-                              }
-                            ]
-                          }
-                        }
-                      }
-                    }
-                  ],
-                  "selection": [
-                    {
-                      "properties": {
-                        "strictSingleSelect": {
-                          "expr": {
-                            "Literal": {
-                              "Value": "true"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  ]
-                }
-              },
+              "visualType": "tableEx",
+              "objects": {},
               "orderBy": [
                 {
-                  "Direction": 1,
+                  "Direction": 2,
                   "Expression": {
-                    "Column": {
+                    "Measure": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "dimMeta"
+                          "Entity": "_Measures"
                         }
                       },
-                      "Property": "Symbol"
+                      "Property": "tabel_Rank"
                     }
                   }
                 }
               ]
+            }
+          },
+          "ef96c25278984dbce36b": {
+            "singleVisual": {
+              "visualType": "simpleImageEBC4593F96F1425FB3D84C5BF02B5075",
+              "objects": {}
             }
           },
           "892875d0de3ebc409311": {
@@ -104,113 +47,10 @@
               "objects": {}
             }
           },
-          "aeb3b8ed495bd698121d": {
+          "3605fafc23e7e027940c": {
             "singleVisual": {
               "visualType": "multiRowCard",
               "objects": {}
-            }
-          },
-          "30e09f19a4833ce02dbc": {
-            "filters": {
-              "byExpr": [
-                {
-                  "name": "01fd10a2b9ea0eeaa065",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "dimCalendar"
-                        }
-                      },
-                      "Property": "Date"
-                    }
-                  },
-                  "howCreated": 1
-                },
-                {
-                  "name": "78dc8b2709a47fe72a98",
-                  "type": "Advanced",
-                  "filter": {
-                    "Version": 2,
-                    "From": [
-                      {
-                        "Name": "_",
-                        "Entity": "_Measures",
-                        "Type": 0
-                      }
-                    ],
-                    "Where": [
-                      {
-                        "Condition": {
-                          "Comparison": {
-                            "ComparisonKind": 0,
-                            "Left": {
-                              "Measure": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Source": "_"
-                                  }
-                                },
-                                "Property": "DateFilter"
-                              }
-                            },
-                            "Right": {
-                              "Literal": {
-                                "Value": "1L"
-                              }
-                            }
-                          }
-                        }
-                      }
-                    ]
-                  },
-                  "expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "_Measures"
-                        }
-                      },
-                      "Property": "DateFilter"
-                    }
-                  },
-                  "howCreated": 1
-                }
-              ]
-            },
-            "singleVisual": {
-              "visualType": "lineStackedColumnComboChart",
-              "objects": {},
-              "orderBy": [
-                {
-                  "Direction": 1,
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "factStocks"
-                        }
-                      },
-                      "Property": "Date"
-                    }
-                  }
-                }
-              ],
-              "activeProjections": {
-                "Category": [
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "factStocks"
-                        }
-                      },
-                      "Property": "Date"
-                    }
-                  }
-                ]
-              }
             }
           },
           "85e6367f727c1d25c22c": {
@@ -348,6 +188,133 @@
                     }
                   ]
                 }
+              }
+            }
+          },
+          "aeb3b8ed495bd698121d": {
+            "singleVisual": {
+              "visualType": "multiRowCard",
+              "objects": {}
+            }
+          },
+          "d3037a16306e3b7c525e": {
+            "singleVisual": {
+              "visualType": "multiRowCard",
+              "objects": {}
+            }
+          },
+          "b5f4116834bd25b1430a": {
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "4e0a81ef530d647da100": {
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "30e09f19a4833ce02dbc": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "01fd10a2b9ea0eeaa065",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dimCalendar"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "78dc8b2709a47fe72a98",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "_",
+                        "Entity": "_Measures",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Comparison": {
+                            "ComparisonKind": 0,
+                            "Left": {
+                              "Measure": {
+                                "Expression": {
+                                  "SourceRef": {
+                                    "Source": "_"
+                                  }
+                                },
+                                "Property": "DateFilter"
+                              }
+                            },
+                            "Right": {
+                              "Literal": {
+                                "Value": "1L"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "DateFilter"
+                    }
+                  },
+                  "howCreated": 1
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineStackedColumnComboChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "factStocks"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "factStocks"
+                        }
+                      },
+                      "Property": "Date"
+                    }
+                  }
+                ]
               }
             }
           },
@@ -514,54 +481,9 @@
               }
             }
           },
-          "d3037a16306e3b7c525e": {
+          "daeffae782ce5601eb32": {
             "singleVisual": {
-              "visualType": "multiRowCard",
-              "objects": {}
-            }
-          },
-          "b5f4116834bd25b1430a": {
-            "singleVisual": {
-              "visualType": "card",
-              "objects": {}
-            }
-          },
-          "4e0a81ef530d647da100": {
-            "singleVisual": {
-              "visualType": "card",
-              "objects": {}
-            }
-          },
-          "5df043050d8d773b61c0": {
-            "singleVisual": {
-              "visualType": "tableEx",
-              "objects": {},
-              "orderBy": [
-                {
-                  "Direction": 2,
-                  "Expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "_Measures"
-                        }
-                      },
-                      "Property": "tabel_Rank"
-                    }
-                  }
-                }
-              ]
-            }
-          },
-          "3605fafc23e7e027940c": {
-            "singleVisual": {
-              "visualType": "multiRowCard",
-              "objects": {}
-            }
-          },
-          "ef96c25278984dbce36b": {
-            "singleVisual": {
-              "visualType": "simpleImageEBC4593F96F1425FB3D84C5BF02B5075",
+              "visualType": "shape",
               "objects": {}
             }
           },
@@ -793,25 +715,7 @@
               ]
             }
           },
-          "4f12ef609bccb631ec40": {
-            "singleVisual": {
-              "visualType": "image",
-              "objects": {}
-            }
-          },
-          "2c0d0f249d4325125e13": {
-            "singleVisual": {
-              "visualType": "textbox",
-              "objects": {}
-            }
-          },
-          "55b17b9bbe820219169a": {
-            "singleVisual": {
-              "visualType": "shape",
-              "objects": {}
-            }
-          },
-          "2f02c8ab6d5ab73b87e5": {
+          "1b55a6c985dddd437309": {
             "singleVisual": {
               "visualType": "shape",
               "objects": {}
@@ -826,6 +730,120 @@
           "b4f2d379ec1c6d8a4030": {
             "singleVisual": {
               "visualType": "image",
+              "objects": {}
+            }
+          },
+          "55b17b9bbe820219169a": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "4f12ef609bccb631ec40": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "2c0d0f249d4325125e13": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "2f02c8ab6d5ab73b87e5": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "8e8a749056a105419da0": {
+            "singleVisual": {
+              "visualType": "advancedSlicerVisual",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "d",
+                                "Entity": "dimLogo",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "d"
+                                            }
+                                          },
+                                          "Property": "Company"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'Moody''s'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dimMeta"
+                        }
+                      },
+                      "Property": "Symbol"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "dd2f69ef29c11385a26d": {
+            "singleVisual": {
+              "visualType": "shape",
               "objects": {}
             }
           },
@@ -868,6 +886,12 @@
               ]
             }
           },
+          "4dbd83e452799e714d07": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
           "c2163ea7320565452d32": {
             "singleVisual": {
               "visualType": "advancedSlicerVisual",
@@ -906,7 +930,7 @@
                                       [
                                         {
                                           "Literal": {
-                                            "Value": "'3M'"
+                                            "Value": "'AbbVie'"
                                           }
                                         }
                                       ],
@@ -920,7 +944,14 @@
                                       [
                                         {
                                           "Literal": {
-                                            "Value": "'AbbVie'"
+                                            "Value": "'Apple'"
+                                          }
+                                        }
+                                      ],
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'Adobe'"
                                           }
                                         }
                                       ]
@@ -977,7 +1008,7 @@
               "objects": {},
               "orderBy": [
                 {
-                  "Direction": 1,
+                  "Direction": 2,
                   "Expression": {
                     "Measure": {
                       "Expression": {
@@ -985,11 +1016,17 @@
                           "Entity": "_Measures"
                         }
                       },
-                      "Property": "portofolio_#2_SVG"
+                      "Property": "portofolio_#2_Company"
                     }
                   }
                 }
               ]
+            }
+          },
+          "6787840c77b053b61366": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
             }
           },
           "6387c58e9226772e7c3e": {
@@ -1016,7 +1053,7 @@
               "objects": {},
               "orderBy": [
                 {
-                  "Direction": 1,
+                  "Direction": 2,
                   "Expression": {
                     "Measure": {
                       "Expression": {
@@ -1031,43 +1068,10 @@
               ]
             }
           },
-          "f240d10170edeb673943": {
+          "6be4a72a500057095581": {
             "singleVisual": {
-              "visualType": "card",
+              "visualType": "shape",
               "objects": {}
-            }
-          },
-          "fe6a032069225e9480cd": {
-            "singleVisual": {
-              "visualType": "multiRowCard",
-              "objects": {}
-            }
-          },
-          "92110e896b41a22a9e31": {
-            "singleVisual": {
-              "visualType": "card",
-              "objects": {}
-            }
-          },
-          "fb76c62d2581aecc6029": {
-            "singleVisual": {
-              "visualType": "tableEx",
-              "objects": {},
-              "orderBy": [
-                {
-                  "Direction": 2,
-                  "Expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "_Measures"
-                        }
-                      },
-                      "Property": "portofolio_#4_Company"
-                    }
-                  }
-                }
-              ]
             }
           },
           "c9d2979cec7ede10a2ce": {
@@ -1114,23 +1118,126 @@
               "visualType": "shape",
               "objects": {}
             }
+          },
+          "fb9674c659d947d27989": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "f240d10170edeb673943": {
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "fe6a032069225e9480cd": {
+            "singleVisual": {
+              "visualType": "multiRowCard",
+              "objects": {}
+            }
+          },
+          "92110e896b41a22a9e31": {
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {}
+            }
+          },
+          "fb76c62d2581aecc6029": {
+            "singleVisual": {
+              "visualType": "tableEx",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "portofolio_#4_Company"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "434f7c80a45a0025300d": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "e745525527ab159cee06": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "bffbcc2c6a995b07e6d8": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
           }
         },
         "visualContainerGroups": {
-          "4e3b82dc9beb8ba11e69": {
+          "2af77589aa8debda5cbd": {
             "isHidden": false
           },
-          "86b4835b0bd580200356": {
+          "4b5ee002900d0e897568": {
             "isHidden": false
           },
-          "fed8a359502eac011306": {
-            "isHidden": false
+          "a6d059db677e261b3e6d": {
+            "isHidden": false,
+            "children": {
+              "4e3b82dc9beb8ba11e69": {
+                "isHidden": false
+              }
+            }
           },
-          "d2e58366117e88da70bc": {
-            "isHidden": false
+          "ff0064abe550e8e6329a": {
+            "isHidden": false,
+            "children": {
+              "182e752b22d08b887632": {
+                "isHidden": false
+              }
+            }
           },
-          "3c9ba1033542a066ca61": {
-            "isHidden": false
+          "70cf86705527500e824e": {
+            "isHidden": false,
+            "children": {
+              "d35e7aa0a9c5090c3385": {
+                "children": {
+                  "86b4835b0bd580200356": {
+                    "isHidden": false
+                  }
+                }
+              },
+              "008d60421557398bbb10": {
+                "children": {
+                  "fed8a359502eac011306": {
+                    "isHidden": false
+                  }
+                }
+              },
+              "121a630dc859c0d82531": {
+                "children": {
+                  "d2e58366117e88da70bc": {
+                    "isHidden": false
+                  }
+                }
+              },
+              "388282f1cd3bc6295503": {
+                "children": {
+                  "3c9ba1033542a066ca61": {
+                    "isHidden": false
+                  }
+                }
+              }
+            }
           }
         }
       }
