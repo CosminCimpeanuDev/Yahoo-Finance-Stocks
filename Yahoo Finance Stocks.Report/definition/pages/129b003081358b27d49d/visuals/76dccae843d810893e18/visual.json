@@ -103,6 +103,13 @@
                   "Value": "'About me'"
                 }
               }
+            },
+            "bookmark": {
+              "expr": {
+                "Literal": {
+                  "Value": "'f8c9b3ad276660220c7b'"
+                }
+              }
             }
           }
         }
