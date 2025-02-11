@@ -2,6 +2,8 @@
 
 This interactive stock market dashboard provides a comprehensive view of financial market trends, stock performance, and key analytics. Designed for investors and traders, the dashboard integrates multiple data sources to display real-time and historical stock market insights.
 
+👋 Connect with me on 👉[LinkedIn](https://www.linkedin.com/in/cosmin-cimpeanu)! 
+
 ![image](https://github.com/user-attachments/assets/a4a48636-f061-40df-80ab-7031419a439d)
 
 
