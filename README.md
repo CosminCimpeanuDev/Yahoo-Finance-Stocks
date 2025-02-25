@@ -4,7 +4,8 @@ This interactive stock market dashboard provides a comprehensive view of financi
 
 👋 Connect with me on 👉[LinkedIn](https://www.linkedin.com/in/cosmin-cimpeanu)! 
 
-![image](https://github.com/user-attachments/assets/a4a48636-f061-40df-80ab-7031419a439d)
+![overview](https://github.com/user-attachments/assets/114a9928-d369-4a02-a236-974a0718a815)
+
 
 
 🚀 Key Features:
@@ -13,6 +14,7 @@ This interactive stock market dashboard provides a comprehensive view of financi
 
  - Displays key stock indices such as NASDAQ Composite, S&P 500, and Costco stock prices.
  - Highlights daily changes, percentage gains/losses, and real-time market trends 📊.
+
 
 📉 Stock Performance Analysis
 
