@@ -1,0 +1,2 @@
+EVALUATE
+ROW("Total Rows", COUNTROWS('factStocks'))
