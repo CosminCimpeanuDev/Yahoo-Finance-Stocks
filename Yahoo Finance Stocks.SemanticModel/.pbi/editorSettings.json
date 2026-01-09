@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "version": "1.0",
-=======
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/semanticModel/editorSettings/1.0.0/schema.json",
->>>>>>> 9eae784 (Fixed company logos & renaming of a company)
   "autodetectRelationships": true,
   "parallelQueryLoading": true,
   "typeDetectionEnabled": true,

@@ -86,10 +86,7 @@ table dimInputStocks
 				        [Symbol="VZ", Sector="Communication Services", Industry="Telecom Services", Company="Verizon", Domain="verizon.com"],
 				        [Symbol="TMUS", Sector="Communication Services", Industry="Telecom Services", Company="T-Mobile", Domain="tmobile.com"],
 				        [Symbol="DUK", Sector="Utilities", Industry="Utilities-Regulated Electric", Company="Duke Energy", Domain="duke-energy.com"],
-<<<<<<< HEAD
 				        [Symbol="SO", Sector="Utilities", Industry="Utilities-Regulated Electric", Company="Southern Company", Domain="southerncompany.com"],
-=======
->>>>>>> 9eae784 (Fixed company logos & renaming of a company)
 				        [Symbol="O", Sector="Real Estate", Industry="REIT-Retail", Company="Realty Income", Domain="realtyincome.com"],
 				        [Symbol="SPG", Sector="Real Estate", Industry="REIT-Retail", Company="Simon Property Group", Domain="spg.com"],
 				        [Symbol="PLD", Sector="Real Estate", Industry="REIT-Industrial", Company="Prologis", Domain="prologis.com"],
@@ -124,10 +121,6 @@ table dimInputStocks
 				        [Symbol="QCOM", Sector="Technology", Industry="Semiconductors", Company="Qualcomm", Domain="qualcomm.com"],
 				        [Symbol="MU", Sector="Technology", Industry="Semiconductors", Company="Micron Technology", Domain="micron.com"],
 				        [Symbol="SHOP", Sector="Technology", Industry="Software-Application", Company="Shopify", Domain="shopify.com"],
-<<<<<<< HEAD
-				        [Symbol="SQ", Sector="Technology", Industry="Software-Infrastructure", Company="Square", Domain="squareup.com"],
-=======
->>>>>>> 9eae784 (Fixed company logos & renaming of a company)
 				        [Symbol="PYPL", Sector="Financial Services", Industry="Software-Infrastructure", Company="PayPal", Domain="paypal.com"],
 				        [Symbol="MA", Sector="Financial Services", Industry="Credit Services", Company="MasterCard", Domain="mastercard.com"],
 				        [Symbol="V", Sector="Financial Services", Industry="Credit Services", Company="Visa", Domain="visa.com"],
@@ -143,11 +136,7 @@ table dimInputStocks
 				     
 				    DistinctTable = Table.Distinct(Source),
 				    SortedTable = Table.Sort(DistinctTable, {{"Symbol", Order.Ascending}}),
-<<<<<<< HEAD
-				    AddLogoUrl = Table.AddColumn(SortedTable, "Logo", each "https://logo.clearbit.com/" & [Domain])
-=======
-				    AddLogoUrl = Table.AddColumn(SortedTable, "Logo", each "https://img.logo.dev/"& [Domain]&"?token=pk_ZvRDDcGaQzykHM2lIwZtaw")
->>>>>>> 9eae784 (Fixed company logos & renaming of a company)
+				    AddLogoUrl = Table.AddColumn(SortedTable, "Logo", each "https://img.logo.dev/" & [Domain]&"?token=pk_ZvRDDcGaQzykHM2lIwZtaw")
 				in
 				    AddLogoUrl
 				```

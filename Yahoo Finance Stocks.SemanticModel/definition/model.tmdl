@@ -9,11 +9,6 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-<<<<<<< HEAD
-annotation PBIDesktopVersion = 2.139.2054.0 (24.12)+334ca1c95b576cc53924655643b0d36f21caac55
-
-=======
->>>>>>> 9eae784 (Fixed company logos & renaming of a company)
 annotation PBI_QueryOrder = ["dimInputStocks","fnStockData","factStocks","dimMeta","dimCalendar","_tParameter","dimPeriod","dimLogo","dimCurrencySymbol","_tFilters"]
 
 annotation PBI_ProTooling = ["TMDLView_Desktop","DaxQueryView_Desktop","DevMode"]

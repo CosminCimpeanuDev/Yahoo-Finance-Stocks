@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
-=======
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
->>>>>>> 9eae784 (Fixed company logos & renaming of a company)
   "name": "9922a5eb0c7a81aba5a7",
   "position": {
     "x": 575.55555555555554,
@@ -16,10 +12,6 @@
   "visualGroup": {
     "displayName": "Group 2",
     "groupMode": "ScaleMode"
-<<<<<<< HEAD
-  }
-=======
   },
   "isHidden": true
->>>>>>> 9eae784 (Fixed company logos & renaming of a company)
 }
