@@ -1,9 +1,17 @@
 {
+<<<<<<< HEAD
+=======
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definitionProperties/2.0.0/schema.json",
+>>>>>>> 9eae784 (Fixed company logos & renaming of a company)
   "version": "4.0",
   "datasetReference": {
     "byPath": {
       "path": "../Yahoo Finance Stocks.SemanticModel"
+<<<<<<< HEAD
     },
     "byConnection": null
+=======
+    }
+>>>>>>> 9eae784 (Fixed company logos & renaming of a company)
   }
 }

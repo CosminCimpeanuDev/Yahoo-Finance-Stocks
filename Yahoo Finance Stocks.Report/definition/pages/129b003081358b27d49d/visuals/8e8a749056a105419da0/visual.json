@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
+=======
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+>>>>>>> 9eae784 (Fixed company logos & renaming of a company)
   "name": "8e8a749056a105419da0",
   "position": {
     "x": 0,
@@ -89,7 +93,11 @@
                           [
                             {
                               "Literal": {
+<<<<<<< HEAD
                                 "Value": "'Tesla'"
+=======
+                                "Value": "'3M'"
+>>>>>>> 9eae784 (Fixed company logos & renaming of a company)
                               }
                             }
                           ]
@@ -216,6 +224,7 @@
                   "Value": "'Right'"
                 }
               }
+<<<<<<< HEAD
             }
           },
           "selector": {
@@ -224,6 +233,9 @@
         },
         {
           "properties": {
+=======
+            },
+>>>>>>> 9eae784 (Fixed company logos & renaming of a company)
             "color": {
               "solid": {
                 "color": {
@@ -238,6 +250,7 @@
             }
           },
           "selector": {
+<<<<<<< HEAD
             "data": [
               {
                 "dataViewWildcard": {
@@ -246,6 +259,9 @@
               }
             ],
             "id": "hover"
+=======
+            "id": "interaction:hover"
+>>>>>>> 9eae784 (Fixed company logos & renaming of a company)
           }
         },
         {
@@ -273,7 +289,11 @@
             }
           },
           "selector": {
+<<<<<<< HEAD
             "id": "selected"
+=======
+            "id": "selection:selected"
+>>>>>>> 9eae784 (Fixed company logos & renaming of a company)
           }
         }
       ],
@@ -331,7 +351,11 @@
             }
           },
           "selector": {
+<<<<<<< HEAD
             "id": "hover"
+=======
+            "id": "interaction:hover"
+>>>>>>> 9eae784 (Fixed company logos & renaming of a company)
           }
         },
         {
@@ -345,7 +369,11 @@
             }
           },
           "selector": {
+<<<<<<< HEAD
             "id": "press"
+=======
+            "id": "interaction:press"
+>>>>>>> 9eae784 (Fixed company logos & renaming of a company)
           }
         }
       ],
@@ -471,7 +499,11 @@
                 }
               }
             ],
+<<<<<<< HEAD
             "id": "hover"
+=======
+            "id": "interaction:hover"
+>>>>>>> 9eae784 (Fixed company logos & renaming of a company)
           }
         },
         {
@@ -492,7 +524,11 @@
             }
           },
           "selector": {
+<<<<<<< HEAD
             "id": "hover"
+=======
+            "id": "interaction:hover"
+>>>>>>> 9eae784 (Fixed company logos & renaming of a company)
           }
         }
       ],
@@ -546,6 +582,7 @@
         },
         {
           "properties": {
+<<<<<<< HEAD
             "fillColor": {
               "solid": {
                 "color": {
@@ -572,6 +609,15 @@
         },
         {
           "properties": {
+=======
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "70D"
+                }
+              }
+            },
+>>>>>>> 9eae784 (Fixed company logos & renaming of a company)
             "fillColor": {
               "solid": {
                 "color": {
@@ -586,6 +632,7 @@
             }
           },
           "selector": {
+<<<<<<< HEAD
             "data": [
               {
                 "dataViewWildcard": {
@@ -594,20 +641,39 @@
               }
             ],
             "id": "selected"
+=======
+            "id": "selection:selected"
+>>>>>>> 9eae784 (Fixed company logos & renaming of a company)
           }
         },
         {
           "properties": {
+<<<<<<< HEAD
             "transparency": {
               "expr": {
                 "Literal": {
                   "Value": "70D"
+=======
+            "fillColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+>>>>>>> 9eae784 (Fixed company logos & renaming of a company)
                 }
               }
             }
           },
           "selector": {
+<<<<<<< HEAD
             "id": "selected"
+=======
+            "id": "interaction:press"
+>>>>>>> 9eae784 (Fixed company logos & renaming of a company)
           }
         }
       ],
@@ -648,6 +714,7 @@
                   "Value": "'Inner'"
                 }
               }
+<<<<<<< HEAD
             }
           },
           "selector": {
@@ -656,6 +723,9 @@
         },
         {
           "properties": {
+=======
+            },
+>>>>>>> 9eae784 (Fixed company logos & renaming of a company)
             "color": {
               "solid": {
                 "color": {
@@ -670,6 +740,7 @@
             }
           },
           "selector": {
+<<<<<<< HEAD
             "data": [
               {
                 "dataViewWildcard": {
@@ -678,6 +749,9 @@
               }
             ],
             "id": "hover"
+=======
+            "id": "interaction:hover"
+>>>>>>> 9eae784 (Fixed company logos & renaming of a company)
           }
         }
       ],
@@ -693,7 +767,11 @@
             }
           },
           "selector": {
+<<<<<<< HEAD
             "id": "hover"
+=======
+            "id": "interaction:hover"
+>>>>>>> 9eae784 (Fixed company logos & renaming of a company)
           }
         },
         {
@@ -761,6 +839,7 @@
                   "Value": "15D"
                 }
               }
+<<<<<<< HEAD
             }
           },
           "selector": {
@@ -769,6 +848,9 @@
         },
         {
           "properties": {
+=======
+            },
+>>>>>>> 9eae784 (Fixed company logos & renaming of a company)
             "fontColor": {
               "solid": {
                 "color": {
@@ -783,6 +865,7 @@
             }
           },
           "selector": {
+<<<<<<< HEAD
             "data": [
               {
                 "dataViewWildcard": {
@@ -790,11 +873,14 @@
                 }
               }
             ],
+=======
+>>>>>>> 9eae784 (Fixed company logos & renaming of a company)
             "id": "default"
           }
         },
         {
           "properties": {
+<<<<<<< HEAD
             "fontColor": {
               "solid": {
                 "color": {
@@ -821,6 +907,8 @@
         },
         {
           "properties": {
+=======
+>>>>>>> 9eae784 (Fixed company logos & renaming of a company)
             "bold": {
               "expr": {
                 "Literal": {
@@ -834,10 +922,29 @@
                   "Value": "'wf_standard-font, helvetica, arial, sans-serif'"
                 }
               }
+<<<<<<< HEAD
             }
           },
           "selector": {
             "id": "selected"
+=======
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0.2
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "selection:selected"
+>>>>>>> 9eae784 (Fixed company logos & renaming of a company)
           }
         }
       ],
@@ -867,7 +974,11 @@
             }
           },
           "selector": {
+<<<<<<< HEAD
             "id": "hover"
+=======
+            "id": "interaction:hover"
+>>>>>>> 9eae784 (Fixed company logos & renaming of a company)
           }
         },
         {
@@ -881,7 +992,11 @@
             }
           },
           "selector": {
+<<<<<<< HEAD
             "id": "selected"
+=======
+            "id": "selection:selected"
+>>>>>>> 9eae784 (Fixed company logos & renaming of a company)
           }
         }
       ],

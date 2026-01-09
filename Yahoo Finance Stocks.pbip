@@ -1,4 +1,8 @@
 {
+<<<<<<< HEAD
+=======
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/pbip/pbipProperties/1.0.0/schema.json",
+>>>>>>> 9eae784 (Fixed company logos & renaming of a company)
   "version": "1.0",
   "artifacts": [
     {
